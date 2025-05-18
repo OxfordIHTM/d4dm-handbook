@@ -64,7 +64,7 @@ format:
       text: |
         \printindex
   epub:
-    cover-image: images/d4md_neg.png
+    cover-image: images/d4dm_neg.png
     toc: true
     toc-depth: 3
     highlight-style: breeze
