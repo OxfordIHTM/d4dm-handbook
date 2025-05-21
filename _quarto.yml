@@ -6,9 +6,15 @@ book:
   title: Data for Decision Makers
   subtitle: Course Handbook
   author:
+    - name: Proochista Ariana
+      orcid: 0000-0002-0154-2237
+      email: proochista.ariana@ndm.ox.ac.uk
+      affiliation: 
+        - name: Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford
+          city: Oxford      
     - name: Ernest Guevarra
       orcid: 0000-0002-4887-4415
-      email: ernest@guevarra.io
+      email: ernest@d4dm.org
       affiliation: 
         - name: Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford
           city: Oxford
