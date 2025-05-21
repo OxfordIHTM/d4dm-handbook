@@ -4,6 +4,12 @@ engine: knitr
 
 # Preface {.unnumbered}
 
-This handbook is a guide on the design, development, training, and implementation of the **Seychelles Oncology Unit Patient Survey**. This handbook was first put together for the first iteration of the survey in 2025.
+In an era defined by information, the ability to make sound decisions increasingly hinges on the intelligent use of data. Across sectors and industries, from healthcare and education to finance and public policy, decision-makers are confronted with unprecedented volumes of information. Yet, it is not the sheer quantity of data that holds value, but our capacity to interpret, understand, and apply it effectively. This book, Data for Decision Makers, is a guide for those who seek to harness the full potential of data in making informed, impactful choices.
 
-This is a pre-release version (**v0.0.0.9000**) released on **`r format(Sys.Date(), format = "%d %B %Y")`**.
+Data is more than numbers on a spreadsheet; it is the language of modern insight. When approached with the right tools and understanding, it becomes a powerful asset for identifying patterns, predicting outcomes, evaluating strategies, and ultimately, improving results. For decision-makers, this means developing fluency not just in reading reports, but in questioning assumptions, validating sources, and interpreting results within context.
+
+Understanding modern data concepts—from statistical reasoning and data visualisation to machine learning and real-time analytics - is no longer optional. It is foundational. These concepts empower leaders to move beyond intuition and anecdote, and toward evidence-based action. As data continues to shape the world around us, the ability to engage with it critically and creatively is becoming an essential skill.
+
+Data for Decision Makers equips readers with both the conceptual grounding and practical knowledge to navigate this landscape. Whether you are a seasoned executive, a policy analyst, or an emerging leader, this book is designed to bridge the gap between data science and decision-making. It demystifies the tools and techniques of modern data analysis and offers real-world applications that demonstrate how data can drive progress and innovation.
+
+As you embark on this journey, remember: good decisions are not just supported by data; they are shaped by those who know how to use it wisely. This book is your invitation to become one of them.
