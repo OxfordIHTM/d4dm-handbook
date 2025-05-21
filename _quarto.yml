@@ -38,7 +38,7 @@ book:
   repo-url: https://github.com/data4decisonmakers/data-concepts-applications/
   repo-actions: [edit]
   downloads: [pdf, epub]
-  sharing: [twitter, facebook]
+  sharing: [linkedin, twitter, facebook]
   google-analytics: 
     tracking-id: ""
     anonymize-ip: true
