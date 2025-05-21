@@ -3,8 +3,6 @@
 <!-- badges: start -->
 ![License for code](https://img.shields.io/badge/license_for_code-GPL3.0-blue)
 ![License for text](https://img.shields.io/badge/license_for_writing-CC_BY_4.0-blue)
-[![test book render](https://github.com/OxfordIHTM/d4dm-handbook/actions/workflows/test-render.yml/badge.svg)](https://github.com/OxfordIHTM/d4dm-handbook/actions/workflows/test-render.yml)
-[![Quarto Publish](https://github.com/OxfordIHTM/d4dm-handbook/actions/workflows/publish.yml/badge.svg)](https://github.com/OxfordIHTM/d4dm-handbook/actions/workflows/publish.yml)
 <!-- badges: end -->
 
 
