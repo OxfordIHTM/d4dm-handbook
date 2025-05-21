@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 book:
-  title: Data for Decision Makers
+  title: "Data for Decision Makers: Data Concepts and Applications"
   subtitle: Course Handbook
   author:
     - name: Proochista Ariana
@@ -22,25 +22,23 @@ book:
   date-format: "DD MMMM YYYY"
   chapters:
     - index.qmd
-    - part: Data Concepts and Applications
-      chapters:
-        - 01-introduction.qmd
-        - 02-all-about-data.qmd
-        - 03-data-security.qmd
-        - 04-data-tools.qmd
-        - 05-data-entry-system.qmd
-        - 06-intro-data-analysis.qmd
-        - 07-exploratory-data-analysis.qmd
+    - 01-introduction.qmd
+    - 02-all-about-data.qmd
+    - 03-data-security.qmd
+    - 04-data-tools.qmd
+    - 05-data-entry-system.qmd
+    - 06-intro-data-analysis.qmd
+    - 07-exploratory-data-analysis.qmd
     - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd
   #   - 13-odk-setup.qmd
   cover-image: images/d4dm_neg.png
   search: true
-  repo-url: https://github.com/OxfordIHTM/d4dm-handbook/
+  repo-url: https://github.com/data4decisonmakers/data-concepts-applications/
   repo-actions: [edit]
   downloads: [pdf, epub]
-  sharing: [twitter, facebook]
+  sharing: [linkedin, twitter, facebook]
   google-analytics: 
     tracking-id: ""
     anonymize-ip: true
