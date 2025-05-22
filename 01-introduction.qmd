@@ -4,3 +4,34 @@ output-file: introduction.html
 
 # Introduction {#sec-introduction}
 
+In an era defined by information, the ability to make sound decisions increasingly hinges on the intelligent use of data. Across sectors and industries, from healthcare and education to finance and public policy, decision-makers are confronted with unprecedented volumes of information. Yet, it is not the sheer quantity of data that holds value, but our capacity to interpret, understand, and apply it effectively.
+
+Data is more than numbers on a spreadsheet\index{spreadsheet}; it is the language of modern insight. When approached with the right tools and understanding, it becomes a powerful asset for identifying patterns, predicting outcomes, evaluating strategies, and ultimately, improving results. For decision-makers, this means developing fluency not just in reading reports, but in questioning assumptions, validating sources, and interpreting results within context.
+
+Understanding modern data concepts - from statistical reasoning\index{statistical reasoning} and data visualisation\index{data visualisation} to machine learning\index{machine learning} and real-time analytics\index{real-time analytics} - is no longer optional. It is foundational. These concepts empower leaders to move beyond intuition and anecdote, and toward evidence-based action\index{evidence-based action}. As data continues to shape the world around us, the ability to engage with it critically and creatively is becoming an essential skill.
+
+This course aims to equip its participants with both the conceptual grounding and practical knowledge to navigate this landscape. Whether you are a seasoned executive, a policy analyst, or an emerging leader, this course is designed to bridge the gap between data science\index{data science} and decision-making\index{decision-making}. It demystifies the tools and techniques of modern data analysis\index{data analysis} and offers real-world applications\index{real-world applications} that demonstrate how data can drive progress and innovation.
+
+Good decisions are not just supported by data; they are shaped by those who know how to use it wisely.
+
+## Data-driven decision-making {#sec-data-driven-decision}
+
+Data-driven decision-making\index{data-driven decision-making} refers to the process of making decisions based on data and information rather than intuition or experience alone. It involves collecting, analysing, interpreting, and presenting data to support decision-making processes\index{decision-making process}.
+
+In this approach, decisions are made by relying on facts, figures, trends patterns, and insights derived from data. The goal is to make objective, evidence-based decisions\index{evidence-based decision} that are more accurate, consistent, and transparent.
+
+:::{#nte-dddm .callout-note}
+
+## Features of data-driven decision-making
+
+Data-driven decision-making is widely used in various fields such as business, healthcare, finance, education, and government. It allows organisations and individuals to:
+
+1. **Informed Decisions** - make decisions based on data rather than assumptions or guesswork;
+2. **Improved Accuracy** - educe errors and biases by relying on objective information;
+3. **Efficiency** - Optimise resources and processes by identifying trends, patterns, and inefficiencies;
+4. **Transparency** - ensure that decisions are made in an open and transparent manner; and,
+5. **Scalability** - Apply to large-scale operations or complex problems where traditional methods may be insufficient.
+
+:::
+
+Data-driven decision-making often involves the use of tools, techniques, and technologies such as data analytics, machine learning, artificial intelligence, and visualisation software. By leveraging these tools, organisations can transform raw data into actionable insights that drive better outcomes.
