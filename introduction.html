@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -224,6 +244,10 @@ gtag('config', '', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#sec-data-driven-decision" id="toc-sec-data-driven-decision" class="nav-link active" data-scroll-target="#sec-data-driven-decision"><span class="header-section-number">1.1</span> Data-driven decision-making</a></li>
+  <li><a href="#sec-case-dddm" id="toc-sec-case-dddm" class="nav-link" data-scroll-target="#sec-case-dddm"><span class="header-section-number">1.2</span> The case for data-driven decision-making</a>
+  <ul class="collapse">
+  <li><a href="#data-use-and-analytics-in-water-quality-management" id="toc-data-use-and-analytics-in-water-quality-management" class="nav-link" data-scroll-target="#data-use-and-analytics-in-water-quality-management"><span class="header-section-number">1.2.1</span> Data use and analytics in water quality management</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/01-introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -256,7 +280,7 @@ gtag('config', '', { 'anonymize_ip': true});
 <p>Good decisions are not just supported by data; they are shaped by those who know how to use it wisely.</p>
 <section id="sec-data-driven-decision" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-data-driven-decision"><span class="header-section-number">1.1</span> Data-driven decision-making</h2>
-<p>Data-driven decision-making refers to the process of making decisions based on data and information rather than intuition or experience alone. It involves collecting, analysing, interpreting, and presenting data to support decision-making processes.</p>
+<p>Data-driven decision-making or DDDM refers to the process of making decisions based on data and information rather than intuition or experience alone. It involves collecting, analysing, interpreting, and presenting data to support decision-making processes<span class="citation" data-cites="stobierski_advantages_2019 ivacko_data-driven_2013 choi_towards_2021"><sup><a href="#ref-stobierski_advantages_2019" role="doc-biblioref">1</a>–<a href="#ref-choi_towards_2021" role="doc-biblioref">3</a></sup></span>.</p>
 <p>In this approach, decisions are made by relying on facts, figures, trends patterns, and insights derived from data. The goal is to make objective, evidence-based decisions that are more accurate, consistent, and transparent.</p>
 <div id="nte-dddm" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -270,17 +294,85 @@ Note&nbsp;1.1: Features of data-driven decision-making
 <div class="callout-body-container callout-body">
 <p>Data-driven decision-making is widely used in various fields such as business, healthcare, finance, education, and government. It allows organisations and individuals to:</p>
 <ol type="1">
-<li><strong>Informed Decisions</strong> - make decisions based on data rather than assumptions or guesswork;</li>
-<li><strong>Improved Accuracy</strong> - educe errors and biases by relying on objective information;</li>
-<li><strong>Efficiency</strong> - Optimise resources and processes by identifying trends, patterns, and inefficiencies;</li>
-<li><strong>Transparency</strong> - ensure that decisions are made in an open and transparent manner; and,</li>
-<li><strong>Scalability</strong> - Apply to large-scale operations or complex problems where traditional methods may be insufficient.</li>
+<li><p><strong>Informed Decisions</strong> - make decisions based on data rather than assumptions or guesswork;</p></li>
+<li><p><strong>Improved Accuracy</strong> - educe errors and biases by relying on objective information;</p></li>
+<li><p><strong>Efficiency</strong> - Optimise resources and processes by identifying trends, patterns, and inefficiencies;</p></li>
+<li><p><strong>Transparency</strong> - ensure that decisions are made in an open and transparent manner; and,</p></li>
+<li><p><strong>Scalability</strong> - Apply to large-scale operations or complex problems where traditional methods may be insufficient.</p></li>
 </ol>
 </div>
 </div>
 <p>Data-driven decision-making often involves the use of tools, techniques, and technologies such as data analytics, machine learning, artificial intelligence, and visualisation software. By leveraging these tools, organisations can transform raw data into actionable insights that drive better outcomes.</p>
+<p>In today’s organisations, this approach has become increasingly important as it allows for more objective and accurate decision-making. The process typically includes identifying relevant data sources, applying analytical techniques, and leveraging technologies like machine learning, artificial intelligence, and visualisation tools to transform raw data to actionable insights that drive better outcomes.</p>
+<p>An organisation that is data-driven also benefits in being able to spot opportunities and threats early. By analysing data regularly, organisations can anticipate changes and act before problems arise.</p>
+<p>Saving costs is another advantage. In a survey of executives of Fortune 1000 companies regarding their data investments since 2012 commissioned by the Harvard Business Review, nearly half (48.4%) of respondents report that they are documenting measurable results from their investments in big data and 80.7% of the executives describing their investments in big data as being successful<span class="citation" data-cites="bean_how_2017 stobierski_advantages_2019"><sup><a href="#ref-stobierski_advantages_2019" role="doc-biblioref">1</a>,<a href="#ref-bean_how_2017" role="doc-biblioref">4</a></sup></span>.</p>
+</section>
+<section id="sec-case-dddm" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-case-dddm"><span class="header-section-number">1.2</span> The case for data-driven decision-making</h2>
+<p>The context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).</p>
+<section id="data-use-and-analytics-in-water-quality-management" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="data-use-and-analytics-in-water-quality-management"><span class="header-section-number">1.2.1</span> Data use and analytics in water quality management</h3>
+<p>This is a case study about a United States state agency struggling with DDDM in addressing environmental issues like harmful algal blooms (HABs) and high chloride concentrations<span class="citation" data-cites="choi_towards_2021"><sup><a href="#ref-choi_towards_2021" role="doc-biblioref">3</a></sup></span>.</p>
+<p>In addressing the challenges faced by an organisation in implementing DDDM, it is crucial to consider a comprehensive strategy that encompasses nine key determinants (see <a href="#nte-nine-determinants" class="quarto-xref">Note&nbsp;<span>1.2</span></a>). These factors interrelate and influence each other, requiring a holistic approach to ensure successful adoption.</p>
+<div id="nte-nine-determinants" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1.2: Nine key determinants for an effective DDDM strategy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>Data Infrastructure</strong> Ensuring robust data infrastructure is foundational, as it supports the collection, storage, and accessibility of data necessary for effective analysis.</p></li>
+<li><p><strong>Analytical Capabilities</strong> Investment in both skilled personnel and advanced tools is essential to transform raw data into actionable insights.</p></li>
+<li><p><strong>Organisational Capacity</strong> Fostering a culture that embraces change and collaboration within the organisation is vital for adaptability and innovation.</p></li>
+<li><p><strong>Institutional Environment</strong> Engaging with external institutions and navigating legal frameworks can provide resources and support, or pose restrictions, respectively.</p></li>
+<li><p><strong>User Involvement</strong> Collaborating with end-users ensures that solutions are practical and aligned with real needs, enhancing decision effectiveness.</p></li>
+<li><p><strong>Stakeholder Engagement</strong> Broad stakeholder involvement brings diverse perspectives, enriching the decision-making process.</p></li>
+<li><p><strong>Public Procurement Rules</strong> Navigating bureaucratic processes efficiently can accelerate tool adoption without unnecessary delays.</p></li>
+<li><p><strong>Privacy and Confidentiality Constraints</strong> Addressing legal requirements regarding data protection is crucial to ensure comprehensive analyses.</p></li>
+<li><p><strong>Innovation and Collaboration</strong> Access to external resources and communities fosters creativity and collaboration, vital for overcoming challenges.</p></li>
+</ol>
+</div>
+</div>
+<p>These key determinants are interrelated and interdependent. For example, if an organisation has strong data infrastructure (determinant 1) but lacks the right analytical tools or skilled personnel (determinant 2), their DDDM efforts will be hampered. Similarly, even with good internal structures (determinant 3), if external regulations make it hard to access necessary tools or collaborate externally (determinants 7 and 9), progress is still limited. Without proper stakeholder engagement (determinant 6) and user involvement (determinant 5), the organisation might develop solutions in isolation, leading to less effective decisions. Moreover, privacy constraints (determinant 8) can affect data availability, which in turn impacts analytical capabilities since data is a key input.</p>
+<p>While DDDM is often seen as a technical issue involving tools and data, it’s also deeply influenced by organisational and institutional factors. This makes sense because any significant change requires not just new technology but also cultural shifts within the organisation to embrace these changes.</p>
+<p>These determinants also influence the ability of an organisation to adapt over time. For example, if the organisation faces challenges in public procurement, which is a structural issue, this could create delays that affect the organisation’s overall strategy. Conversely, strong stakeholder engagement might mitigate some of these delays by providing alternative solutions or resources.</p>
+<section id="leadership-role" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="leadership-role"><span class="header-section-number">1.2.1.1</span> Leadership role</h4>
+<p>Leadership plays a critical part in driving organisational change. Without supportive leadership, many of these determinants could be obstacles rather than opportunities. For instance, if leaders aren’t committed to DDDM, they might not push for necessary cultural shifts or investment in new tools.</p>
+</section>
+<section id="balancing-existing-practices" class="level4" data-number="1.2.1.2">
+<h4 data-number="1.2.1.2" class="anchored" data-anchor-id="balancing-existing-practices"><span class="header-section-number">1.2.1.2</span> Balancing existing practices</h4>
+<p>The balance between existing practices and new methods is important. While the state agency was implementing DDDM, traditional approaches were still relied upon. This blend can be beneficial initially but may need careful management to avoid conflicts or inefficiencies as newer methods prove their worth.</p>
+</section>
+<section id="measuring-success" class="level4" data-number="1.2.1.3">
+<h4 data-number="1.2.1.3" class="anchored" data-anchor-id="measuring-success"><span class="header-section-number">1.2.1.3</span> Measuring success</h4>
+<p>How would this state agency assess its progress in implementing DDDM? They might look at metrics like the quality and timeliness of decisions, reduction in issues (like HABs), efficiency improvements, and user satisfaction. These outcomes can help gauge whether their efforts are paying off despite facing various challenges.</p>
+</section>
+<section id="conclusion" class="level4" data-number="1.2.1.4">
+<h4 data-number="1.2.1.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.2.1.4</span> Conclusion</h4>
+<p>A tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-stobierski_advantages_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Stobierski, T. The advantages of data-driven decision-making. Business insights. <a href="https://online.hbs.edu/blog/post/data-driven-decision-making">https://online.hbs.edu/blog/post/data-driven-decision-making</a> (2019).</div>
+</div>
+<div id="ref-ivacko_data-driven_2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ivacko, T. M., Horner, D. &amp; Crawford, M. Q. Data-driven decision-making in michigan local government. <em><span>SSRN</span> Journal</em> (2013) doi:<a href="https://doi.org/10.2139/ssrn.2351916">10.2139/ssrn.2351916</a>.</div>
+</div>
+<div id="ref-choi_towards_2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Choi, Y. <em>et al.</em> Towards data-driven decision-making in government: Identifying opportunities and challenges for data use and analytics. in (2021). doi:<a href="https://doi.org/10.24251/HICSS.2021.268">10.24251/HICSS.2021.268</a>.</div>
+</div>
+<div id="ref-bean_how_2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Bean, R. <a href="https://hbr.org/2017/04/how-companies-say-theyre-using-big-data">How companies say they’re using big data</a>. <em>Harvard Business Review</em> (2017).</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
