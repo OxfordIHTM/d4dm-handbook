@@ -51,7 +51,7 @@ Saving costs is another advantage. In a survey of executives of Fortune 1000 com
 
 The context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).
 
-### Data use and analytics in water quality management
+### Case Study 1: Data use and analytics in water quality management {#sec-cs1-water-management}
 
 This is a case study about a United States state agency struggling with DDDM in addressing environmental issues like harmful algal blooms\index{harmful algal blooms} (HABs) and high chloride concentrations\index{high chloride concentrations} [@choi_towards_2021].
 
@@ -97,20 +97,89 @@ also deeply influenced by organisational and institutional factors. This makes s
 
 These determinants also influence the ability of an organisation to adapt over time. For example, if the organisation faces challenges in public procurement, which is a structural issue, this could create delays that affect the organisation's overall strategy. Conversely, strong stakeholder engagement might mitigate some of these delays by providing alternative solutions or resources.
 
-#### Leadership role
+#### Leadership role {.unnumbered}
 
 Leadership plays a critical part in driving organisational change. Without supportive leadership, many of these determinants could be obstacles rather than opportunities. For instance, if leaders aren't committed to DDDM, they might not push for necessary cultural shifts or investment in new tools.
 
-#### Balancing existing practices
+#### Balancing existing practices {.unnumbered}
 
 The balance between existing practices and new methods is important. While the state agency was implementing DDDM, traditional approaches were still relied upon. This blend can be beneficial initially but may need careful management to avoid conflicts or inefficiencies as newer methods prove their worth.
 
-#### Measuring success
+#### Measuring success {.unnumbered}
 
 How would this state agency assess its progress in implementing DDDM? They might 
 look at metrics like the quality and timeliness of decisions, reduction in issues (like HABs), efficiency improvements, and user satisfaction. These outcomes can help gauge whether their efforts are paying off despite 
 facing various challenges.
 
-#### Conclusion
+#### Conclusion {.unnumbered}
 
 A tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.
+
+### Case Study 2: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia {#sec-cs2-indonesia}
+
+In an era where technology and data are transforming governance, adopting a data-driven approach is crucial for improving decision-making and fostering transparency. This case study explores Indonesia's journey toward integrating data into local governance, highlighting both challenges and opportunities, and offers recommendations for mid-level government officials to enhance their governance strategies.
+
+#### Context {.unnumbered}
+
+Indonesia, the largest archipelagic nation in the world, operates under a federalist system with provinces and regencies. With a diverse population of over 270 million people, it faces significant challenges such as inequality, environmental degradation, and sustainable development. These issues necessitate effective local governance to ensure equitable growth and environmental preservation.
+
+#### Current Situation {.unnumbered}
+
+Currently, Indonesia's policy-making is often influenced by top-down directives rather than data-driven insights. Decisions are frequently based on the instructions of superior officials due to a history of autocratic administration. Additionally, there is a lack of standardised data quality frameworks, leading to 
+fragmented and siloed data systems. Limited analytics capacity and reliance on outdated technologies further hinder effective decision-making.
+
+#### Challenges {.unnumbered}
+
+1. **Autocratic Administration** 
+A cultural tendency towards hierarchical decision-making limits the use of data in governance.
+
+2. **Fragmented Data Systems**
+Siloed systems across different levels of government result in data inconsistencies and inefficiencies.
+
+3. **Lack of Skilled Personnel** 
+Insufficient training and expertise in data analysis impede effective data utilisation.
+
+4. **Public Distrust** 
+Concerns about data accuracy and misuse erode public confidence in data-driven decisions.
+
+#### Opportunities {.unnumbered}
+
+1. **Recent Regulations** 
+The 2022 Data Governance Regulation provides a framework to standardize data collection and use.
+
+2. **International Collaboration** 
+Partnerships with international organizations offer resources for capacity-building and technological support.
+
+3. **Available Data Sources** 
+Rich datasets on demographics, environment, and economy can enhance policy-making, such as managing forest fires or coral reef preservation.
+
+4. **Capacity-Building**
+Training programs can equip officials with data analysis skills, fostering a culture of evidence-based decision-making.
+
+#### Recommendations {.unnumbered}
+
+1. **Develop Data Quality Frameworks** 
+Establish standardized protocols to ensure data accuracy and consistency across all levels of government.
+
+2. **Enhance Analytical Skills** 
+Implement training programs to build expertise in data analysis and visualisation tools.
+
+3. **Foster Public Trust** 
+Promote initiatives that demonstrate the benefits of data-driven decisions, such as improving public services or environmental outcomes.
+
+4. **Encourage Collaboration** 
+Facilitate intergovernmental cooperation to share best practices and resources for effective data use.
+
+5. **Adopt Technology** 
+Invest in integrated digital platforms to streamline data collection and sharing processes.
+
+6. **Establish Feedback Mechanisms** 
+Create channels for public input to ensure that data-driven policies reflect community needs and concerns.
+
+#### Conclusion {.unnumbered}
+
+Indonesia's shift towards data-driven governance presents a transformative opportunity to address pressing challenges and enhance decision-making effectiveness. By overcoming existing barriers and leveraging available resources, Indonesia can set a precedent for other developing nations. Mid-level officials worldwide are encouraged to consider these insights in their own governance strategies, fostering a global culture of transparency, collaboration, and innovation in public service.
+
+### Case Study 3: 
+
+## References
