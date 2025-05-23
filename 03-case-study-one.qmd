@@ -1,5 +1,5 @@
 ---
-output_file: case_study_one.html
+output-file: case_study_one.html
 ---
 
 # Case study: Data use and analytics in water quality management {#sec-cs1-water-management}
@@ -93,5 +93,8 @@ facing various challenges.
 ## Conclusion {#sec-cs1-conclusion}
 
 A tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.
+
+<br/>
+<br/>
 
 ### References {.unnumbered}

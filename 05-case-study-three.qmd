@@ -1,0 +1,53 @@
+---
+output-file: case-study-three.html
+---
+
+# Case Study: The Use of Data in Local Governance - A Michigan Perspective
+
+This case study explores the current state of data-driven decision-making in Michigan's local governments, highlighting challenges and opportunities for integrating data into policy and governance[@ivacko_data-driven_2013].
+
+## Current Situation of Policy and Decision-Making in Michigan Local Governments {#sec-cs3-current-situation}
+
+Michigan's local governments have seen significant growth in data-driven decision-making over the past five years. This approach is now widespread across all sizes and regions, with many jurisdictions using data to inform budgeting and resource allocation. Despite this progress, most data use remains informal or ad hoc, particularly among smaller communities.
+
+The [Michigan Public Performance Survey (MPPS)](https://closup.umich.edu/michigan-public-policy-survey)\index{Michigan Public Performance Survey} reveals that while larger jurisdictions are more likely to engage in formal performance measurement, over half of the state's smallest jurisdictions also incorporate some form of data into their decision-making processes. This indicates a trend towards broader adoption, albeit at varying levels of formality.
+
+## Challenges and Concerns {#sec-cs3-challenges}
+
+1. **Cost Concerns**: Many local governments, especially smaller ones with limited resources, perceive data use as costly. The MPPS found that 62% of non-data users cited cost concerns, though only 28% of current users reported significant issues, suggesting costs may be manageable.
+
+2. **Informal Practices**: The reliance on informal methods can lead to inconsistent outcomes and less accountability. Only about 16% of jurisdictions have formal performance measurement practices, indicating a gap in structured data use.
+
+3. **Resource Constraints**: Smaller jurisdictions often face limitations in staff and financial resources, hindering their ability to adopt more formal data practices.
+
+## Opportunities and Benefits {#sec-cs3-opportunities}
+
+1. **Fiscal Efficiency**: Data-driven approaches help identify cost savings and program efficiencies, crucial for jurisdictions grappling with fiscal challenges.
+
+2. **Improved Service Delivery**: By aligning services with community needs, data can enhance service quality and responsiveness.
+
+3. **Enhanced Transparency and Trust**: Effective use of data fosters transparency, improving public trust in government decisions.
+
+4. **Policy Communication**: Data provides a clear evidence base for policy-making, aiding communication between governments and stakeholders.
+
+## Conclusion {#sec-cs3-conclusion}
+
+The integration of data into Michigan's local governance has proven valuable despite challenges like cost concerns and resource limitations. The broader adoption of data-driven practices, even informally, highlights its potential to improve decision-making and service delivery.
+
+## Recommendations {#sec-csc3-recommendations}
+
+1. **Capacity Building**: Invest in training to enhance technical and analytical skills among local officials.
+
+2. **Encourage Collaboration**: Foster partnerships with academic institutions or tech firms to support data initiatives.
+
+3. **Leverage Resources**: Utilise available tools and frameworks, such as those provided by Michigan's MPPS, to guide data practices.
+
+4. **Promote Leadership and Cultural Change**: Champion leadership roles that prioritize data use and cultivate a culture of evidence-based decision-making.
+
+By adopting these strategies, countries can effectively integrate data into local governance, enhancing policy 
+outcomes and public trust.
+
+<br/>
+<br/>
+
+### References {.unnumbered}
