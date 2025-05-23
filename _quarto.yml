@@ -22,14 +22,25 @@ book:
   date-format: "DD MMMM YYYY"
   chapters:
     - index.qmd
-    - 01-introduction.qmd
-    - 02-all-about-data.qmd
-    - 03-data-security.qmd
-    - 04-data-tools.qmd
-    - 05-data-entry-system.qmd
-    - 06-intro-data-analysis.qmd
-    - 07-exploratory-data-analysis.qmd
-    - references.qmd
+    - part: Data Concepts
+      chapters:
+        - 01-introduction.qmd
+        - 02-all-about-data.qmd
+        - 03-case-study-one.qmd
+        - 04-case-study-two.qmd
+        - 05-case-study-three.qmd
+        - 06-case-study-four.qmd
+        - 07-case-study-five.qmd
+    - part: Data Management
+      chapters:
+        - 08-data-security.qmd
+        - 09-data-tools.qmd
+        - 10-data-collection.qmd
+    - part: Data Analysis and Visualisation
+      chapters:        
+        - 11-intro-data-analysis.qmd
+        - 12-exploratory-data-analysis.qmd
+    # - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd
   #   - 13-odk-setup.qmd
