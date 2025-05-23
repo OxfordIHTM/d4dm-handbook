@@ -36,7 +36,7 @@
     "href": "introduction.html#sec-case-dddm",
     "title": "1  Introduction",
     "section": "1.2 The case for data-driven decision-making",
-    "text": "1.2 The case for data-driven decision-making\nThe context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).\n\n1.2.1 Case Study 3:",
+    "text": "1.2 The case for data-driven decision-making\nThe context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
@@ -76,8 +76,8 @@
     ]
   },
   {
-    "objectID": "03-case-study-one.html",
-    "href": "03-case-study-one.html",
+    "objectID": "case_study_one.html",
+    "href": "case_study_one.html",
     "title": "3  Case study: Data use and analytics in water quality management",
     "section": "",
     "text": "3.1 Leadership role\nThis is a case study about the Division of Water (DOW), a local government agency in the State of New York, which has attempted to improve its analytic capabilities by developing efficient data management practices, suggest governance models, and identify analytic techniques potentially beneficial to addressing harmful algal blooms (HABs; see Figure 3.1) and high chloride concentrations1.\nThe DOW faces challenges in using its legacy systems and traditional analytical methods effectively in addressing the problems of HABs and high chloride levels. DOW aims to enhance its decision-making processes through DDDM by improving its ability to gather and analyse data more effectively, beyond their current capabilities, to better inform policy decisions.\nFrom this process, nine key factors across four overarching determinants have been observed and articulated as being crucial to consider by an organisation in implementing a comprehensive strategy for DDDM (see Note 3.1). These factors interrelate and influence each other, requiring a holistic approach to ensure successful adoption.\nThese key determinants are interrelated and interdependent. For example, if an organisation has strong data infrastructure (determinant 1) but lacks the right analytical tools or skilled personnel (determinant 2), their DDDM efforts will be hampered. Similarly, even with good internal structures (determinant 3), if external regulations make it hard to access necessary tools or collaborate externally (determinants 7 and 9), progress is still limited. Without proper stakeholder engagement (determinant 6) and user involvement (determinant 5), the organisation might develop solutions in isolation, leading to less effective decisions. Moreover, privacy constraints (determinant 8) can affect data availability, which in turn impacts analytical capabilities since data is a key input.\nWhile DDDM is often seen as a technical issue involving tools and data, it’s also deeply influenced by organisational and institutional factors. This makes sense because any significant change requires not just new technology but also cultural shifts within the organisation to embrace these changes.\nThese determinants also influence the ability of an organisation to adapt over time. For example, if the organisation faces challenges in public procurement, which is a structural issue, this could create delays that affect the organisation’s overall strategy. Conversely, strong stakeholder engagement might mitigate some of these delays by providing alternative solutions or resources.\nLeadership plays a critical part in driving organisational change. Without supportive leadership, many of these determinants could be obstacles rather than opportunities. For instance, if leaders aren’t committed to DDDM, they might not push for necessary cultural shifts or investment in new tools.",
@@ -87,8 +87,8 @@
     ]
   },
   {
-    "objectID": "03-case-study-one.html#sec-balance-practices",
-    "href": "03-case-study-one.html#sec-balance-practices",
+    "objectID": "case_study_one.html#sec-balance-practices",
+    "href": "case_study_one.html#sec-balance-practices",
     "title": "3  Case study: Data use and analytics in water quality management",
     "section": "3.2 Balancing existing practices",
     "text": "3.2 Balancing existing practices\nThe balance between existing practices and new methods is important. While the state agency was implementing DDDM, traditional approaches were still relied upon. This blend can be beneficial initially but may need careful management to avoid conflicts or inefficiencies as newer methods prove their worth.",
@@ -98,8 +98,8 @@
     ]
   },
   {
-    "objectID": "03-case-study-one.html#sec-measuring-success",
-    "href": "03-case-study-one.html#sec-measuring-success",
+    "objectID": "case_study_one.html#sec-measuring-success",
+    "href": "case_study_one.html#sec-measuring-success",
     "title": "3  Case study: Data use and analytics in water quality management",
     "section": "3.3 Measuring success",
     "text": "3.3 Measuring success\nHow would this state agency assess its progress in implementing DDDM? They might look at metrics like the quality and timeliness of decisions, reduction in issues (like HABs), efficiency improvements, and user satisfaction. These outcomes can help gauge whether their efforts are paying off despite facing various challenges.",
@@ -109,19 +109,19 @@
     ]
   },
   {
-    "objectID": "03-case-study-one.html#sec-cs1-conclusion",
-    "href": "03-case-study-one.html#sec-cs1-conclusion",
+    "objectID": "case_study_one.html#sec-cs1-conclusion",
+    "href": "case_study_one.html#sec-cs1-conclusion",
     "title": "3  Case study: Data use and analytics in water quality management",
     "section": "3.4 Conclusion",
-    "text": "3.4 Conclusion\nA tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.\n\nReferences\n\n\n\n\n1. Choi, Y. et al. Towards data-driven decision-making in government: Identifying opportunities and challenges for data use and analytics. in (2021). doi:10.24251/HICSS.2021.268.",
+    "text": "3.4 Conclusion\nA tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.\n \n\nReferences\n\n\n\n\n1. Choi, Y. et al. Towards data-driven decision-making in government: Identifying opportunities and challenges for data use and analytics. in (2021). doi:10.24251/HICSS.2021.268.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Case study: Data use and analytics in water quality management</span>"
     ]
   },
   {
-    "objectID": "04-case-study-two.html",
-    "href": "04-case-study-two.html",
+    "objectID": "case_study_two.html",
+    "href": "case_study_two.html",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "",
     "text": "4.1 Context\nIn an era where technology and data are transforming governance, adopting a data-driven approach is crucial for improving decision-making and fostering transparency. This case study explores Indonesia’s journey toward integrating data into local governance, highlighting both challenges and opportunities, and offers recommendations for mid-level government officials to enhance their governance strategies1.\nIndonesia, the largest archipelagic nation in the world, operates under a federalist system with provinces and regencies. With a diverse population of over 270 million people, it faces significant challenges such as inequality, environmental degradation, and sustainable development. These issues necessitate effective local governance to ensure equitable growth and environmental preservation.",
@@ -131,8 +131,8 @@
     ]
   },
   {
-    "objectID": "04-case-study-two.html#sec-cs2-current-situation",
-    "href": "04-case-study-two.html#sec-cs2-current-situation",
+    "objectID": "case_study_two.html#sec-cs2-current-situation",
+    "href": "case_study_two.html#sec-cs2-current-situation",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "4.2 Current Situation",
     "text": "4.2 Current Situation\nCurrently, Indonesia’s policy-making is often influenced by top-down directives rather than data-driven insights. Decisions are frequently based on the instructions of superior officials due to a history of autocratic administration. Additionally, there is a lack of standardised data quality frameworks, leading to fragmented and siloed data systems. Limited analytics capacity and reliance on outdated technologies further hinder effective decision-making.",
@@ -142,8 +142,8 @@
     ]
   },
   {
-    "objectID": "04-case-study-two.html#sec-cs2-challenges",
-    "href": "04-case-study-two.html#sec-cs2-challenges",
+    "objectID": "case_study_two.html#sec-cs2-challenges",
+    "href": "case_study_two.html#sec-cs2-challenges",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "4.3 Challenges",
     "text": "4.3 Challenges\n\nAutocratic Administration A cultural tendency towards hierarchical decision-making limits the use of data in governance.\nFragmented Data Systems Siloed systems across different levels of government result in data inconsistencies and inefficiencies.\nLack of Skilled Personnel Insufficient training and expertise in data analysis impede effective data utilisation.\nPublic Distrust Concerns about data accuracy and misuse erode public confidence in data-driven decisions.",
@@ -153,8 +153,8 @@
     ]
   },
   {
-    "objectID": "04-case-study-two.html#sec-cs2-opportunities",
-    "href": "04-case-study-two.html#sec-cs2-opportunities",
+    "objectID": "case_study_two.html#sec-cs2-opportunities",
+    "href": "case_study_two.html#sec-cs2-opportunities",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "4.4 Opportunities",
     "text": "4.4 Opportunities\n\nRecent Regulations The 2022 Data Governance Regulation provides a framework to standardize data collection and use.\nInternational Collaboration Partnerships with international organizations offer resources for capacity-building and technological support.\nAvailable Data Sources Rich datasets on demographics, environment, and economy can enhance policy-making, such as managing forest fires or coral reef preservation.\nCapacity-Building Training programs can equip officials with data analysis skills, fostering a culture of evidence-based decision-making.",
@@ -164,8 +164,8 @@
     ]
   },
   {
-    "objectID": "04-case-study-two.html#sec-cs2-recommendations",
-    "href": "04-case-study-two.html#sec-cs2-recommendations",
+    "objectID": "case_study_two.html#sec-cs2-recommendations",
+    "href": "case_study_two.html#sec-cs2-recommendations",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "4.5 Recommendations",
     "text": "4.5 Recommendations\n\nDevelop Data Quality Frameworks Establish standardized protocols to ensure data accuracy and consistency across all levels of government.\nEnhance Analytical Skills Implement training programs to build expertise in data analysis and visualisation tools.\nFoster Public Trust Promote initiatives that demonstrate the benefits of data-driven decisions, such as improving public services or environmental outcomes.\nEncourage Collaboration Facilitate intergovernmental cooperation to share best practices and resources for effective data use.\nAdopt Technology Invest in integrated digital platforms to streamline data collection and sharing processes.\nEstablish Feedback Mechanisms Create channels for public input to ensure that data-driven policies reflect community needs and concerns.",
@@ -175,14 +175,69 @@
     ]
   },
   {
-    "objectID": "04-case-study-two.html#sec-cs2-conclusion",
-    "href": "04-case-study-two.html#sec-cs2-conclusion",
+    "objectID": "case_study_two.html#sec-cs2-conclusion",
+    "href": "case_study_two.html#sec-cs2-conclusion",
     "title": "4  Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia",
     "section": "4.6 Conclusion",
-    "text": "4.6 Conclusion\nIndonesia’s shift towards data-driven governance presents a transformative opportunity to address pressing challenges and enhance decision-making effectiveness. By overcoming existing barriers and leveraging available resources, Indonesia can set a precedent for other developing nations. Mid-level officials worldwide are encouraged to consider these insights in their own governance strategies, fostering a global culture of transparency, collaboration, and innovation in public service.\n\nReferences\n\n\n\n\n1. Sayogo, D. S., Yuli, S. B. C. & Amalia, F. A. Data-driven decision-making challenges of local government in indonesia. TG 18, 145–156 (2024).",
+    "text": "4.6 Conclusion\nIndonesia’s shift towards data-driven governance presents a transformative opportunity to address pressing challenges and enhance decision-making effectiveness. By overcoming existing barriers and leveraging available resources, Indonesia can set a precedent for other developing nations. Mid-level officials worldwide are encouraged to consider these insights in their own governance strategies, fostering a global culture of transparency, collaboration, and innovation in public service.\n \n\nReferences\n\n\n\n\n1. Sayogo, D. S., Yuli, S. B. C. & Amalia, F. A. Data-driven decision-making challenges of local government in indonesia. TG 18, 145–156 (2024).",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html",
+    "href": "case-study-three.html",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "",
+    "text": "5.1 Current Situation of Policy and Decision-Making in Michigan Local Governments\nThis case study explores the current state of data-driven decision-making in Michigan’s local governments, highlighting challenges and opportunities for integrating data into policy and governance1.\nMichigan’s local governments have seen significant growth in data-driven decision-making over the past five years. This approach is now widespread across all sizes and regions, with many jurisdictions using data to inform budgeting and resource allocation. Despite this progress, most data use remains informal or ad hoc, particularly among smaller communities.\nThe Michigan Public Performance Survey (MPPS) reveals that while larger jurisdictions are more likely to engage in formal performance measurement, over half of the state’s smallest jurisdictions also incorporate some form of data into their decision-making processes. This indicates a trend towards broader adoption, albeit at varying levels of formality.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html#sec-cs3-challenges",
+    "href": "case-study-three.html#sec-cs3-challenges",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "5.2 Challenges and Concerns",
+    "text": "5.2 Challenges and Concerns\n\nCost Concerns: Many local governments, especially smaller ones with limited resources, perceive data use as costly. The MPPS found that 62% of non-data users cited cost concerns, though only 28% of current users reported significant issues, suggesting costs may be manageable.\nInformal Practices: The reliance on informal methods can lead to inconsistent outcomes and less accountability. Only about 16% of jurisdictions have formal performance measurement practices, indicating a gap in structured data use.\nResource Constraints: Smaller jurisdictions often face limitations in staff and financial resources, hindering their ability to adopt more formal data practices.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html#sec-cs3-opportunities",
+    "href": "case-study-three.html#sec-cs3-opportunities",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "5.3 Opportunities and Benefits",
+    "text": "5.3 Opportunities and Benefits\n\nFiscal Efficiency: Data-driven approaches help identify cost savings and program efficiencies, crucial for jurisdictions grappling with fiscal challenges.\nImproved Service Delivery: By aligning services with community needs, data can enhance service quality and responsiveness.\nEnhanced Transparency and Trust: Effective use of data fosters transparency, improving public trust in government decisions.\nPolicy Communication: Data provides a clear evidence base for policy-making, aiding communication between governments and stakeholders.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html#sec-cs3-conclusion",
+    "href": "case-study-three.html#sec-cs3-conclusion",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "5.4 Conclusion",
+    "text": "5.4 Conclusion\nThe integration of data into Michigan’s local governance has proven valuable despite challenges like cost concerns and resource limitations. The broader adoption of data-driven practices, even informally, highlights its potential to improve decision-making and service delivery.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html#sec-csc3-recommendations",
+    "href": "case-study-three.html#sec-csc3-recommendations",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "5.5 Recommendations",
+    "text": "5.5 Recommendations\n\nCapacity Building: Invest in training to enhance technical and analytical skills among local officials.\nEncourage Collaboration: Foster partnerships with academic institutions or tech firms to support data initiatives.\nLeverage Resources: Utilise available tools and frameworks, such as those provided by Michigan’s MPPS, to guide data practices.\nPromote Leadership and Cultural Change: Champion leadership roles that prioritize data use and cultivate a culture of evidence-based decision-making.\n\nBy adopting these strategies, countries can effectively integrate data into local governance, enhancing policy outcomes and public trust.\n \n\nReferences\n\n\n\n\n1. Ivacko, T. M., Horner, D. & Crawford, M. Q. Data-driven decision-making in michigan local government. SSRN Journal (2013) doi:10.2139/ssrn.2351916.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
     ]
   }
 ]
