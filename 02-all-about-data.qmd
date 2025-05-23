@@ -9,4 +9,7 @@ basics—such as what data is and why it matters—to more advanced topics like 
 and visualization. Through practical examples and real-world applications, you'll learn how to harness the 
 power of data to drive insights, solve problems, and make informed decisions in fields ranging from business 
 and technology to healthcare and beyond. By the end of this course, you’ll not only understand the importance 
-of data but also be prepared to apply these concepts in your own work or further studies.
+of data but also be prepared to apply these concepts in your own work or further studies [@sayogo_data-driven_2024].
+
+## References
+

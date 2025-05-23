@@ -51,66 +51,10 @@ Saving costs is another advantage. In a survey of executives of Fortune 1000 com
 
 The context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).
 
-### Data use and analytics in water quality management
 
-This is a case study about a United States state agency struggling with DDDM in addressing environmental issues like harmful algal blooms\index{harmful algal blooms} (HABs) and high chloride concentrations\index{high chloride concentrations} [@choi_towards_2021].
 
-In addressing the challenges faced by an organisation in implementing DDDM, it is crucial to consider a comprehensive strategy that encompasses nine key determinants (see @nte-nine-determinants). These factors interrelate and influence each other, requiring a holistic approach to ensure successful adoption.
 
-::: {#nte-nine-determinants .callout-note}
 
-## Nine key determinants for an effective DDDM strategy
+### Case Study 3: 
 
-1. **Data Infrastructure**
-Ensuring robust data infrastructure is foundational, as it supports the collection, storage, and accessibility of data necessary for effective analysis.
-
-2. **Analytical Capabilities**
-Investment in both skilled personnel and advanced tools is essential to transform raw data into actionable insights.
-
-3. **Organisational Capacity**
-Fostering a culture that embraces change and collaboration within the organisation is vital for adaptability and innovation.
-
-4. **Institutional Environment**
-Engaging with external institutions and navigating legal frameworks can provide resources and support, or pose restrictions, respectively.
-
-5. **User Involvement**
-Collaborating with end-users ensures that solutions are practical and aligned with real needs, enhancing decision effectiveness.
-
-6. **Stakeholder Engagement**
-Broad stakeholder involvement brings diverse perspectives, enriching the decision-making process.
-
-7. **Public Procurement Rules**
-Navigating bureaucratic processes efficiently can accelerate tool adoption without unnecessary delays.
-
-8. **Privacy and Confidentiality Constraints**
-Addressing legal requirements regarding data protection is crucial to ensure comprehensive analyses.
-
-9. **Innovation and Collaboration**
-Access to external resources and communities fosters creativity and collaboration, vital for overcoming challenges.
-
-:::
-
-These key determinants are interrelated and interdependent. For example, if an organisation has strong data infrastructure (determinant 1) but lacks the right analytical tools or skilled personnel (determinant 2), their DDDM  efforts will be hampered. Similarly, even with good internal structures (determinant 3), if external regulations make it hard to access necessary tools or collaborate externally (determinants 7 and 9), progress is still limited. Without proper stakeholder engagement (determinant 6) and user involvement (determinant 5), the organisation might develop solutions in isolation, leading to less effective decisions. Moreover, privacy constraints (determinant 8) can affect data availability, which in turn impacts analytical capabilities since data is a key input.
-
-While DDDM is often seen as a technical issue involving tools and data, it's 
-also deeply influenced by organisational and institutional factors. This makes sense because any significant change requires not just new technology but also cultural shifts within the organisation to embrace these changes.
-
-These determinants also influence the ability of an organisation to adapt over time. For example, if the organisation faces challenges in public procurement, which is a structural issue, this could create delays that affect the organisation's overall strategy. Conversely, strong stakeholder engagement might mitigate some of these delays by providing alternative solutions or resources.
-
-#### Leadership role
-
-Leadership plays a critical part in driving organisational change. Without supportive leadership, many of these determinants could be obstacles rather than opportunities. For instance, if leaders aren't committed to DDDM, they might not push for necessary cultural shifts or investment in new tools.
-
-#### Balancing existing practices
-
-The balance between existing practices and new methods is important. While the state agency was implementing DDDM, traditional approaches were still relied upon. This blend can be beneficial initially but may need careful management to avoid conflicts or inefficiencies as newer methods prove their worth.
-
-#### Measuring success
-
-How would this state agency assess its progress in implementing DDDM? They might 
-look at metrics like the quality and timeliness of decisions, reduction in issues (like HABs), efficiency improvements, and user satisfaction. These outcomes can help gauge whether their efforts are paying off despite 
-facing various challenges.
-
-#### Conclusion
-
-A tailored strategy that evaluates specific organisational strengths and weaknesses across these determinants is essential for effective DDDM implementation. This approach ensures that each organisation maximises opportunities while minimising challenges, leading to more informed and efficient decision-making processes.
+## References {.unnumbered}
