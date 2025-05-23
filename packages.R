@@ -1,5 +1,10 @@
 # Load R package dependencies --------------------------------------------------
 
+## Utility packages ----
+library(here)
+library(ragg)
+
+
 ## Packages for publishing ----
 library(quarto)
 library(knitr)

@@ -28,14 +28,14 @@ mpss |>
   dplyr::mutate(n_total = sum(n), p = (n / n_total) * 100) |>
   dplyr::mutate(
     q2_new = dplyr::case_when(
-      q2_new == 1 ~ "Use data about own or other jurisdictions",
-      q2_new == 2 ~ "Do not use data about own or other jurisdictions",
+      q2_new == 1 ~ "Use data about own or\nother jurisdictions",
+      q2_new == 2 ~ "Do not use data about own or\nother jurisdictions",
       q2_new == 3 ~ "Don't know"
     ) |>
     factor(
       levels = c(
-        "Use data about own or other jurisdictions",
-        "Do not use data about own or other jurisdictions",
+        "Use data about own or\nother jurisdictions",
+        "Do not use data about own or\nother jurisdictions",
         "Don't know"
       )
     )
@@ -47,7 +47,9 @@ mpss |>
     name = NULL, values = oxthema::oxford_theme_palettes()$corporate[1:3]
   ) +
   ggplot2::labs(x = "%", y = NULL) +
-  ggplot2::theme_minimal()
+  oxthema::theme_oxford(
+    base_family = "", grid = "Y", grid_col = oxthema::get_oxford_colour("stone")
+  )
 ```
 
 1. **Cost Concerns**: Many local governments, especially smaller ones with limited resources, perceive data use as costly. The MPPS found that 62% of non-data users cited cost concerns, though only 28% of current users reported significant issues, suggesting costs may be manageable.
