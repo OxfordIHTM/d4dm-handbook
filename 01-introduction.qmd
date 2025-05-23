@@ -52,9 +52,4 @@ Saving costs is another advantage. In a survey of executives of Fortune 1000 com
 The context described above alongside the potential benefits proffered are strong reasons for considering a shift towards using data more effectively in decision-making processes. The following case studies provide a more nuanced narrative of opportunities and challenges of adopting a data-driven approach to decision-making specifically in the context of governance within governments (rather than just in businesses).
 
 
-
-
-
-### Case Study 3: 
-
 ## References {.unnumbered}
