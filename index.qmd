@@ -2,14 +2,6 @@
 engine: knitr
 ---
 
-```{r}
-#| label: setup
-#| echo: false
-
-suppressPackageStartupMessages(source(here::here("packages.R")))
-for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
-```
-
 # Preface {.unnumbered}
 
 In today’s data-driven world, the responsibility of public service demands more than experience and intuition; it requires evidence-based decision-making\index{evidence-based decision-making} grounded in a deep understanding of data. For government officials at all levels, from local administrators to national policymakers, data is not just a tool - it is an indispensable asset in crafting policies that are effective, equitable, and accountable. Data for Decision Makers\index{Data for Decision Makers} is developed with you in mind: to support those entrusted with public leadership in leveraging data to serve communities more effectively.
