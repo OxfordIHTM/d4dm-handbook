@@ -22,7 +22,7 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          apt-get update && apt-get install -y --no-install-recommends \
+          sudo apt-get update && apt-get install -y --no-install-recommends \
           libfontconfig1-dev pandoc
 
       - name: Install R
