@@ -2,7 +2,6 @@
 
 ## Utility packages ----
 library(here)
-library(ragg)
 
 
 ## Packages for publishing ----
