@@ -1,0 +1,66 @@
+---
+output-file: case-study-four.html
+---
+
+# Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County
+
+This case study describes the significant steps that the Turkana County local government are taking to modernising early childhood development and education services management through the use of digital technology[@onunga_digital_2025].
+
+## Introduction {#sec-cs4-introduction}
+
+Turkana County, located in northwest Kenya, is a region marked by significant natural resource wealth and cultural diversity. However, it faces challenges such as poverty, infrastructure gaps, and governance inefficiencies. The county's recent efforts to embrace data-driven decision-making offer valuable insights for enhancing local governance through improved policy formulation and implementation.
+
+## Background {#sec-cs4-background}
+
+Turkana County was established under Kenya's devolution framework in 2013, with its administrative structure comprising several wards and sub-counties. The county has made strides in adopting digital tools like the Turkana Early Childhood Development and Education (ECDE) Management Information System\index{Turkana ECDE Management Information System} or [TECDEMIS](https://www.tecdemis.turkanaassembly.go.ke/) and the Continuous Database Updating System\index{Continuous Database Updating System} or CODUSYS for education management, reflecting a commitment to modernise governance.
+
+## Current Situation of Policy and Decision-Making {#sec-cs4-current-situation}
+
+Policy-making in Turkana County is characterised by structured processes involving the County Assembly and Executive. Data utilisation is integral to planning and budgeting, with systems like TECDEMIS facilitating real-time data collection and analysis. These tools support decision-makers in tracking program outcomes and resource allocation efficiency.
+
+## Challenges in Data Utilisation for Governance {#sec-cs4-challenges}
+
+Despite progress, several challenges impede effective data use:
+
+- **Technological Barriers:** Limited internet access hampers system functionality.
+
+- **Institutional Weaknesses:** Insufficient skilled personnel affect system implementation.
+
+- **Financial Constraints:** Inadequate funding limits infrastructure development and capacity building.
+
+- **Socio-Political Factors:** Resistance to change and lack of awareness about data's value.
+
+## Opportunities for Enhancing Data Use {#sec-cs4-opportunities}
+
+The county presents several opportunities:
+
+- **Investments in Digital Infrastructure:** Initiatives like TECDEMIS and CODUSYS provide a solid foundation.
+
+- **Partnerships with Development Agencies:** Collaborations with organisations like the Japan International Cooperation Agency or JICA offer resources and expertise.
+
+- **Capacity Building:** Training programs enhance staff skills in data management and analysis.
+
+- **Community Engagement:** Involving citizens fosters trust and ownership of data initiatives.
+
+## Conclusion {#sec-cs4-conclusion}
+
+Embracing data-driven governance is crucial for Turkana County to overcome challenges and achieve sustainable development. Effective data use aligns with broader goals of accountability, service efficiency, and inclusive growth.
+
+## Recommendations {#sec-cs4-recommendations}
+
+1. **Invest in IT Infrastructure:** Expand internet access and upgrade digital tools.
+
+2. **Enhance Training Programs:** Prioritise skills development in data management and analysis.
+
+3. **Foster Multi-Sectoral Partnerships:** Strengthen collaborations with development agencies and the private 
+sector.
+
+4. **Improve Stakeholder Engagement:** Involve communities to build trust and ownership of data initiatives.
+
+5. **Establish Monitoring Frameworks:** Develop systems to evaluate the impact of data-driven policies.
+
+<br/>
+<br/>
+
+### References {.unnumbered}
+
