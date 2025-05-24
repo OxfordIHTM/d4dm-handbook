@@ -1,0 +1,49 @@
+---
+output-file: case-study-five.html
+---
+
+# Case Study: Indigenous Data Governance in the United States {#sec-cs5-indigenous}
+
+This case study describes the challenges and opportunities with regard to Indigenous data governance in the United States[@carroll_indigenous_2019].
+
+## Introduction {#sec-cs5-introduction}
+Indigenous nations in the United States exercise sovereignty over their data, recognising their right to control and manage their own information. This sovereignty is supported by federal laws such as Native American Graves Protection and Repatriation Act\index{Native American Graves Protection and Repatriation Act} or [NAGPRA](https://www.nps.gov/subjects/nagpra/index.htm) which provide frameworks for protecting Indigenous rights, including those related to data governance.
+
+## Current Strategies {#sec-cs5-current-strategies}
+
+1. **Tribal Data Sovereignty** 
+
+Indigenous nations establish policies and institutions, like tribal councils, to own and control their data, ensuring it aligns with cultural values.
+
+2. **Collaboration** 
+
+Partnerships with federal and state governments are facilitated through initiatives like 
+the National Historic Preservation Act\index{National Historic Preservation Act} or NHPA promoting shared goals in data governance.
+
+3. **Capacity Building**
+
+Training programs and technological infrastructure development enhance technical skills, though resources vary among tribes.
+
+4. **Legal Frameworks** 
+
+Treaties and international agreements, such as the United Nations Declaration on the Rights of Indigenous Peoples or [UNDRIP](https://www.un.org/development/desa/indigenouspeoples/wp-content/uploads/sites/19/2018/11/UNDRIP_E_web.pdf)[@united_nations_general_assembly_united_2007], provide legal backing for data governance, ensuring respect for Indigenous rights.
+
+## Challenges {#sec-cs5-challenges}
+
+- **Legal Complexities:** Overlapping jurisdictions complicate data governance, requiring clear resolution mechanisms.
+
+- **Resource Limitations:** Financial and technical constraints affect smaller tribes' ability to implement strategies.
+
+- **Cultural Preservation:** Balancing modern data practices with cultural preservation is complex but crucial.
+
+## Opportunities {#sec-cs5-opportunities}
+
+- **Global Networks:** Engagement with international bodies like the UNDRIP offers support and recognition, enhancing governance effectiveness.
+
+- **Capacity Building:** Support through grants and partnerships can bridge resource gaps.
+
+- **Collaboration:** Inter-tribal agreements strengthen collective data management efforts.
+
+## Conclusion {#sec-cs5-conclusion}
+
+Indigenous data governance in the U.S. is advancing through sovereignty assertion collaboration, capacity building, and international frameworks. While challenges persist, opportunities for improvement are significant. Government officials must support Indigenous nations by respecting their sovereignty, providing resources, and fostering international engagement to enhance data governance effectively.
