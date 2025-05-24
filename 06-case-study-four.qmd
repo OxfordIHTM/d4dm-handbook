@@ -2,7 +2,7 @@
 output-file: case-study-four.html
 ---
 
-# Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County
+# Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County {#sec-cs4-turkana}
 
 This case study describes the significant steps that the Turkana County local government are taking to modernising early childhood development and education services management through the use of digital technology[@onunga_digital_2025].
 
