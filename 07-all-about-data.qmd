@@ -4,13 +4,72 @@ output-file: all-about-data.html
 
 # All about data {#sec-all-about-data}
 
+In this chapter, we go further into data concepts with a discussion on the **sources**, **formats**, **structures**, **types**, **classes**, and **systems** of data.
 
+## Data Sources {#sec-data-sources}
 
+Data can be classified as either being of **primary** or **secondary** source.
 
+* **Primary data** includes original data collected directly from primary sources such as experiments surveys, or interviews.
+
+* **Secondary data** exists in various forms like reports, government statistics, or academic publications which are data that have been already collected primarily by some other person and/or organisation/entity who make such data available for others to use for either the same purpose or a totally different use-case altogether from the original purpose.
+
+Data sources also refer to where data was obtained or sourced from. These encompass a wide range of information repositories, from traditional databases and files to emerging online platforms and application programming interfaces (APIs).
+
+## Data Formats {#sec-data-formats}
+
+Data formats define how information is organised, stored, and accessed within a file or database. They determine the structure of data, such as text, numbers, or multimedia, using common formats like CSV, JSON, and XML, each with unique methods for representing data.
+
+Data formats may specifically refer to the following:
+
+* **Recording format** - a format for encoding data for storage on a storage medium
+* **File format** - a format for encoding data for storage in a computer file
+* **Container format (digital)** - a format for encoding data for storage by means of a standardised audio/video codecs file format
+* **Content format** - a format for representing media content as data
+* **Audio format** - format for encoded sound data
+
+## Data Structures {#sec-data-structure}
+
+A data structure is an organised format for storing data, designed to allow efficient access and modification. It encompasses not just the storage of data but also the relationships between data elements and the operations that can be performed on them. These operations are structured with defined behaviors where operations have specific properties.
+
+Examples of data structures include:
+
+* **Relational Databases** - Organised into tables with defined relationships (e.g., SQL).
+* **NoSQL Systems** - Flexible storage solutions like document stores or key-value systems.
+* **Hierarchical Structures** - Data organised in a tree-like structure, such as XML or JSON.
+* **Flat Structures** - All data resides at the same logical level without hierarchy (e.g., JSON arrays).
+* **Semi-Structured Formats** - Use tags and nested structures for complex data (e.g., JSON).
+
+## Data Types {#sec-data-types}
+
+* **Categorical** - Data divided into categories (e.g., gender, color).
+* **Numerical** - Involves numbers, which can be discrete or continuous.
+* **Temporal** - Data with time-based attributes (e.g., dates, times).
+* **Textual** -Includes natural language text and speech data.
+* **Binary** - Represents presence/absence of a feature.
+* **Spatial** - Geospatial data indicating locations (e.g., coordinates).
+* **Multimedia** - Combines multiple types like images, audio, and video.
+
+## Data Systems {#sec-data-systems}
+
+* **Databases** - Platforms for managing and querying structured data, including relational (SQL) and NoSQL systems.
+* **Data Lakes** - repositories storing raw, unstructured, or semi-structured data in a lake-like structure.
+* **Big Data Systems** - Designed to handle large-scale datasets with distributed processing.
+* **Business Intelligence Tools** - Provide analytics capabilities for transforming data into actionable insights.
+
+## Integration and Considerations {#sec-data-integration}
+
+### Data flow {#sec-data-flow}
+
+Data is collected from sources, processed or formatted as needed, organised into appropriate types and structures, and managed by suitable systems.
+
+### Interconnected Components
+
+Each component (sources, formats, structures) plays a role in ensuring data compatibility with various systems, which are then used for classification based on specific needs.
 
 
 <br/>
 <br/>
 
-### References {.unnumbered}
+<!-- ### References {.unnumbered} -->
 
