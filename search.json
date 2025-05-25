@@ -355,7 +355,73 @@
     "href": "all-about-data.html",
     "title": "7  All about data",
     "section": "",
-    "text": "References",
+    "text": "7.1 Data Sources\nIn this chapter, we go further into data concepts with a discussion on the sources, formats, structures, types, classes, and systems of data.\nData can be classified as either being of primary or secondary source.\nData sources also refer to where data was obtained or sourced from. These encompass a wide range of information repositories, from traditional databases and files to emerging online platforms and application programming interfaces (APIs).",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-sources",
+    "href": "all-about-data.html#sec-data-sources",
+    "title": "7  All about data",
+    "section": "",
+    "text": "Primary data includes original data collected directly from primary sources such as experiments surveys, or interviews.\nSecondary data exists in various forms like reports, government statistics, or academic publications which are data that have been already collected primarily by some other person and/or organisation/entity who make such data available for others to use for either the same purpose or a totally different use-case altogether from the original purpose.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-formats",
+    "href": "all-about-data.html#sec-data-formats",
+    "title": "7  All about data",
+    "section": "7.2 Data Formats",
+    "text": "7.2 Data Formats\nData formats define how information is organised, stored, and accessed within a file or database. They determine the structure of data, such as text, numbers, or multimedia, using common formats like CSV, JSON, and XML, each with unique methods for representing data.\nData formats may specifically refer to the following:\n\nRecording format - a format for encoding data for storage on a storage medium\nFile format - a format for encoding data for storage in a computer file\nContainer format (digital) - a format for encoding data for storage by means of a standardised audio/video codecs file format\nContent format - a format for representing media content as data\nAudio format - format for encoded sound data",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-structure",
+    "href": "all-about-data.html#sec-data-structure",
+    "title": "7  All about data",
+    "section": "7.3 Data Structures",
+    "text": "7.3 Data Structures\nA data structure is an organised format for storing data, designed to allow efficient access and modification. It encompasses not just the storage of data but also the relationships between data elements and the operations that can be performed on them. These operations are structured with defined behaviors where operations have specific properties.\nExamples of data structures include:\n\nRelational Databases - Organised into tables with defined relationships (e.g., SQL).\nNoSQL Systems - Flexible storage solutions like document stores or key-value systems.\nHierarchical Structures - Data organised in a tree-like structure, such as XML or JSON.\nFlat Structures - All data resides at the same logical level without hierarchy (e.g., JSON arrays).\nSemi-Structured Formats - Use tags and nested structures for complex data (e.g., JSON).",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-types",
+    "href": "all-about-data.html#sec-data-types",
+    "title": "7  All about data",
+    "section": "7.4 Data Types",
+    "text": "7.4 Data Types\n\nCategorical - Data divided into categories (e.g., gender, color).\nNumerical - Involves numbers, which can be discrete or continuous.\nTemporal - Data with time-based attributes (e.g., dates, times).\nTextual -Includes natural language text and speech data.\nBinary - Represents presence/absence of a feature.\nSpatial - Geospatial data indicating locations (e.g., coordinates).\nMultimedia - Combines multiple types like images, audio, and video.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-systems",
+    "href": "all-about-data.html#sec-data-systems",
+    "title": "7  All about data",
+    "section": "7.5 Data Systems",
+    "text": "7.5 Data Systems\n\nDatabases - Platforms for managing and querying structured data, including relational (SQL) and NoSQL systems.\nData Lakes - repositories storing raw, unstructured, or semi-structured data in a lake-like structure.\nBig Data Systems - Designed to handle large-scale datasets with distributed processing.\nBusiness Intelligence Tools - Provide analytics capabilities for transforming data into actionable insights.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"
+    ]
+  },
+  {
+    "objectID": "all-about-data.html#sec-data-integration",
+    "href": "all-about-data.html#sec-data-integration",
+    "title": "7  All about data",
+    "section": "7.6 Integration and Considerations",
+    "text": "7.6 Integration and Considerations\n\n7.6.1 Data flow\nData is collected from sources, processed or formatted as needed, organised into appropriate types and structures, and managed by suitable systems.\n\n\n7.6.2 Interconnected Components\nEach component (sources, formats, structures) plays a role in ensuring data compatibility with various systems, which are then used for classification based on specific needs.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>All about data</span>"

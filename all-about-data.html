@@ -280,7 +280,16 @@ gtag('config', '', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#sec-data-sources" id="toc-sec-data-sources" class="nav-link active" data-scroll-target="#sec-data-sources"><span class="header-section-number">7.1</span> Data Sources</a></li>
+  <li><a href="#sec-data-formats" id="toc-sec-data-formats" class="nav-link" data-scroll-target="#sec-data-formats"><span class="header-section-number">7.2</span> Data Formats</a></li>
+  <li><a href="#sec-data-structure" id="toc-sec-data-structure" class="nav-link" data-scroll-target="#sec-data-structure"><span class="header-section-number">7.3</span> Data Structures</a></li>
+  <li><a href="#sec-data-types" id="toc-sec-data-types" class="nav-link" data-scroll-target="#sec-data-types"><span class="header-section-number">7.4</span> Data Types</a></li>
+  <li><a href="#sec-data-systems" id="toc-sec-data-systems" class="nav-link" data-scroll-target="#sec-data-systems"><span class="header-section-number">7.5</span> Data Systems</a></li>
+  <li><a href="#sec-data-integration" id="toc-sec-data-integration" class="nav-link" data-scroll-target="#sec-data-integration"><span class="header-section-number">7.6</span> Integration and Considerations</a>
+  <ul class="collapse">
+  <li><a href="#sec-data-flow" id="toc-sec-data-flow" class="nav-link" data-scroll-target="#sec-data-flow"><span class="header-section-number">7.6.1</span> Data flow</a></li>
+  <li><a href="#interconnected-components" id="toc-interconnected-components" class="nav-link" data-scroll-target="#interconnected-components"><span class="header-section-number">7.6.2</span> Interconnected Components</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/07-all-about-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -306,11 +315,75 @@ gtag('config', '', { 'anonymize_ip': true});
 </header>
 
 
+<p>In this chapter, we go further into data concepts with a discussion on the <strong>sources</strong>, <strong>formats</strong>, <strong>structures</strong>, <strong>types</strong>, <strong>classes</strong>, and <strong>systems</strong> of data.</p>
+<section id="sec-data-sources" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-data-sources"><span class="header-section-number">7.1</span> Data Sources</h2>
+<p>Data can be classified as either being of <strong>primary</strong> or <strong>secondary</strong> source.</p>
+<ul>
+<li><p><strong>Primary data</strong> includes original data collected directly from primary sources such as experiments surveys, or interviews.</p></li>
+<li><p><strong>Secondary data</strong> exists in various forms like reports, government statistics, or academic publications which are data that have been already collected primarily by some other person and/or organisation/entity who make such data available for others to use for either the same purpose or a totally different use-case altogether from the original purpose.</p></li>
+</ul>
+<p>Data sources also refer to where data was obtained or sourced from. These encompass a wide range of information repositories, from traditional databases and files to emerging online platforms and application programming interfaces (APIs).</p>
+</section>
+<section id="sec-data-formats" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-data-formats"><span class="header-section-number">7.2</span> Data Formats</h2>
+<p>Data formats define how information is organised, stored, and accessed within a file or database. They determine the structure of data, such as text, numbers, or multimedia, using common formats like CSV, JSON, and XML, each with unique methods for representing data.</p>
+<p>Data formats may specifically refer to the following:</p>
+<ul>
+<li><strong>Recording format</strong> - a format for encoding data for storage on a storage medium</li>
+<li><strong>File format</strong> - a format for encoding data for storage in a computer file</li>
+<li><strong>Container format (digital)</strong> - a format for encoding data for storage by means of a standardised audio/video codecs file format</li>
+<li><strong>Content format</strong> - a format for representing media content as data</li>
+<li><strong>Audio format</strong> - format for encoded sound data</li>
+</ul>
+</section>
+<section id="sec-data-structure" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-data-structure"><span class="header-section-number">7.3</span> Data Structures</h2>
+<p>A data structure is an organised format for storing data, designed to allow efficient access and modification. It encompasses not just the storage of data but also the relationships between data elements and the operations that can be performed on them. These operations are structured with defined behaviors where operations have specific properties.</p>
+<p>Examples of data structures include:</p>
+<ul>
+<li><strong>Relational Databases</strong> - Organised into tables with defined relationships (e.g., SQL).</li>
+<li><strong>NoSQL Systems</strong> - Flexible storage solutions like document stores or key-value systems.</li>
+<li><strong>Hierarchical Structures</strong> - Data organised in a tree-like structure, such as XML or JSON.</li>
+<li><strong>Flat Structures</strong> - All data resides at the same logical level without hierarchy (e.g., JSON arrays).</li>
+<li><strong>Semi-Structured Formats</strong> - Use tags and nested structures for complex data (e.g., JSON).</li>
+</ul>
+</section>
+<section id="sec-data-types" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-data-types"><span class="header-section-number">7.4</span> Data Types</h2>
+<ul>
+<li><strong>Categorical</strong> - Data divided into categories (e.g., gender, color).</li>
+<li><strong>Numerical</strong> - Involves numbers, which can be discrete or continuous.</li>
+<li><strong>Temporal</strong> - Data with time-based attributes (e.g., dates, times).</li>
+<li><strong>Textual</strong> -Includes natural language text and speech data.</li>
+<li><strong>Binary</strong> - Represents presence/absence of a feature.</li>
+<li><strong>Spatial</strong> - Geospatial data indicating locations (e.g., coordinates).</li>
+<li><strong>Multimedia</strong> - Combines multiple types like images, audio, and video.</li>
+</ul>
+</section>
+<section id="sec-data-systems" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-data-systems"><span class="header-section-number">7.5</span> Data Systems</h2>
+<ul>
+<li><strong>Databases</strong> - Platforms for managing and querying structured data, including relational (SQL) and NoSQL systems.</li>
+<li><strong>Data Lakes</strong> - repositories storing raw, unstructured, or semi-structured data in a lake-like structure.</li>
+<li><strong>Big Data Systems</strong> - Designed to handle large-scale datasets with distributed processing.</li>
+<li><strong>Business Intelligence Tools</strong> - Provide analytics capabilities for transforming data into actionable insights.</li>
+</ul>
+</section>
+<section id="sec-data-integration" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-data-integration"><span class="header-section-number">7.6</span> Integration and Considerations</h2>
+<section id="sec-data-flow" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="sec-data-flow"><span class="header-section-number">7.6.1</span> Data flow</h3>
+<p>Data is collected from sources, processed or formatted as needed, organised into appropriate types and structures, and managed by suitable systems.</p>
+</section>
+<section id="interconnected-components" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="interconnected-components"><span class="header-section-number">7.6.2</span> Interconnected Components</h3>
+<p>Each component (sources, formats, structures) plays a role in ensuring data compatibility with various systems, which are then used for classification based on specific needs.</p>
 <p><br> <br></p>
-<section id="references" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="references">References</h3>
+<!-- ### References {.unnumbered} -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
