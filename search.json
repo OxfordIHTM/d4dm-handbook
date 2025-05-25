@@ -190,7 +190,18 @@
     "href": "case-study-three.html",
     "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
     "section": "",
-    "text": "5.1 Current Situation of Policy and Decision-Making in Michigan Local Governments\nThis case study explores the current state of data-driven decision-making in Michigan’s local governments, highlighting challenges and opportunities for integrating data into policy and governance1.\nMichigan’s local governments have seen significant growth in data-driven decision-making over the past five years. This approach is now widespread across all sizes and regions, with many jurisdictions using data to inform budgeting and resource allocation. Despite this progress, most data use remains informal or ad hoc, particularly among smaller communities.\nThe Michigan Public Performance Survey (MPPS) reveals that while larger jurisdictions are more likely to engage in formal performance measurement, over half of the state’s smallest jurisdictions also incorporate some form of data into their decision-making processes. This indicates a trend towards broader adoption, albeit at varying levels of formality.",
+    "text": "5.1 Michigan Public Policy Survey\nThis case study explores the current state of data-driven decision-making in Michigan’s local governments, highlighting challenges and opportunities for integrating data into policy and governance based on the results of the Michigan Public Policy Survey (MPPS)1.\nThe MPPS, established post the 2009 Great Recession, is the first ongoing survey of local leaders across an entire state in the United States, involving over 1,856 jurisdictions in Michigan. It addresses a critical gap by providing insights into local officials’ perspectives, crucial for informed policymaking. Conducted biannually, it tracks long-term trends on fiscal and operational policies while addressing current issues like the COVID-19 pandemic and infrastructure. Collaborations with key associations enhance its credibility and scope.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-three.html#sec-cs3-current-situation",
+    "href": "case-study-three.html#sec-cs3-current-situation",
+    "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
+    "section": "5.2 Current Situation of Policy and Decision-Making in Michigan Local Governments",
+    "text": "5.2 Current Situation of Policy and Decision-Making in Michigan Local Governments\nMichigan’s local governments have seen significant growth in data-driven decision-making (see Figure 5.1 and Figure 5.2).\n\n\n\n\n\n\n\n\n\nFigure 5.1: Percentage of Michigan jurisdictions reporting use of performance data\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.2: Michigan jurisdictions’ history of data use (among current data users), by population density\n\n\n\n\nThis approach is now widespread across jurisdictions of all population sizes (see Figure 5.3) and across regions, with many jurisdictions using data to inform budgeting and resource allocation.\n\n\n\n\n\n\n\n\n\nFigure 5.3: Percentage of Michigan jurisdictions reporting data use, by population density\n\n\n\n\nDespite this progress, most data use remains informal or ad hoc (see Figure 5.4), particularly among smaller communities (see Figure 5.5).\n\n\n\n\n\n\n\n\n\nFigure 5.4: Percentage of Michigan jurisdictions reporting ad hoc vs. systematic data use (among data users)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.5: Percentage of Michigan jurisdictions reporting ad hoc vs. systematic data use (among data users), by population size\n\n\n\n\nThe MPPS reveals that while larger jurisdictions are more likely to engage in formal performance measurement, over half of the state’s smallest jurisdictions also incorporate some form of data into their decision-making processes (see Figure 5.2). This indicates a trend towards broader adoption, albeit at varying levels of formality.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
@@ -200,8 +211,8 @@
     "objectID": "case-study-three.html#sec-cs3-challenges",
     "href": "case-study-three.html#sec-cs3-challenges",
     "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
-    "section": "5.2 Challenges and Concerns",
-    "text": "5.2 Challenges and Concerns\n\nCost Concerns: Many local governments, especially smaller ones with limited resources, perceive data use as costly. The MPPS found that 62% of non-data users cited cost concerns, though only 28% of current users reported significant issues, suggesting costs may be manageable.\nInformal Practices: The reliance on informal methods can lead to inconsistent outcomes and less accountability. Only about 16% of jurisdictions have formal performance measurement practices, indicating a gap in structured data use.\nResource Constraints: Smaller jurisdictions often face limitations in staff and financial resources, hindering their ability to adopt more formal data practices.",
+    "section": "5.3 Challenges and Concerns",
+    "text": "5.3 Challenges and Concerns\n\nCost Concerns\n\nMany local governments, especially smaller ones with limited resources, perceive data use as costly. The MPPS found that 62% of non-data users cited cost concerns, though only 28% of current users reported significant issues, suggesting costs may be manageable.\n\nInformal Practices\n\nThe reliance on informal methods can lead to inconsistent outcomes and less accountability. Only about 16% of jurisdictions have formal performance measurement practices, indicating a gap in structured data use.\n\nResource Constraints\n\nSmaller jurisdictions often face limitations in staff and financial resources, hindering their ability to adopt more formal data practices.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
@@ -211,8 +222,8 @@
     "objectID": "case-study-three.html#sec-cs3-opportunities",
     "href": "case-study-three.html#sec-cs3-opportunities",
     "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
-    "section": "5.3 Opportunities and Benefits",
-    "text": "5.3 Opportunities and Benefits\n\nFiscal Efficiency: Data-driven approaches help identify cost savings and program efficiencies, crucial for jurisdictions grappling with fiscal challenges.\nImproved Service Delivery: By aligning services with community needs, data can enhance service quality and responsiveness.\nEnhanced Transparency and Trust: Effective use of data fosters transparency, improving public trust in government decisions.\nPolicy Communication: Data provides a clear evidence base for policy-making, aiding communication between governments and stakeholders.",
+    "section": "5.4 Opportunities and Benefits",
+    "text": "5.4 Opportunities and Benefits\n\nFiscal Efficiency\n\nData-driven approaches help identify cost savings and program efficiencies, crucial for jurisdictions grappling with fiscal challenges.\n\nImproved Service Delivery\n\nBy aligning services with community needs, data can enhance service quality and responsiveness.\n\nEnhanced Transparency and Trust\n\nEffective use of data fosters transparency, improving public trust in government decisions.\n\nPolicy Communication\n\nData provides a clear evidence base for policy-making, aiding communication between governments and stakeholders.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
@@ -222,8 +233,8 @@
     "objectID": "case-study-three.html#sec-cs3-conclusion",
     "href": "case-study-three.html#sec-cs3-conclusion",
     "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
-    "section": "5.4 Conclusion",
-    "text": "5.4 Conclusion\nThe integration of data into Michigan’s local governance has proven valuable despite challenges like cost concerns and resource limitations. The broader adoption of data-driven practices, even informally, highlights its potential to improve decision-making and service delivery.",
+    "section": "5.5 Conclusion",
+    "text": "5.5 Conclusion\nThe integration of data into Michigan’s local governance has proven valuable despite challenges like cost concerns and resource limitations. The broader adoption of data-driven practices, even informally, highlights its potential to improve decision-making and service delivery.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
@@ -233,11 +244,143 @@
     "objectID": "case-study-three.html#sec-csc3-recommendations",
     "href": "case-study-three.html#sec-csc3-recommendations",
     "title": "5  Case Study: The Use of Data in Local Governance - A Michigan Perspective",
-    "section": "5.5 Recommendations",
-    "text": "5.5 Recommendations\n\nCapacity Building: Invest in training to enhance technical and analytical skills among local officials.\nEncourage Collaboration: Foster partnerships with academic institutions or tech firms to support data initiatives.\nLeverage Resources: Utilise available tools and frameworks, such as those provided by Michigan’s MPPS, to guide data practices.\nPromote Leadership and Cultural Change: Champion leadership roles that prioritize data use and cultivate a culture of evidence-based decision-making.\n\nBy adopting these strategies, countries can effectively integrate data into local governance, enhancing policy outcomes and public trust.\n \n\nReferences\n\n\n\n\n1. Ivacko, T. M., Horner, D. & Crawford, M. Q. Data-driven decision-making in michigan local government. SSRN Journal (2013) doi:10.2139/ssrn.2351916.",
+    "section": "5.6 Recommendations",
+    "text": "5.6 Recommendations\n\nCapacity Building - Invest in training to enhance technical and analytical skills among local officials.\nEncourage Collaboration - Foster partnerships with academic institutions or tech firms to support data initiatives.\nLeverage Resources - Utilise available tools and frameworks, such as those provided by Michigan’s MPPS, to guide data practices.\nPromote Leadership and Cultural Change - Champion leadership roles that prioritize data use and cultivate a culture of evidence-based decision-making.\n\nBy adopting these strategies, countries can effectively integrate data into local governance, enhancing policy outcomes and public trust.\n \n\nReferences\n\n\n\n\n1. Ivacko, T. M., Horner, D. & Crawford, M. Q. Data-driven decision-making in michigan local government. SSRN Journal (2013) doi:10.2139/ssrn.2351916.",
     "crumbs": [
       "Data Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Case Study: The Use of Data in Local Governance - A Michigan Perspective</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html",
+    "href": "case-study-four.html",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "",
+    "text": "6.1 Introduction\nThis case study describes the significant steps that the Turkana County local government are taking to modernising early childhood development and education services management through the use of digital technology1.\nTurkana County, located in northwest Kenya, is a region marked by significant natural resource wealth and cultural diversity. However, it faces challenges such as poverty, infrastructure gaps, and governance inefficiencies. The county’s recent efforts to embrace data-driven decision-making offer valuable insights for enhancing local governance through improved policy formulation and implementation.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-background",
+    "href": "case-study-four.html#sec-cs4-background",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.2 Background",
+    "text": "6.2 Background\nTurkana County was established under Kenya’s devolution framework in 2013, with its administrative structure comprising several wards and sub-counties. The county has made strides in adopting digital tools like the Turkana Early Childhood Development and Education (ECDE) Management Information System or TECDEMIS and the Continuous Database Updating System or CODUSYS for education management, reflecting a commitment to modernise governance.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-current-situation",
+    "href": "case-study-four.html#sec-cs4-current-situation",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.3 Current Situation of Policy and Decision-Making",
+    "text": "6.3 Current Situation of Policy and Decision-Making\nPolicy-making in Turkana County is characterised by structured processes involving the County Assembly and Executive. Data utilisation is integral to planning and budgeting, with systems like TECDEMIS facilitating real-time data collection and analysis. These tools support decision-makers in tracking program outcomes and resource allocation efficiency.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-challenges",
+    "href": "case-study-four.html#sec-cs4-challenges",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.4 Challenges in Data Utilisation for Governance",
+    "text": "6.4 Challenges in Data Utilisation for Governance\nDespite progress, several challenges impede effective data use:\n\nTechnological Barriers: Limited internet access hampers system functionality.\nInstitutional Weaknesses: Insufficient skilled personnel affect system implementation.\nFinancial Constraints: Inadequate funding limits infrastructure development and capacity building.\nSocio-Political Factors: Resistance to change and lack of awareness about data’s value.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-opportunities",
+    "href": "case-study-four.html#sec-cs4-opportunities",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.5 Opportunities for Enhancing Data Use",
+    "text": "6.5 Opportunities for Enhancing Data Use\nThe county presents several opportunities:\n\nInvestments in Digital Infrastructure: Initiatives like TECDEMIS and CODUSYS provide a solid foundation.\nPartnerships with Development Agencies: Collaborations with organisations like the Japan International Cooperation Agency or JICA offer resources and expertise.\nCapacity Building: Training programs enhance staff skills in data management and analysis.\nCommunity Engagement: Involving citizens fosters trust and ownership of data initiatives.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-conclusion",
+    "href": "case-study-four.html#sec-cs4-conclusion",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.6 Conclusion",
+    "text": "6.6 Conclusion\nEmbracing data-driven governance is crucial for Turkana County to overcome challenges and achieve sustainable development. Effective data use aligns with broader goals of accountability, service efficiency, and inclusive growth.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-four.html#sec-cs4-recommendations",
+    "href": "case-study-four.html#sec-cs4-recommendations",
+    "title": "6  Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County",
+    "section": "6.7 Recommendations",
+    "text": "6.7 Recommendations\n\nInvest in IT Infrastructure: Expand internet access and upgrade digital tools.\nEnhance Training Programs: Prioritise skills development in data management and analysis.\nFoster Multi-Sectoral Partnerships: Strengthen collaborations with development agencies and the private sector.\nImprove Stakeholder Engagement: Involve communities to build trust and ownership of data initiatives.\nEstablish Monitoring Frameworks: Develop systems to evaluate the impact of data-driven policies.\n\n \n\nReferences\n\n\n\n\n1. Onunga, J. & Odongo, P. Digital transformation in public administration and data-driven decision-making: A review of turkana county government. IJRIAS IX, 234–240 (2025).",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-five.html",
+    "href": "case-study-five.html",
+    "title": "7  Case Study: Indigenous Data Governance in the United States",
+    "section": "",
+    "text": "7.1 Introduction\nThis case study describes the challenges and opportunities with regard to Indigenous data governance in the United States1.\nIndigenous nations in the United States exercise sovereignty over their data, recognising their right to control and manage their own information. This sovereignty is supported by federal laws such as Native American Graves Protection and Repatriation Act or NAGPRA which provide frameworks for protecting Indigenous rights, including those related to data governance.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Case Study: Indigenous Data Governance in the United States</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-five.html#sec-cs5-current-strategies",
+    "href": "case-study-five.html#sec-cs5-current-strategies",
+    "title": "7  Case Study: Indigenous Data Governance in the United States",
+    "section": "7.2 Current Strategies",
+    "text": "7.2 Current Strategies\n\nTribal Data Sovereignty\n\nIndigenous nations establish policies and institutions, like tribal councils, to own and control their data, ensuring it aligns with cultural values.\n\nCollaboration\n\nPartnerships with federal and state governments are facilitated through initiatives like the National Historic Preservation Act or NHPA promoting shared goals in data governance.\n\nCapacity Building\n\nTraining programs and technological infrastructure development enhance technical skills, though resources vary among tribes.\n\nLegal Frameworks\n\nTreaties and international agreements, such as the United Nations Declaration on the Rights of Indigenous Peoples or UNDRIP2, provide legal backing for data governance, ensuring respect for Indigenous rights.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Case Study: Indigenous Data Governance in the United States</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-five.html#sec-cs5-challenges",
+    "href": "case-study-five.html#sec-cs5-challenges",
+    "title": "7  Case Study: Indigenous Data Governance in the United States",
+    "section": "7.3 Challenges",
+    "text": "7.3 Challenges\n\nLegal Complexities: Overlapping jurisdictions complicate data governance, requiring clear resolution mechanisms.\nResource Limitations: Financial and technical constraints affect smaller tribes’ ability to implement strategies.\nCultural Preservation: Balancing modern data practices with cultural preservation is complex but crucial.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Case Study: Indigenous Data Governance in the United States</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-five.html#sec-cs5-opportunities",
+    "href": "case-study-five.html#sec-cs5-opportunities",
+    "title": "7  Case Study: Indigenous Data Governance in the United States",
+    "section": "7.4 Opportunities",
+    "text": "7.4 Opportunities\n\nGlobal Networks: Engagement with international bodies like the UNDRIP offers support and recognition, enhancing governance effectiveness.\nCapacity Building: Support through grants and partnerships can bridge resource gaps.\nCollaboration: Inter-tribal agreements strengthen collective data management efforts.",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Case Study: Indigenous Data Governance in the United States</span>"
+    ]
+  },
+  {
+    "objectID": "case-study-five.html#sec-cs5-conclusion",
+    "href": "case-study-five.html#sec-cs5-conclusion",
+    "title": "7  Case Study: Indigenous Data Governance in the United States",
+    "section": "7.5 Conclusion",
+    "text": "7.5 Conclusion\nIndigenous data governance in the U.S. is advancing through sovereignty assertion collaboration, capacity building, and international frameworks. While challenges persist, opportunities for improvement are significant. Government officials must support Indigenous nations by respecting their sovereignty, providing resources, and fostering international engagement to enhance data governance effectively.\n\n\n\n\n1. Carroll, S. R., Rodriguez-Lonebear, D. & Martinez, A. Indigenous data governance: Strategies from united states native nations. CODATA 18, 31 (2019).\n\n\n2. United Nations General Assembly. United nations declaration on the rights of indigenous peoples : Resolution / adopted by the general assembly. (2007).",
+    "crumbs": [
+      "Data Concepts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Case Study: Indigenous Data Governance in the United States</span>"
     ]
   }
 ]

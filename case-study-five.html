@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>case-study-five – Data for Decision Makers: Data Concepts and Applications</title>
+<title>7&nbsp; Case Study: Indigenous Data Governance in the United States – Data for Decision Makers: Data Concepts and Applications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./data-security.html" rel="next">
-<link href="./06-case-study-four.html" rel="prev">
+<link href="./case-study-four.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +102,7 @@ gtag('config', '', { 'anonymize_ip': true});
 
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,7 +111,7 @@ gtag('config', '', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Data Concepts</a></li><li class="breadcrumb-item"><a href="./07-case-study-five.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07-case-study-five.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Data Concepts</a></li><li class="breadcrumb-item"><a href="./case-study-five.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Case Study: Indigenous Data Governance in the United States</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,14 +226,14 @@ gtag('config', '', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-case-study-four.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">06-case-study-four.html</span></span></a>
+  <a href="./case-study-four.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-case-study-five.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07-case-study-five.html</span></span></a>
+  <a href="./case-study-five.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Case Study: Indigenous Data Governance in the United States</span></span></a>
   </div>
 </li>
       </ul>
@@ -275,15 +295,95 @@ gtag('config', '', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-cs5-introduction" id="toc-sec-cs5-introduction" class="nav-link active" data-scroll-target="#sec-cs5-introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+  <li><a href="#sec-cs5-current-strategies" id="toc-sec-cs5-current-strategies" class="nav-link" data-scroll-target="#sec-cs5-current-strategies"><span class="header-section-number">7.2</span> Current Strategies</a></li>
+  <li><a href="#sec-cs5-challenges" id="toc-sec-cs5-challenges" class="nav-link" data-scroll-target="#sec-cs5-challenges"><span class="header-section-number">7.3</span> Challenges</a></li>
+  <li><a href="#sec-cs5-opportunities" id="toc-sec-cs5-opportunities" class="nav-link" data-scroll-target="#sec-cs5-opportunities"><span class="header-section-number">7.4</span> Opportunities</a></li>
+  <li><a href="#sec-cs5-conclusion" id="toc-sec-cs5-conclusion" class="nav-link" data-scroll-target="#sec-cs5-conclusion"><span class="header-section-number">7.5</span> Conclusion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/07-case-study-five.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Data Concepts</a></li><li class="breadcrumb-item"><a href="./07-case-study-five.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">07-case-study-five.html</span></a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Data Concepts</a></li><li class="breadcrumb-item"><a href="./case-study-five.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Case Study: Indigenous Data Governance in the United States</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-cs5-indigenous" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Case Study: Indigenous Data Governance in the United States</span></span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p>This case study describes the challenges and opportunities with regard to Indigenous data governance in the United States<span class="citation" data-cites="carroll_indigenous_2019"><sup><a href="#ref-carroll_indigenous_2019" role="doc-biblioref">1</a></sup></span>.</p>
+<section id="sec-cs5-introduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-cs5-introduction"><span class="header-section-number">7.1</span> Introduction</h2>
+<p>Indigenous nations in the United States exercise sovereignty over their data, recognising their right to control and manage their own information. This sovereignty is supported by federal laws such as Native American Graves Protection and Repatriation Act or <a href="https://www.nps.gov/subjects/nagpra/index.htm">NAGPRA</a> which provide frameworks for protecting Indigenous rights, including those related to data governance.</p>
+</section>
+<section id="sec-cs5-current-strategies" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-cs5-current-strategies"><span class="header-section-number">7.2</span> Current Strategies</h2>
+<ol type="1">
+<li><strong>Tribal Data Sovereignty</strong></li>
+</ol>
+<p>Indigenous nations establish policies and institutions, like tribal councils, to own and control their data, ensuring it aligns with cultural values.</p>
+<ol start="2" type="1">
+<li><strong>Collaboration</strong></li>
+</ol>
+<p>Partnerships with federal and state governments are facilitated through initiatives like the National Historic Preservation Act or NHPA promoting shared goals in data governance.</p>
+<ol start="3" type="1">
+<li><strong>Capacity Building</strong></li>
+</ol>
+<p>Training programs and technological infrastructure development enhance technical skills, though resources vary among tribes.</p>
+<ol start="4" type="1">
+<li><strong>Legal Frameworks</strong></li>
+</ol>
+<p>Treaties and international agreements, such as the United Nations Declaration on the Rights of Indigenous Peoples or <a href="https://www.un.org/development/desa/indigenouspeoples/wp-content/uploads/sites/19/2018/11/UNDRIP_E_web.pdf">UNDRIP</a><span class="citation" data-cites="united_nations_general_assembly_united_2007"><sup><a href="#ref-united_nations_general_assembly_united_2007" role="doc-biblioref">2</a></sup></span>, provide legal backing for data governance, ensuring respect for Indigenous rights.</p>
+</section>
+<section id="sec-cs5-challenges" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-cs5-challenges"><span class="header-section-number">7.3</span> Challenges</h2>
+<ul>
+<li><p><strong>Legal Complexities:</strong> Overlapping jurisdictions complicate data governance, requiring clear resolution mechanisms.</p></li>
+<li><p><strong>Resource Limitations:</strong> Financial and technical constraints affect smaller tribes’ ability to implement strategies.</p></li>
+<li><p><strong>Cultural Preservation:</strong> Balancing modern data practices with cultural preservation is complex but crucial.</p></li>
+</ul>
+</section>
+<section id="sec-cs5-opportunities" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-cs5-opportunities"><span class="header-section-number">7.4</span> Opportunities</h2>
+<ul>
+<li><p><strong>Global Networks:</strong> Engagement with international bodies like the UNDRIP offers support and recognition, enhancing governance effectiveness.</p></li>
+<li><p><strong>Capacity Building:</strong> Support through grants and partnerships can bridge resource gaps.</p></li>
+<li><p><strong>Collaboration:</strong> Inter-tribal agreements strengthen collective data management efforts.</p></li>
+</ul>
+</section>
+<section id="sec-cs5-conclusion" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-cs5-conclusion"><span class="header-section-number">7.5</span> Conclusion</h2>
+<p>Indigenous data governance in the U.S. is advancing through sovereignty assertion collaboration, capacity building, and international frameworks. While challenges persist, opportunities for improvement are significant. Government officials must support Indigenous nations by respecting their sovereignty, providing resources, and fostering international engagement to enhance data governance effectively.</p>
+
+
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-carroll_indigenous_2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Carroll, S. R., Rodriguez-Lonebear, D. &amp; Martinez, A. <a href="https://doi.org/10.5334/dsj-2019-031">Indigenous data governance: Strategies from united states native nations</a>. <em><span>CODATA</span></em> <strong>18</strong>, 31 (2019).</div>
+</div>
+<div id="ref-united_nations_general_assembly_united_2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">United Nations General Assembly. <a href="https://www.refworld.org/legal/resolution/unga/2007/en/49353">United nations declaration on the rights of indigenous peoples : Resolution / adopted by the general assembly</a>. (2007).</div>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -687,8 +787,8 @@ gtag('config', '', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-case-study-four.html" class="pagination-link" aria-label="06-case-study-four.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">06-case-study-four.html</span></span>
+      <a href="./case-study-four.html" class="pagination-link" aria-label="Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Case Study: Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -702,4 +802,4 @@ gtag('config', '', { 'anonymize_ip': true});
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/07-case-study-five.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/07-case-study-five.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
