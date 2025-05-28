@@ -51,7 +51,7 @@ Saving costs is another advantage. In a survey of executives of Fortune 1000 com
 
 In this course, we will explore everything from the basics such as what data is and why it matters to more advanced topics like data collection, storage, analysis, and visualisation. Through practical examples and real-world applications, you'll learn how to harness the power of data to drive insights, solve problems, and make informed decisions in fields ranging from business and technology to healthcare and beyond. By the end of this course, you’ll not only understand the importance of data but also be prepared to apply these concepts in your own work.
 
-### Objective {#sec-objectives}
+### Objectives {#sec-objectives}
 
 All these towards the overall objective of making a case for shifting to more data-driven decision-making processes.
 
