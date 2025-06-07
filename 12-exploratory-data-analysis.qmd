@@ -1,5 +1,0 @@
----
-output-file: exploratory-data-analysis.html
----
-
-# Exploratory data analysis {#sec-exploratory}
