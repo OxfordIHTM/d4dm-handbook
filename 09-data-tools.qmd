@@ -4,65 +4,268 @@ output-file: data-tools.html
 
 # Data tools {#sec-data-tools}
 
-Working with data is a multi-faceted endeavour that involves collecting, storing, analysing, visualising, securing, and managing data across various domains. Below is a categorized guide to the available data tools and software based on their primary functions:
+Working with data is a multi-faceted endeavour that involves collecting, storing, analysing, visualising, securing, and managing data across various domains. The various steps in the data pathway (see @fig-data-pathway) often require specific tools that are best-suited for the task at hand.
 
-1. **Data Collection Tools**
-   - **Web Scraping Tools**: Extract data from websites programmatically.
-   - **Automation Tools**: Streamline data collection processes with no-code platforms.
+![Data pathway](images/data_pathway.png){#fig-data-pathway fig-align="center"}
 
-2. **Data Storage Solutions**
-   - **On-Premise Databases**: Include MySQL, PostgreSQL, and Microsoft SQL Server for local storage.
-   - **Cloud Storage Services**: Google Drive, Amazon S3, and Microsoft OneDrive for accessible, remote storage.
+In this section, we present the most common data tools, describe their key functionalities, and discuss what each tool is best suited for in relation to the steps in the data pathway.
 
-3. **Data Analysis Tools**
-   - **Statistical Tools**: R, Python (Pandas library), and SPSS for statistical analysis.
-   - **BI Platforms**: Tableau, Power BI, and QlikView for data visualization and reporting.
-   - **Machine Learning Frameworks**: TensorFlow, Scikit-learn, and PyTorch for predictive modelling.
+## Microsoft Excel and other Excel-like spreadsheet software {#sec-excel-spreadsheet}
 
-4. **Automation Tools**
-   - **Workflow Automation Platforms**: Jira, Trello, and Asana for task management.
-   - **ETL Tools**: Apache NiFi and Talend for data integration and transformation.
+[Microsoft Excel](https://www.microsoft.com/en/microsoft-365/excel) is versatile spreadsheet software with robust formula capabilities, pivot tables for quick data summarisation, and [Power Query](https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a) for advanced data cleaning. Other than for data collection, it is also suited for detailed analysis, budgeting, and financial tracking. Suitable for complex data management. On the other hand, some may find that using it presents a steeper learning curve and costs of the subscription-based software-as-a-service (SaaS) model as part of [Microsoft 365](https://www.microsoft.com/en/microsoft-365) can be prohibitive.
 
-5. **Data Visualization Tools**
-   - **Charting Libraries**: Matplotlib, Seaborn, and Plotly in Python for creating visualizations.
-   - **Spreadsheet Tools**: Microsoft Excel and Google Sheets for basic to intermediate data visualization.
+An estimated 750 million up to 1.5 billion people[^excelnote] use Microsoft Excel. It has numerous applications, including data entry, analysis, accounting, financial modelling, and reporting. It's used in various fields like business, education, and personal finance to organise, manage, and visualise data.
 
-6. **Security Tools**
-   - **Encryption Software**: WinRAS, BitLocker, and RSA SecuriCard for data protection.
-   - **Access Control Systems**: Azure AD and Google Workspace for user authentication.
-   - **Log Management Tools**: Splunk, ELK Stack, and SIEM for monitoring system activities.
+Other than Microsoft Excel, there are Excel-like applications available as part of a suite of office applications that use the Open Document Form (ODF), an open file format for word processing documents, spreadsheets, presentations and graphics and using ZIP-compressed XML files. It was developed with the aim of providing an open, XML-based file format specification for office applications. ODF was based on the Sun Microsystems specification for OpenOffice.org XML, the default format for [OpenOffice.org](https://www.openoffice.org/) and [LibreOffice](https://www.libreoffice.org/). This standard was originally developed to provide an open standard for office documents. Versions of Microsoft Excel since 2003 use the ODF XML standard to afford compatibility to other spreadsheets that use the standard. A number of free and proprietary software use the ODF XML standard hence there are various Excel-like spreadsheet alternatives available that use the standard[^odfnote] and are mostly compatible with Microsoft Office/Microsoft 365 applications including Excel. Although generally compatible in almost all of the basic features, Excel-like spreadsheet applications may not fully implement highly customised Excel spreadsheets that use Visual Basic for Applications (VBA) macros as there are significant differences in syntax and implementation to LibreOffice Calc's Basic macro system and environment.
 
-7. **Data Integration Tools**
-   - **API Integrations**: Axios, uneasy, and requests in Python for connecting with external systems.
-   - **Data Gateway Solutions**: Apache Log4j for seamless data flow between applications.
+## Google Sheets {#sec-google-sheets}
 
-8. **Data Management Platforms (DMPs)**
-   - **Comprehensive Tools**: Adobe Experience Cloud, Salesforce Marketing Cloud, and HubSpot CRM for unified 
-data handling.
+[Google Sheets](https://workspace.google.com/products/sheets/), a free and web-based spreadsheet application, is a versatile data tool used for organising, managing, and analysing data, as well as creating visualisations. It's part of the Google Workspace suite, along with Google Docs and Google Slides. Sheets offers features like pivot tables, formulas, conditional formatting, and data validation for a variety of data-related tasks.
 
-9. **Specialized Data Tools**
-   - **EHR Systems**: For healthcare data management.
-   - **CRM Tools**: Including Salesforce, HubSpot, and Pipedrive for customer interaction management.
+Google Sheets is technically not an Excel-like spreadsheet (although general use and behaviour is similar to Excel) as it doesn't use the ODF XML standard but rather has its own proprietary format called the Google Sheets format which can only be accessed or utilised through a web browser rather than through a standalone installer for your computer. In order to access/open a Google Sheets format outside of a browser, one h as to download it as either an Excel file or as a comma-separated value (CSV) file which can then be opened in Excel. Google Sheets has similar features and functionalities as Excel but because of its indirect compatibility with Excel and Excel-like ODF XML-compliant software, advanced features of both applications are not interoperable.
 
-10. **Big Data Processing Tools**
-    - **Hadoop Ecosystem**: Apache Hadoop and Hive for distributed data processing.
-    - **Spark Framework**: Apache Spark for fast data analytics on large datasets.
+## Google Forms {#sec-google-forms}
 
-11. **Customer Relationship Management (CRM) Tools**
-    - **Integration Platforms**: Marketing automation tools like HubSpot CRM, Pipedrive, and Salesforce.
+[Google Forms](https://workspace.google.com/products/forms/) is a tool for creating online forms, surveys, and quizzes that can be shared with others to collect data. It allows users to create and edit these forms online, collaborate in real-time, and have the collected data automatically entered into a spreadsheet. Google Forms is part of the free, web-based Google Suite and the software-as-a-service (SaaS) Google Workspace which includes Google Docs, Google Sheets, Google Slides, Google Drawings, Google Sites, and Google Keep. Google Forms is only available as a web application.
 
-12. **Customer Data Platforms (CDPs)**
-    - **MDM Solutions**: Adobe Target, Monetate, and Segment for managing customer data across channels.
+## Airtable {#sec-airtable}
 
-13. **Destination Marketing Platforms (DMPs)**
-    - **Unified Campaign Management**: For tracking and personalizing digital marketing campaigns.
+[Airable](https://airtable.com/) is a **spreadsheet-database hybrid**, with the features of a database but applied to a spreadsheet. The fields in an Airtable table are similar to cells in a spreadsheet, but have types such as *'checkbox'*, *'phone number'*, and *'drop-down list'*, and can reference file attachments like images.
 
-14. **Compliance and Auditing Tools**
-    - **Audit Trails**: Log management tools like Splunk for compliance monitoring.
-    - **Data Usage Tracking**: For ensuring adherence to GDPR, HIPAA, and other regulations.
+Users can create a database, set up column types, add records, link tables to one another, collaborate, sort records and publish views to external websites. Users cannot download their database in full, but can download some of the data by manually downloading CSVs for each table.
 
-15. **Artificial Intelligence (AI) and Machine Learning Tools**
-    - **Preprocessing Tools**: Clean and transform raw data before feeding into AI models.
-    - **Enrichment Tools**: Add context or value to datasets for enhanced insights.
+Airtable is user-friendly and is designed for ease of use, making it accessible to a wide range of users, including those without technical backgrounds. It also enables users to build and customise applications for various purposes, such as managing product roadmaps, launching marketing campaigns, and tracking job applications. It facilitates collaboration by allowing multiple users to access and work on the same database. Airtable integrates with various other platforms, enabling data to be shared and workflows to be automated. 
+
+## QuickBooks and other accounting-specific software {#sec-quickbooks}
+
+[QuickBooks](https://quickbooks.intuit.com/global/) is a popular accounting software designed to help businesses manage their finances, including tasks like bookkeeping, invoicing, expense tracking, and payroll.
+
+QuickBooks is a widely used accounting software known for its ease of use and automation capabilities. It's a solution for small to medium-sized businesses (SMEs), offering features like invoicing, expense tracking, inventory management, and payroll processing. 
+
+### Other Accounting Software {#sec-other-accounting}
+
+Beyond QuickBooks, several other software options exist, each with its strengths and weaknesses:
+
+* [Xero](https://www.xero.com/): Offers a user-friendly interface and strong integration capabilities, making it popular among small businesses. 
+
+* [Sage 50](https://www.sage.com/en-us/products/sage-50/): A desktop accounting software with robust reporting and features for larger businesses. 
+
+* [Wave Accounting](https://www.waveapps.com/): A free option that provides basic accounting features, suitable for startups and small businesses. 
+
+* [Zoho Books](https://www.zoho.com/books/): A comprehensive online accounting software with various features, including project management. 
+
+* [FreshBooks](https://www.freshbooks.com/): A popular choice for freelancers and sole proprietors, known for its simplicity.
+
+### Key Features of Accounting Software {#sec-accounting-software}
+
+Common features across different accounting software include bookkeeping and recording of financial transactions, invoicing, expense tracking and managing and categorising business expenses, payroll processing financial reporting to generate reports like income statements and balance sheets, and inventory management to track and manage inventory levels.
+
+## Business intelligence and analytics platforms {#sec-business-intelligence}
+
+[Power BI](https://www.microsoft.com/en-us/power-platform/products/power-bi), [Tableau](https://www.tableau.com/), and [Qlik](https://www.qlik.com/us)  are classified as business intelligence (BI) tools or data analytics platforms. They share the common goal of enabling users to interact with data, visualise it, analyse it, and ultimately, make data-driven decisions. However, they each have unique strengths and features that cater to different needs and preferences.
+
+### PowerBI {#sec-powerbi}
+
+Microsoft's BI platform offers a wide range of functionalities, including data connectivity, data modelling, interactive visualisations, and dashboard creation. It's known for its ease of use and seamless integration with other Microsoft products.
+
+### Qlik {#sec-qlik}
+
+This platform focuses on its associative data model, allowing users to explore relationships within data freely. It also offers strong data integration capabilities and is well-suited for large, complex datasets.
+
+### Tableau {#sec-tableau}
+
+Tableau is highly regarded for its visual analytics capabilities, enabling users to create stunning and interactive dashboards. It's known for its user-friendly interface and strong visualisation options.
+
+### Comparison {#sec-bi-comparison}
+
+#### Ease of Use
+
+Power BI is generally considered to have a more intuitive interface, while Qlik Sense is more powerful but can have a steeper learning curve. Tableau's drag-and-drop interface is known for its ease of use.
+
+#### Data Integration:
+Qlik is particularly strong in data integration and can handle diverse data sources, while Tableau offers a dedicated tool ([Tableau Prep](https://www.tableau.com/products/prep)) for data preparation. Power BI's data integration capabilities are also robust, particularly when used in conjunction with other Microsoft products. 
+
+#### Visualisation
+
+Tableau is renowned for its visual analytics, offering a wide array of visual options and a focus on storytelling through data. Power BI also offers extensive visualisation capabilities, and Qlik provides a unique approach with its associative model. 
+
+#### Scalability and performance
+
+All three tools are scalable, but Qlik is particularly well-suited for large, real-time datasets. Power BI is strong for smaller to medium datasets and can leverage [Microsoft Azure](https://azure.microsoft.com/en-gb/) for scalability. Tableau's performance depends on the complexity of the dashboards, but it's generally robust for complex visualisations.
+
+#### Pricing
+
+Power BI is known for its affordable pricing, while Tableau and Qlik Sense can be more expensive, particularly for enterprise users. 
+
+## Cloud-based data storage {#sec-cloud-storage}
+
+In today's digital age, efficient data storage and quick access are crucial, particularly as remote work becomes more prevalent. Cloud storage solutions like [Google Drive](https://workspace.google.com/products/drive/), [Dropbox](https://www.dropbox.com), and [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) have become vital tools for both businesses and individuals due to their ease of use and collaborative features.
+
+### Google Drive {#sec-google-drive}
+
+Google Drive is a cloud storage service included in the Google Suite or Google Workspace of tools that allows users to store, sync, and access files across 
+multiple devices and platforms via an internet connection. It also offers features like collaboration tools, document creation, and sharing capabilities.
+
+### OneDrive {#sec-microsoft-onedrive}
+
+OneDrive is a cloud storage service by Microsoft included in the Microsoft 365 set of applications that provides collaboration, document creation, and sharing tools. It allows users to store and sync files across multiple devices and offers 5GB of free storage. Paid plans are available for additional storage ranging from 50GB to 1TB.
+
+### Dropbox {#sec-dropbox}
+
+Dropbox is a cloud storage service that allows users to store, share, and sync files across multiple devices. Available on Windows, Mac, iOS, and Android, it offers document creation, collaboration, and sharing tools. With 2GB of free storage, paid plans range from 200GB to 3TB for additional needs.
+
+## Databases {#sec-database}
+
+A database is an organised collection of structured and/or unstructured data, typically stored electronically in a computer system. It's a system for storing and managing data, and it's managed by a Database Management System (DBMS). Databases are used to store, retrieve, and manipulate data efficiently.
+
+Hence, the concept of a database is both software, which deals with the handling and management of the data, and hardware, which deals with the physical storage of the data.
+
+### SQL and other relational databases {#sec-database-sql}
+
+SQL databases, also known as _relational databases_, are systems that store collections of tables and organise structured sets of data in a tabular columns-and-rows format, similar to that of a spreadsheet. The databases are built using **structured query language (SQL)**, the query language that not only makes up all relational databases and relational database management systems (RDBMS), but also enables them to “talk to each other”. 
+
+The history of database technology/relational databases SQL was invented as a language in the early 1970s, which means SQL databases have been around for as long as the Internet itself. Dubbed the structured English query language (SEQUEL), SQL was originally created to streamline access to relational database systems and to assist with the processing of information. Today, SQL remains one of the most popular and widely used query languages in open-source database technology due to its flexibility, ease of use, and seamless integration with a variety of different programming languages. You’ll find SQL being used throughout all types of high-performing, data-centric applications. 
+
+### NoSQL {#sec-database-nosql}
+
+NoSQL stands for *"Not Only SQL."* It refers to a type of database that doesn't rely on the traditional relational database models, which are organised into tables with fixed schemas and use SQL for querying. NoSQL databases offer a more flexible approach to data storage and querying, often using document, graph, key-value, or other data models. NoSQL databases are equipped to handle large volumes of structured, semi-structured, and unstructured data from non-traditional sources.
+
+Popular database management systems include Microsoft SQL Server, PostgreSQL, MongoDB, Redis, Elasticsearch, SQLite, MariaDB, IBM Db2, Oracle Database, and MySQL. In essence, databases are fundamental to modern IT infrastructure, enabling organisations to store, manage, and analyse data efficiently for various applications, including websites, apps, and business processes. 
+
+## Management information systems {#sec-mis}
+
+A Management Information System (MIS) is an integrated system that collects, processes, stores, and disseminates information to support managerial decision-making and improve operational efficiency. It essentially acts as a tool for gathering and analysing data, converting it into actionable insights, and making those insights available to the right people within an organisation.
+
+### Key Features {#sec-mis-features}
+
+* **Data Collection and Storage** - MIS systems gather data from various sources, both internal (e.g., sales records, inventory) and external (e.g., market trends, competitor information).
+
+* **Data Processing and Analysis** - The collected data is processed and analysed to identify trends, patterns, and opportunities, often using sophisticated tools and techniques.
+
+* **Information Dissemination** - The analysed information is then formatted and delivered to managers and other stakeholders in a way that is easy to understand and use.
+
+* **Decision Support** - MIS provides the information that managers need to make informed decisions about various aspects of their business, such as sales, marketing, finance, and operations.
+
+* **Improved Efficiency** - By providing timely and accurate information, MIS helps organisations to operate more efficiently, reduce costs, and improve decision-making. 
+
+### Examples of MIS applications {#sec-mis-examples}
+
+* **Sales and Marketing** - Tracking sales figures, analysing marketing campaign effectiveness, and identifying customer trends.
+
+* **Accounting and Finance** - Managing financial records, generating financial statements, and tracking investments.
+
+* **Human Resources** - Managing employee information, tracking performance, and supporting recruitment and training activities.
+
+* **Inventory Management** - Tracking inventory levels, managing warehouses, and forecasting demand. 
+
+* **Health records** - tracking of patients and clients of various health services. This is often called a Health Management Information System (HMIS).
+
+* **Customer-relationship manager** - tracking of clients/customers data and interactions with company (see @sec-crm).
+
+## Customer-relationship Manager {#sec-crm}
+
+Customer Relationship Management (CRM) systems are software applications that help businesses manage and analyse customer data and interactions. They are used to collect, organise, and process information about customers, including their interactions, preferences, and purchase history. The goal is to improve customer service, increase customer retention, and drive sales growth.
+
+### Key Features and Functionality {#sec-crm-features}
+
+### Data Management
+
+CRMs store and organise customer data from various sources, like sales interactions, customer service inquiries, marketing campaigns, and social media.
+
+#### Sales Management
+
+CRMs help track sales opportunities, pipeline management, and sales activities, enabling sales teams to improve efficiency and close deals faster.
+
+#### Customer Service
+
+CRMs facilitate communication with customers, track service requests, and help resolve issues, leading to improved customer satisfaction. 
+
+#### Marketing Automation
+
+CRMs can be integrated with marketing automation tools, allowing businesses to personalise and automate marketing campaigns. 
+
+#### Reporting and Analytics
+
+CRMs provide insights into customer behaviour, sales performance, and overall business trends, enabling data-driven decision-making. 
+
+### Types of CRM Systems {#sec-crm-types}
+
+* **Operational CRM** - Focuses on day-to-day customer interactions, such as sales and customer service.
+
+* **Analytical CRM** - Analyses customer data to identify trends, patterns, and opportunities.
+
+* **Collaborative CRM** - Facilitates communication and collaboration between different departments, such as sales, marketing, and customer service.
+
+* **Strategic CRM** - Uses customer insights to make strategic decisions about product development, pricing, and market positioning.
+
+### Benefits of using a CRM {#sec-crm-benefits}
+
+* **Improved Customer Service** - By having a centralised database of customer information, companies can provide better and more personalised service. 
+
+* **Increased Sales** - CRMs help sales teams manage leads, track opportunities, and close deals more effectively. 
+
+* **Enhanced Customer Retention** - By understanding customer preferences and needs, businesses can build stronger relationships and retain customers. 
+
+* **Data-Driven Decision Making** - CRMs provide valuable insights into customer behaviour and business performance, enabling data-driven decision-making. 
+
+* **Increased Efficiency** - Automating tasks and streamlining processes can free up employees to focus on more strategic initiatives. 
+
+## Statistical packages {#sec-stats-packages}
+
+[SAS](https://www.sas.com/en_us/home.html), [SPSS](https://www.ibm.com/products/spss-statistics), and [Stata](https://www.stata.com/) are popular statistical software packages used for data analysis, but have distinct strengths and target industries. SPSS is known for its user-friendly interface, making it popular in social sciences and market research. Stata is a general-purpose statistical software, often favoured for econometrics, and known for its command-line interface and strong data management features. SAS is a powerful system for advanced analytics, business intelligence, and data management, and is widely used in various industries due to its scalability and robustness. 
+
+### SPSS {#sec-stats-spss}
+
+Statistical Package for the Social Sciences or SPSS has a ser-friendly interface and intuitive data management making it suitabile for social sciences and market research. It focuses on descriptive and inferential statistics, data exploration, and model building. Its common uses are for surveys, market research, data mining, and other social science applications. The interface is Menu-driven with a graphical user interface.
+ 
+### Stata {#sex-stats-stata}
+
+Stata is a general-purpose software with strong data management capabilities, and a command-line interface. It is used commonly in econometrics, time series analysis, and statistical modelling. Its most commong uses are in economics, biomedicine, and political science research. It has some graphical user interface but full capability is accessed via the command-line. It has a graphical output. 
+
+### SAS {#sec-stats-sas}
+
+SAS or Statistical Analysis System is robust, scalable, and suitable for advanced analytics, business intelligence, and data management. It can be used for Multivariate analysis, predictive analytics, and large-scale data processing. It's common sses are for business analytics, data warehousing, and industry-specific applications. The interface to SAS is primarily as a procedural language.
+
+## Programming languages {#sec-programming-languages}
+
+R, Python, and Julia are powerful programming languages frequently used in data science, scientific computing, and related fields. They offer distinct advantages, making them suitable for various tasks.
+
+### R {#sec-language-r}
+
+[R](https://r-project.org) is a language and environment for statistical computing and graphics. It is a [GNU](https://en.wikipedia.org/wiki/GNU) project which is similar to the [S language and environment](https://en.wikipedia.org/wiki/S_(programming_language)) which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
+
+R provides a wide variety of statistical (linear and non-linear modelling, classical statistical tests, time-series analysis, classification, clustering, etc.) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
+
+One of R’s strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
+
+R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+
+R is unique in that it is not general-purpose. It does not compromise by trying to do a lot of things. It does a few things very well, mainly statistical analysis and data visualisation. While you can find data analysis and machine learning libraries for languages like [Python](https://www.python.org/), R has many statistical functionalities built into its core. No third-party libraries are needed for much of the core data analysis you can do with the language.
+
+But even with this specific use case, it is used in every industry you can think of because a modern business runs on data. Using past data, data scientists and data analysts can determine the health of a business and give business leaders actionable insights into the future of their company.
+
+Just because R is specifically used for statistical analysis and data visualisation doesn't mean its use is limited. It’s actually quite popular, ranking 12th in the [TIOBE index](https://www.tiobe.com/tiobe-index/) of the most popular programming languages.
+
+Academics, scientists, and researchers use R to analyse the results of experiments. In addition, businesses of all sizes and in every industry use it to extract insights from the increasing amount of daily data they generate.
+
+### Python {#sec-language-python}
+
+[Python](https://www.python.org/) is an interpreted, interactive, object-oriented programming language. It incorporates modules, exceptions, dynamic typing, very high level dynamic data types, and classes. It supports multiple programming paradigms beyond object-oriented programming, such as procedural and functional programming. Python combines remarkable power with very clear syntax. It has interfaces to many system calls and libraries, as well as to various window systems, and is extensible in C or C++. It is also usable as an extension language for applications that need a programmable interface. Finally, Python is portable: it runs on many Unix variants including Linux and macOS, and on Windows.
+
+Python is a high-level general-purpose programming language that can be applied to many different classes of problems.
+
+The language comes with a large standard library that covers areas such as string processing (regular expressions, Unicode, calculating differences between files), internet protocols (HTTP, FTP, SMTP, XML-RPC, POP, IMAP), software engineering (unit testing, logging, profiling, parsing Python code), and operating system interfaces (system calls, filesystems, TCP/IP sockets). Look at the table of contents for The Python Standard Library to get an idea of what’s available. A wide variety of third-party extensions are also available. Consult the Python Package Index to find packages of interest to you.
+
+### Julia {#sec-language-julia}
+
+[Julia](https://julialang.org/) is a high-level, open-source, general-purpose programming language designed for technical and scientific computing. It's known for its fast performance, approaching that of languages like C and Fortran, while remaining relatively easy to use. Julia is particularly well-suited for tasks like numerical analysis, data science, and machine learning.
 
 
+<!-- ## Summary of tools {#sec-tools-summary}
+
+Add here a summary tables of each tool against the steps of the data pathway -->
+
+
+[^excelnote]: It is challenging to make more precise estimates for this. The lower end of this estimate is most likely very conservative and based on historical information. The upper end of this estimate is based on Microsoft's own estimation based on subscription to Microsoft 365. These estimates likely don't include unlicensed or unauthorised usage of the software.
+
+[^odfnote]: To see a list of free and proprietary software that use the ODF XML standard, see https://en.wikipedia.org/wiki/OpenDocument.

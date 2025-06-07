@@ -59,8 +59,3 @@ sector.
 
 5. **Establish Monitoring Frameworks:** Develop systems to evaluate the impact of data-driven policies.
 
-<br/>
-<br/>
-
-### References {.unnumbered}
-
