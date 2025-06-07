@@ -35,12 +35,13 @@ book:
       chapters:
         - 08-data-security.qmd
         - 09-data-tools.qmd
-        - 10-data-collection.qmd
-    - part: Data Analysis and Visualisation
+        - 10-project-based-workflow.qmd
+    - part: Exploratory Data Analysis
       chapters:        
-        - 11-intro-data-analysis.qmd
-        - 12-exploratory-data-analysis.qmd
-    # - references.qmd
+        - 11-exploratory-data-analysis.qmd
+        - 12-univariate-statistics.qmd
+        - 13-bivariate-statistics.qmd
+    - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd
   #   - 13-odk-setup.qmd

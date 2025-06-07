@@ -1,5 +1,0 @@
----
-output-file: data-entry-system.html
----
-
-# Data entry system {#sec-data-entry}
