@@ -216,15 +216,15 @@ CRMs provide insights into customer behaviour, sales performance, and overall bu
 
 ### SPSS {#sec-stats-spss}
 
-Statistical Package for the Social Sciences or SPSS has a ser-friendly interface and intuitive data management making it suitabile for social sciences and market research. It focuses on descriptive and inferential statistics, data exploration, and model building. Its common uses are for surveys, market research, data mining, and other social science applications. The interface is Menu-driven with a graphical user interface.
+Statistical Package for the Social Sciences or SPSS has a ser-friendly interface and intuitive data management making it suitable for social sciences and market research. It focuses on descriptive and inferential statistics, data exploration, and model building. Its common uses are for surveys, market research, data mining, and other social science applications. The interface is Menu-driven with a graphical user interface.
  
 ### Stata {#sex-stats-stata}
 
-Stata is a general-purpose software with strong data management capabilities, and a command-line interface. It is used commonly in econometrics, time series analysis, and statistical modelling. Its most commong uses are in economics, biomedicine, and political science research. It has some graphical user interface but full capability is accessed via the command-line. It has a graphical output. 
+Stata is a general-purpose software with strong data management capabilities, and a command-line interface. It is used commonly in econometrics, time series analysis, and statistical modelling. Its most common uses are in economics, biomedicine, and political science research. It has some graphical user interface but full capability is accessed via the command-line. It has a graphical output. 
 
 ### SAS {#sec-stats-sas}
 
-SAS or Statistical Analysis System is robust, scalable, and suitable for advanced analytics, business intelligence, and data management. It can be used for Multivariate analysis, predictive analytics, and large-scale data processing. It's common sses are for business analytics, data warehousing, and industry-specific applications. The interface to SAS is primarily as a procedural language.
+SAS or Statistical Analysis System is robust, scalable, and suitable for advanced analytics, business intelligence, and data management. It can be used for Multivariate analysis, predictive analytics, and large-scale data processing. It's common uses are for business analytics, data warehousing, and industry-specific applications. The interface to SAS is primarily as a procedural language.
 
 ## Programming languages {#sec-programming-languages}
 
