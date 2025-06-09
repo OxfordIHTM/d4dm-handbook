@@ -11,7 +11,7 @@ suppressPackageStartupMessages(source(here::here("packages.R")))
 for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
 ```
 
-# Case Study: The Use of Data in Local Governance - A Michigan Perspective {#sec-cs3-michigan}
+# The Use of Data in Local Governance - A Michigan Perspective {#sec-cs3-michigan}
 
 This case study explores the current state of data-driven decision-making in Michigan's local governments, highlighting challenges and opportunities for integrating data into policy and governance based on the results of the [Michigan Public Policy Survey (MPPS)](https://closup.umich.edu/michigan-public-policy-survey)\index{Michigan Public Performance Survey}[@ivacko_data-driven_2013].
 
