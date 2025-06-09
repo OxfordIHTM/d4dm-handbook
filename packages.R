@@ -14,6 +14,7 @@ library(yaml)
 ## Packages for working with data ----
 library(dplyr)
 library(ggplot2)
+library(ngramr)
 
 
 ## Packages for colour palettes ----

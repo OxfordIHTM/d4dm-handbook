@@ -2,7 +2,7 @@
 output-file: case_study_one.html
 ---
 
-# Case study: Data use and analytics in water quality management {#sec-cs1-water-management}
+# Data use and analytics in water quality management {#sec-cs1-water-management}
 
 This is a case study about the Division of Water\index{Division of Water} (DOW), a local government agency in the State of New York, which has attempted to improve its analytic capabilities by developing efficient data management practices, suggest governance models, and identify analytic techniques potentially beneficial to addressing harmful algal blooms\index{harmful algal blooms} (HABs; see @fig-habs) and high chloride concentrations\index{high chloride concentrations}[@choi_towards_2021].
 

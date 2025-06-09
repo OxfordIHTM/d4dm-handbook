@@ -25,22 +25,25 @@ book:
     - part: Data Concepts
       chapters:
         - 01-introduction.qmd
-        - 02-case-study-one.qmd
-        - 03-case-study-two.qmd
-        - 04-case-study-three.qmd
-        - 05-case-study-four.qmd
-        - 06-case-study-five.qmd
-        - 07-all-about-data.qmd        
+        - 02-all-about-data.qmd
+    - part: Data Case Studies
+      chapters:
+        - 03-case-study-one.qmd
+        - 04-case-study-two.qmd
+        - 05-case-study-three.qmd
+        - 06-case-study-four.qmd
+        - 07-case-study-five.qmd
     - part: Data Management
       chapters:
         - 08-data-security.qmd
         - 09-data-tools.qmd
-        - 10-project-based-workflow.qmd
+        - 10-using-spreadsheets.qmd
+        - 11-project-based-workflow.qmd
     - part: Exploratory Data Analysis
       chapters:        
-        - 11-exploratory-data-analysis.qmd
-        - 12-univariate-statistics.qmd
-        - 13-bivariate-statistics.qmd
+        - 12-exploratory-data-analysis.qmd
+        - 13-univariate-statistics.qmd
+        - 14-bivariate-statistics.qmd
     - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd

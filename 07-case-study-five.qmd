@@ -2,7 +2,7 @@
 output-file: case-study-five.html
 ---
 
-# Case Study: Indigenous Data Governance in the United States {#sec-cs5-indigenous}
+# Indigenous Data Governance in the United States {#sec-cs5-indigenous}
 
 This case study describes the challenges and opportunities with regard to Indigenous data governance in the United States[@carroll_indigenous_2019].
 

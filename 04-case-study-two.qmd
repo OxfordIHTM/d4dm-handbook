@@ -2,7 +2,7 @@
 output-file: case_study_two.html
 ---
 
-# Case Study: Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia {#sec-cs2-indonesia}
+# Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia {#sec-cs2-indonesia}
 
 In an era where technology and data are transforming governance, adopting a data-driven approach is crucial for improving decision-making and fostering transparency. This case study explores Indonesia's journey toward integrating data into local governance, highlighting both challenges and opportunities, and offers recommendations for mid-level government officials to enhance their governance strategies[@sayogo_data-driven_2024].
 

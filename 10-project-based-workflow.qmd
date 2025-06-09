@@ -1,7 +1,0 @@
----
-output-file: project-based-workflow.html
----
-
-# Project-based workflow {#sec-project-based-workflow}
-
-

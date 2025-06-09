@@ -1,0 +1,5 @@
+---
+output-file: bivariate-statistics.html
+---
+
+# Bivariate statistics {#sec-bivariate-statistics} 
