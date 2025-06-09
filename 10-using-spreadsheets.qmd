@@ -34,6 +34,6 @@ ng_freq |>
   ) +
   scale_x_continuous(breaks = seq(from = 1950, to = 2022, by = 5)) +
   labs(x = "Year", y = "Frequency") +
-  theme_oxford(grid = "XY") +
+  theme_oxford(base_family = "", grid = "XY") +
   theme(legend.position = "top")
 ```
