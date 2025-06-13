@@ -1,0 +1,175 @@
+---
+output-file: all-about-spreadsheets.html
+lightbox: auto
+---
+
+```{r}
+#| label: setup
+#| echo: false
+
+suppressPackageStartupMessages(source(here::here("packages.R")))
+for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
+```
+
+# All about spreadsheets {#sec-all-about-spreadsheets}
+
+```{r}
+#| label: spreadsheet-ngram
+#| echo: false
+#| eval: false
+#| message: false
+#| warning: false
+
+spreadsheet_freq <- ngram("spreadsheet", year_start = 1950, year_end = 2024)
+
+excel_freq <- ngram(
+  phrases = "Microsoft Excel", year_start = 1950, year_end = 2024
+)
+
+ng_freq <- rbind(spreadsheet_freq, excel_freq)
+
+ng_freq |>
+  ggplot(
+    mapping = aes(x = Year, y = Frequency, group = Phrase, colour = Phrase)
+  ) +
+  geom_line(linewidth = 1.5) +
+  scale_colour_manual(
+    name = NULL,
+    values = c(oxthema::get_oxford_colours(c("royal", "plum")))
+  ) +
+  scale_x_continuous(breaks = seq(from = 1950, to = 2022, by = 10)) +
+  labs(x = "Year", y = "Frequency") +
+  theme_oxford(
+    base_family = "", grid = "XY", 
+    grid_col = get_oxford_colour("stone")
+  ) +
+  theme(legend.position = "top")
+```
+
+A spreadsheet is a digital tool for organising, analysing, and storing data in tables, originally developed as an electronic version of paper accounting worksheets. It allows users to enter numerical or textual data and formulas that reference other cells, enabling dynamic calculations.
+
+Spreadsheets are interactive with users able to modify values and observe immediate changes in calculated results, facilitating "what-if" analysis. Beyond basic arithmetic, spreadsheets offer financial, statistical, and conditional functions, enhancing their analytical capabilities. Composed of rows (numbered) and columns (labelled with letters), cells are referenced by their alphanumeric coordinates (e.g., A1). Modern spreadsheet applications include multiple worksheets within a workbook, allowing for complex data management. It  can also display data graphically, aiding in understanding trends and patterns.
+
+Spreadsheets have revolutionised business processes by replacing manual systems, offering versatility across various applications where tabular data is essential. Their dynamic cell referencing system allows for efficient and flexible data manipulation, making them indispensable in both professional and personal contexts.
+
+## History of spreadsheets {#sec-history-spreadsheet}
+
+### Paper spreadsheet {#sec-paper-spreadsheet}
+
+The concept of organising data into tabular formats dates back to ancient times, with examples such as Babylonian clay tablets from 1800 BCE as shown in @fig-plimpton322 [@britton_plimpton_2011]. In accounting, the term _"spread sheet"_ was used by at least 1906 to describe a grid system in ledgers[^ledgernote].
+
+![A Babylonian clay tablet believed to have been written around 1800 BC containing mathematical table written in cuneiform script](images/plimpton322.jpg){#fig-plimpton322 fig-align="center"}
+
+Before digital spreadsheets, _"spread"_ referred to large, two-page layouts in publications. The evolution of the term _"spread-sheet"_ reflects its transition from physical, oversized ledger pages with examples shown in [@fig-ledger-accounting; @fig-ledger-titanic] to the digital tool we use today, emphasising their role in accounting and data organisation.
+
+::: {layout-ncol=2 layout-valign="bottom"}
+![Accounting ledger from 1911](images/ledger1911.jpg){#fig-ledger-accounting}
+
+![Manifest of passengers of the Titanic](images/titanic.jpg){#fig-ledger-titanic}
+:::
+
+### Electronic spreadsheet {#sec-electronic-spreadsheet}
+
+@fig-spreadsheet-timeline shows key development milestones of the electronic spreadsheet.
+
+```{r}
+#| label: fig-spreadsheet-timeline
+#| fig-cap: Timeline of development of the electronic spreadsheet
+#| echo: false
+#| fig-align: center
+#| width: 10
+#| height: 6.67
+
+timeline <- read.csv("data/spreadsheet_timeline.csv")
+
+timeline |>
+  dplyr::mutate(
+    event_name = paste0(year, ": ", event_name),
+    n = c(2, -1.5, 3, -1.2, 1.8, -2, 1, -2.3, 2.2, -1, 1, -1.8)
+  ) |>
+  ggplot(
+    mapping = aes(x = year, y = n, label = stringr::str_wrap(event_name, 15))
+  ) +
+  geom_hline(yintercept = 0, colour = get_oxford_colour("stone"), linewidth = 1) +
+  geom_segment(
+    mapping = aes(x = year, xend = year, y = 0, yend = n), 
+    colour = get_oxford_colour("stone"), linewidth = 0.5
+  ) +
+  geom_label(size = 2.5, fill = get_oxford_colour("ochre")) +
+  scale_x_continuous(
+    breaks = seq(from = 1960, to = 2010, by = 5), limits = c(1960, 2010)
+  ) +
+  scale_y_discrete(breaks = seq(from = -4, to = 4, by = 1)) +
+  labs(x = NULL, y = NULL) +
+  theme_oxford(base_family = "", grid = FALSE)
+```
+
+## Spreadsheets as databases {#sec-spreadsheet-database}
+
+Spreadsheets and databases share similarities but are fundamentally different. A spreadsheet is essentially a single table, while a database consists of multiple tables with machine-readable relational structures. Although a spreadsheet workbook containing multiple sheets has interacting tables, it lacks the relational complexity of a 
+database. Spreadsheets and databases are interoperable, however, with spreadsheets being able to be converted into database tables, and database queries being able to be exported to spreadsheets for analysis.
+
+## Spreadsheets as multi-function tools {#sec-spreadsheet-function}
+
+Spreadsheets are widely used software tools for every step of the data pathway - _data entry_, _storage_, _analysis_, and _visualisation_. Spreadsheets are able to implement such functionality through an _end-user development_ approach.
+
+### End-user development {#sec-end-user-development}
+
+Spreadsheets are designed as _end-user development_ (EUD) tools. EUD refers to techniques in which non-professional developers are able to create automated tasks and complex data objects without in-depth knowledge of a programming language. Many find using spreadsheets for calculations and analysis much easier. This most likely stems from the following key features:
+
+#### Ease of use {.unnumbered}
+
+Spreadsheets leverage spatial relationships, making it intuitive to establish program connections, unlike sequential programming which requires extensive text.
+
+#### Forgiving nature {.unnumbered} 
+
+Partial results and functions can operate even if other parts are incomplete or 
+contain errors, simplifying the development process.
+
+#### Visual enhancements {.unnumbered} 
+
+Modern spreadsheets use colours, fonts, and lines to provide visual cues, aiding 
+comprehension and organisation.
+
+#### Advanced functionality {.unnumbered} 
+
+Extensions enable users to create complex functions and integrate machine learning models, expanding their capabilities beyond basic calculations.
+
+#### Versatility {.unnumbered} 
+
+Beyond numerical data, spreadsheets support Boolean logic, graphical design, and even SQL queries through relational data storage and formula-based expressions.
+
+In essence, spreadsheets offer a flexible, powerful platform that caters to diverse tasks, making them an invaluable tool for many users despite their limitations compared to traditional programming environments.
+
+### Limitations and shortcomings of spreadsheets {#sec-spreadsheet-limitations}
+
+Unfortunately, the same multi-functionality and features that make spreadsheets user-friendly and easily accessible to most also make them fragile, non-robust, and prone to causing/producing errors.
+
+In order to be able to function as a tool for the various steps in the data pathway while still being user-friendly meant combining the data interface functionality (data storage and data access) with the programming/scripting capabilities (for data cleaning/processing, analysis, and visualisation) into a single graphical user interface with no clear distinction between them and no clear mechanism for programming/script testing. This brings about the following limitations and shortcomings:
+
+#### Lack of standard mechanisms for management and quality assurance of spreadsheets produced by organisations {.unnumbered}
+
+Given that data storage and access along with data processing/cleaning, analysis and visualisation capabilities sit side-by-side within the spreadsheet tool/software, developing routine and automated audit mechanisms for both data validity/quality and accuracy/correctness of data processing, analysis, and visualisation is nearly impossible. These audits will need to be done manually and line-by-line making them highly onerous. This is most likely the reason why a survey conducted in 2011 of nearly 1,500 people in the UK saw 72% reporting that no internal department checks their spreadsheets for accuracy, that only 13% said that internal audit reviews their spreadsheets, while a mere 1% receive checks from their risk department [@noauthor_spreadsheet_nodate].
+
+#### Reliability issues {.unnumbered}
+
+An estimated 1% of all formulas in operational spreadsheets are in error [@powell_errors_2009].
+
+#### Practical expressiveness is limited {.unnumbered}
+
+Whilst the graphical user interface of a spreadsheet using its _cell-at-a-time_ approach is accessible and user-friendly for most users and for simple data operations, applying the same to a complex data model requiring more complicated calculations require tedious attention to detail. Users will tend to have difficulty remembering the meanings of hundreds or thousands of alphanumeric cell addresses that appear in per cell formulas.
+
+#### Formulas expressed in terms of cell addresses are hard to keep straight and hard to audit {.unnumbered}
+
+A research paper critically reviewing spreadsheet errors has shown that auditors who check both numerical results and the cell formulas find no more errors than auditors who only check numerical results [@powell_critical_2008]. By the nature of the _cell-at-a-time_ approach, spreadsheets typically contain many copies of the same formula. Thus, when a formula needs to be edited, these edits will need to be applied to all cells containing that formula. This is in sharp contrast to a well-known principle in programming - _do not repeat yourself_ or _DRY_ - which emphasises the best practice of not repeating code to implement/achieve the same process or output. The _DRY_ approach makes code implementation much more efficient and code auditing much more feasible and robust.
+
+#### Maintenance of volumes of spreadsheets is challenging {.unnumbered}
+
+Creating and managing a system to maintain vast amounts of spreadsheets for an individual or for an organisation is a challenging endeavour. Without built-in functionalities for proper security, version control and audit trails, and prevention of unintentional introduction of errors, it is more likely that management of spreadsheets end up being ad hoc, non-systematic, and tedious to implement.
+
+
+<br/>
+<br/>
+
+
+[^ledgernote]: "We maintain, in our general ledger, a so-called Spread Sheet which is a long sheet with the name of each individual plant in a particular column." [from @middleton_baking_1933, pp. 763]

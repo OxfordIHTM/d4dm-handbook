@@ -37,13 +37,14 @@ book:
       chapters:
         - 08-data-security.qmd
         - 09-data-tools.qmd
-        - 10-using-spreadsheets.qmd
+        - 10-all-about-spreadsheets.qmd
         - 11-project-based-workflow.qmd
+        - 12-data-entry-storage.qmd
     - part: Exploratory Data Analysis
       chapters:        
-        - 12-exploratory-data-analysis.qmd
-        - 13-univariate-statistics.qmd
-        - 14-bivariate-statistics.qmd
+        - 13-exploratory-data-analysis.qmd
+        - 14-univariate-statistics.qmd
+        - 15-bivariate-statistics.qmd
     - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd
@@ -63,7 +64,7 @@ crossref:
   appendix-delim: ":"
 
 bibliography: references.bib
-csl: nature.csl
+csl: who-europe-harvard.csl
 
 format:
   html:
