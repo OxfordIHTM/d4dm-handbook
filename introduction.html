@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,7 +60,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-52a0159e1581fd4d72d8415155fb0da6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-294fa1c87bd05ab18c889b332083caa9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2c583ca0f5e1d80a00909d1e0daac7e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -272,14 +271,20 @@ gtag('config', '', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./using-spreadsheets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using spreadsheets</span></span></a>
+  <a href="./all-about-spreadsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">All about spreadsheets</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project-based-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Project-based workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-entry-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data entry/collection and storage using spreadsheets</span></span></a>
   </div>
 </li>
       </ul>
@@ -296,19 +301,19 @@ gtag('config', '', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exploratory-data-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./univariate-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Univariate statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Univariate statistics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bivariate-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bivariate statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Bivariate statistics</span></span></a>
   </div>
 </li>
       </ul>
@@ -368,7 +373,7 @@ gtag('config', '', { 'anonymize_ip': true});
 <p>Good decisions are not just supported by data; they are shaped by those who know how to use it wisely.</p>
 <section id="sec-data-driven-decision" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-data-driven-decision"><span class="header-section-number">1.1</span> Data-driven decision-making</h2>
-<p>Data-driven decision-making or DDDM refers to the process of making decisions based on data and information rather than intuition or experience alone. It involves collecting, analysing, interpreting, and presenting data to support decision-making processes<span class="citation" data-cites="stobierski_advantages_2019 ivacko_data-driven_2013 choi_towards_2021"><sup><a href="references.html#ref-stobierski_advantages_2019" role="doc-biblioref">1</a>–<a href="references.html#ref-choi_towards_2021" role="doc-biblioref">3</a></sup></span>.</p>
+<p>Data-driven decision-making or DDDM refers to the process of making decisions based on data and information rather than intuition or experience alone. It involves collecting, analysing, interpreting, and presenting data to support decision-making processes<span class="citation" data-cites="stobierski_advantages_2019 ivacko_data-driven_2013 choi_towards_2021">(<a href="references.html#ref-stobierski_advantages_2019" role="doc-biblioref">Stobierski, 2019</a>; <a href="references.html#ref-ivacko_data-driven_2013" role="doc-biblioref">Ivacko, Horner &amp; Crawford, 2013</a>; <a href="references.html#ref-choi_towards_2021" role="doc-biblioref">Choi et al., 2021</a>)</span>.</p>
 <p>In this approach, decisions are made by relying on facts, figures, trends patterns, and insights derived from data. The goal is to make objective, evidence-based decisions that are more accurate, consistent, and transparent.</p>
 <div id="nte-dddm" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -393,7 +398,7 @@ Note&nbsp;1.1: Features of data-driven decision-making
 <p>Data-driven decision-making often involves the use of tools, techniques, and technologies such as data analytics, machine learning, artificial intelligence, and visualisation software. By leveraging these tools, organisations can transform raw data into actionable insights that drive better outcomes.</p>
 <p>In today’s organisations, this approach has become increasingly important as it allows for more objective and accurate decision-making. The process typically includes identifying relevant data sources, applying analytical techniques, and leveraging technologies like machine learning, artificial intelligence, and visualisation tools to transform raw data to actionable insights that drive better outcomes.</p>
 <p>An organisation that is data-driven also benefits in being able to spot opportunities and threats early. By analysing data regularly, organisations can anticipate changes and act before problems arise.</p>
-<p>Saving costs is another advantage. In a survey of executives of Fortune 1000 companies regarding their data investments since 2012 commissioned by the Harvard Business Review, nearly half (48.4%) of respondents report that they are documenting measurable results from their investments in big data and 80.7% of the executives describing their investments in big data as being successful<span class="citation" data-cites="bean_how_2017 stobierski_advantages_2019"><sup><a href="references.html#ref-stobierski_advantages_2019" role="doc-biblioref">1</a>,<a href="references.html#ref-bean_how_2017" role="doc-biblioref">4</a></sup></span>.</p>
+<p>Saving costs is another advantage. In a survey of executives of Fortune 1000 companies regarding their data investments since 2012 commissioned by the Harvard Business Review, nearly half (48.4%) of respondents report that they are documenting measurable results from their investments in big data and 80.7% of the executives describing their investments in big data as being successful <span class="citation" data-cites="bean_how_2017 stobierski_advantages_2019">(<a href="references.html#ref-bean_how_2017" role="doc-biblioref">Bean, 2017</a>; <a href="references.html#ref-stobierski_advantages_2019" role="doc-biblioref">Stobierski, 2019</a>)</span>.</p>
 </section>
 <section id="sec-about-this-course" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="sec-about-this-course"><span class="header-section-number">1.2</span> About this course</h2>
@@ -458,18 +463,18 @@ Note&nbsp;1.1: Features of data-driven decision-making
 <p>In summary, using the “who, what, when, where, how, and why” framework provides a systematic method to identify key elements of data, ensuring clarity and focus in data management and analysis.</p>
 
 
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-stobierski_advantages_2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Stobierski, T. The advantages of data-driven decision-making. Business insights. <a href="https://online.hbs.edu/blog/post/data-driven-decision-making">https://online.hbs.edu/blog/post/data-driven-decision-making</a> (2019).</div>
-</div>
-<div id="ref-ivacko_data-driven_2013" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ivacko, T. M., Horner, D. &amp; Crawford, M. Q. Data-driven decision-making in michigan local government. <em><span>SSRN</span> Journal</em> (2013) doi:<a href="https://doi.org/10.2139/ssrn.2351916">10.2139/ssrn.2351916</a>.</div>
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-bean_how_2017" class="csl-entry" role="listitem">
+Bean R (2017). How companies say they’re using big data. Harvard Business Review. (<a href="https://hbr.org/2017/04/how-companies-say-theyre-using-big-data">https://hbr.org/2017/04/how-companies-say-theyre-using-big-data</a>).
 </div>
 <div id="ref-choi_towards_2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Choi, Y. <em>et al.</em> Towards data-driven decision-making in government: Identifying opportunities and challenges for data use and analytics. in (2021). doi:<a href="https://doi.org/10.24251/HICSS.2021.268">10.24251/HICSS.2021.268</a>.</div>
+Choi Y, Gil-Garcia J, Burke GB, Costello J, Werthmuller D, Aranay O (2021). Towards data-driven decision-making in government: Identifying opportunities and challenges for data use and analytics. <em>Hawaii international conference on system sciences</em>. doi:<a href="https://doi.org/10.24251/HICSS.2021.268">10.24251/HICSS.2021.268</a>.
 </div>
-<div id="ref-bean_how_2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Bean, R. <a href="https://hbr.org/2017/04/how-companies-say-theyre-using-big-data">How companies say they’re using big data</a>. <em>Harvard Business Review</em> (2017).</div>
+<div id="ref-ivacko_data-driven_2013" class="csl-entry" role="listitem">
+Ivacko TM, Horner D, Crawford MQ (2013). Data-driven decision-making in michigan local government. <span>SSRN</span> Journal. doi:<a href="https://doi.org/10.2139/ssrn.2351916">10.2139/ssrn.2351916</a>.
+</div>
+<div id="ref-stobierski_advantages_2019" class="csl-entry" role="listitem">
+Stobierski T (2019). The advantages of data-driven decision-making. Business insights [web site]. (<a href="https://online.hbs.edu/blog/post/data-driven-decision-making">https://online.hbs.edu/blog/post/data-driven-decision-making</a>, accessed 12 May 2025).
 </div>
 </div>
 </section>
