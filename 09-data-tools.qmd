@@ -260,11 +260,12 @@ The language comes with a large standard library that covers areas such as strin
 
 [Julia](https://julialang.org/) is a high-level, open-source, general-purpose programming language designed for technical and scientific computing. It's known for its fast performance, approaching that of languages like C and Fortran, while remaining relatively easy to use. Julia is particularly well-suited for tasks like numerical analysis, data science, and machine learning.
 
-
 <!-- ## Summary of tools {#sec-tools-summary}
 
 Add here a summary tables of each tool against the steps of the data pathway -->
 
+<br/>
+<br/>
 
 [^excelnote]: It is challenging to make more precise estimates for this. The lower end of this estimate is most likely very conservative and based on historical information. The upper end of this estimate is based on Microsoft's own estimation based on subscription to Microsoft 365. These estimates likely don't include unlicensed or unauthorised usage of the software.
 

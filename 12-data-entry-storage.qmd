@@ -1,0 +1,6 @@
+---
+output-file: data-entry-storage.html
+---
+
+# Data entry/collection and storage using spreadsheets {#sec-data-entry-storage}
+
