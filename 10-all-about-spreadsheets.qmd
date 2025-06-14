@@ -63,9 +63,11 @@ The concept of organising data into tabular formats dates back to ancient times,
 Before digital spreadsheets, _"spread"_ referred to large, two-page layouts in publications. The evolution of the term _"spread-sheet"_ reflects its transition from physical, oversized ledger pages with examples shown in [@fig-ledger-accounting; @fig-ledger-titanic] to the digital tool we use today, emphasising their role in accounting and data organisation.
 
 ::: {layout-ncol=2 layout-valign="bottom"}
+
 ![Accounting ledger from 1911](images/ledger1911.jpg){#fig-ledger-accounting}
 
 ![Manifest of passengers of the Titanic](images/titanic.jpg){#fig-ledger-titanic}
+
 :::
 
 ### Electronic spreadsheet {#sec-electronic-spreadsheet}
