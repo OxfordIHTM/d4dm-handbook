@@ -133,7 +133,7 @@ Comparison of Excel's 1900 and 1904 date systems
 
 The difference between the two date systems is _1,462 days_. This means that the serial number of a date in the 1900 date system is always 1,462 days greater than the serial number of the same date in the 1904 date system. 1,462 days is equal to _four years and one day (including one leap day)_.
 
-- taken from [Microsoft Support documentation](https://support.microsoft.com/en-gb/office/date-systems-in-excel-e7fe7167-48a9-4b96-bb53-5612a800b487#:~:text=The%201900%20date%20system,-In%20the%201900&text=This%20is%20the%20default%20date,the%20dates%20that%20you%20copied.)
+*taken from [Microsoft Support documentation](https://support.microsoft.com/en-gb/office/date-systems-in-excel-e7fe7167-48a9-4b96-bb53-5612a800b487#:~:text=The%201900%20date%20system,-In%20the%201900&text=This%20is%20the%20default%20date,the%20dates%20that%20you%20copied.)
 
 :::
 
@@ -157,7 +157,7 @@ Step 1: Create a date variable (see @fig-date-format-text-01).
 
 Step 2. Select the date variable you created (see @fig-date-format-text-02).
 
-Step 3: In the menu bar, select Format --> Cells -- >Choose “Text” on the left (see @fig-date-format-text-03).
+Step 3: In the menu bar, select _Format --> Cells --> Choose "Text"_ on the left (see @fig-date-format-text-03).
 
 This approach will only work if you are creating the date variable first and when no date values have been entered yet. If you do this on a date variable that already contain dates, Excel will convert them to a text value of their underlying numeric representation (as described in @nte-excel-dates).
 
