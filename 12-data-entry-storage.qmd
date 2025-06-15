@@ -165,7 +165,7 @@ This approach will only work if you are creating the date variable first and whe
 
 Another way to force Excel to treat dates as text is to begin the date with an apostrophe, like this: `'2014-06-14`. Excel will treat the cells as text, but the apostrophe will not appear when you view the spreadsheet or export it to other formats. This is a handy trick, but it requires impeccable diligence and consistency.
 
-![Enter an apostrophe followed by YYYY-MM-DD date format](images/date_format_text_05.png){#fig-date_format_text_05 fig-align="center" width="70%"}
+![Enter an apostrophe followed by YYYY-MM-DD date format](images/date_format_text_05.png){#fig-date_format_text_05 fig-align="center" width="50%"}
 
 * Create three separate columns with year, month, and day
 
@@ -185,7 +185,7 @@ These will be ordinary numbers, and so Excel will not mess them up. If there is 
 
 For example, `20140614` for `2014-06-14` (see @fig-date-format-text-09).
 
-![Date value as text in YYYYMMDD format](images/date_format_text_09.png){#fig-date-format-text-09 fig-align="center" width="70%"}
+![Date value as text in YYYYMMDD format](images/date_format_text_09.png){#fig-date-format-text-09 fig-align="center" width="50%"}
 
 ## No empty cells {#sec-spreadsheet-no-empty-cells}
 
@@ -227,13 +227,164 @@ A single big rectangle with rows corresponding to subjects and columns correspon
 
 ## Create a dictionary {#sec-spreadsheet-data-dictionary}
 
+Having a separate file (see @fig-project-metadata-file) that outlines all variables can be very helpful, particularly if it's organised in a structured layout so data analysts can use it effectively in their analyses. We recommend that this _data dictionary_ includes the following information:
+
+1. The **precise variable names** as they appear in the dataset.
+2. A **detailed description** explaining what the variable represents.
+3. The **measurement units** associated with each variable.
+4. The **list of possible values** (for categorical variables) and/or **typical range of values expected** (for numerical variables) for that variable.
+
+An example of this data dictionary within an accompanying Word document metadata in a project-based workflow is shown in @fig-project-metadata-contents.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![A project-based workflow structure with a separate file for metadata](images/project_based_workflow_05.png){#fig-project-metadata-file}
+
+![A recommended layout and contents of a project metadata containing a data dictionary](images/project_metadata_docx.png){#fig-project-metadata-contents}
+
+:::
+
+An alternative to a separate metadata and data dictionary file is to include this documentation as a separate worksheet within the spreadsheet containing the data.
+
+::: {layout-ncol="3" layout-valign="bottom"}
+
+![A project-based workflow structure with separate file for data](images/project_based_workflow_03.png){#fig-project-data-raw-file}
+
+![Project spreadsheet with raw data in worksheet called "main"](images/spreadsheet_data_01.png){#fig-project-data-raw-spreadsheet}
+
+![Project spreadsheet with metadata/dictionary in worksheet called "metadata"](images/spreadsheet_data_04.png){#fig-project-metadata-spreadsheet}
+
+:::
+
 ## No calculations in the raw data file {#sec-spreadsheet-data-calculations}
+
+Excel files often come with various calculations and graphs included alongside the data itself. We strongly recommend keeping your primary data file free from any additional content - only raw data should be present. This is because editing the same file for calculations can lead to accidental errors. For instance, when you open a file and start typing without selecting a cell, the text might end up in unexpected cells, causing problems during analysis. To prevent this, protect your main data file from changes, keep it backed up, and refrain from making edits. If you need to perform analyses or create graphs, work on a duplicate of the original file.
 
 ## Do not use font colour or highlighting as data {#sec-spreadsheet-data-colour-highlighting}
 
+You might be tempted to highlight particular cells with suspicious data, or rows that should be ignored. Or the font or font colour might have some meaning. Instead, add another column with an indicator variable (e.g., ”trusted” with values TRUE or FALSE).
+
+Another possible use of highlighting would be to indicate males and females in a mouse study by highlighting the corresponding rows in different colours. But rather than use highlighting to indicate sex, it is better to include a sex column, with values Male or Female.
+
 ## Make backups {#sec-spreadsheet-data-backup}
+
+Regularly back up your data by storing copies in multiple locations. Consider using a formal version control system such as _git_ (though it's not ideal for data files). Keep every version of your data files and label them with version numbers, like `file_v1.xlsx`, `file_v2.xlsx`, and so on and so forth. For this, the guidance on good file names discussed in @sec-spreadsheet-file-name is a good reference to follow for naming your file versions. Once you've finished entering data or if taking a break, protect the file from accidental changes by setting it to _read-only_ as described below. 
+
+::: {.panel-tabset}
+
+## Windows {#sec-readonly-windwos}
+
+1, Right-click the file in File Explorer or select the file and then click on the triple dot icon in File Explorer as shown in @fig-read-only-windows-01.
+
+![See more file options in File Explorer](images/read_only_windows_01.png){#fig-read-only-windows-01 fig-align="center" width="70%"}
+
+2. In the drop-down menu, choose `Properties` as shown in @fig-read-only-windows-02.
+
+![Select Properties option in the drop-down menu](images/read_only_windows_02.png){#fig-read-only-windows-02 fig-align="center" width="30%"}
+
+3. In the pop-up menu, navigate to the `General` tab, check the `Attributes` box for `Read-only`, and confirm with `OK` as shown in @fig-read-only-windows-03.
+
+![Set the file to read-only](images/read_only_windows_03.png){#fig-read-only-windows-03 fig-align="center" width="50%"}
+
+## macOS {#sec-readonly-mac}
+
+1. Open Finder and right-click on the file.
+
+![Right-click on the spreadsheet file](images/read_only_mac_01.png){#fig-read-only-mac-01 fig-align="center" width="70%"}
+
+2. Select `Get Info` then go to `Sharing & Permissions`.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select Get Info](images/read_only_mac_02.png){#fig-read-only-mac-02}
+
+![Go to Sharing & Permissions](images/read_only_mac_03.png){#fig-read-only-mac-03 width="30%"}
+
+:::
+
+3. Set your privileges to `Read only`.
+
+![Set privileges to Read only](images/read_only_mac_04.png){#fig-read-only-mac-04 fig-align="center" width="30%"}
+
+:::
+
+Another option is to password protect the worksheet in the spreadsheet that has the data. 
+
+1. Select the worksheet to password-protect and then go to `Review` as shown in @fig-password-spreadsheet-01.
+
+![Go to Review](images/password_spreadsheet_01.png){#fig-password-spreadsheet-01 fig-align="center" width="70%"}
+
+2. Select `Protect Sheet` as shown in @fig-password-spreadsheet-02.
+
+![Select Protect Sheet](images/password_spreadsheet_02.png){#fig-password-spreadsheet-02 fig-align="center" width="70%"}
+
+3. Enter password to protect worksheet as shown in @fig-password-spreadsheet-03.
+
+![Enter password to protect worksheet](images/password_spreadsheet_03.png){#fig-password-spreadsheet-03 fig-align="center" width="50%"}
+
+4. Re-enter password to confirm protection as shown in @fig-password-spreadsheet-04.
+
+![Re-enter password to confirm protection](images/password_spreadsheet_04.png){#fig-password-spreadsheet-04 fig-align="center" width="50%"}
+
+Password protection can also be applied to the whole spreadsheet workbook.
+
+1. Open the spreadsheet to password-protect and then go to `Review` as shown in @fig-password-spreadsheet-01.
+
+![Go to Review](images/password_spreadsheet_01.png){#fig-password-spreadsheet-01 fig-align="center" width="70%"}
+
+2. Select `Protect Workbook` as shown in @fig-password-spreadsheet-05.
+
+![Select Protect Workbook](images/password_spreadsheet_05.png){#fig-password-spreadsheet-05 fig-align="center" width="70%"}
+
+3. Enter password to protect workbook as shown in @fig-password-spreadsheet-06.
+
+![Enter password to protect workbook](images/password_spreadsheet_06.png){#fig-password-spreadsheet-06 fig-align="center" width="50%"}
+
+4. Re-enter password to confirm workbook protection as shown in @fig-password-spreadsheet-07.
+
+![Re-enter password to confirm workbook protection](images/password_spreadsheet_07.png){#fig-password-spreadsheet-07 fig-align="center" width="50%"}
+
+::: {#imp-backup-data .callout-important}
+
+Remember, always back up your data!
+
+:::
 
 ## Use data validation to avoid errors {#sec-spreadsheet-data-validation}
 
-## Save the data in plain text files {#sec-spreadsheet-data-plain-text}
+When handling data entry tasks using spreadsheets, it's crucial to aim for accuracy and comfort to minimise errors and reduce physical strain. Excel provides a helpful `Data Validation` feature that can prevent errors during data entry.
+
+To use this feature:
+
+1. Choose the column you wish to validate. In @fig-data-validation-01, the data entry for the `age` variable is to be validated.
+
+![Add validation to the age column/variable](images/data_validation_01.png){#fig-data-validation-01 fig-align="center" width="70%"}
+
+2. Go to the menu bar and select `Data --> Data Tools --> Data Validation` as shown in 
+
+![Select Data Validation in Data Tools](images/data_validation_02.png){#fig-data-validation-02 fig-align="center" width="70%"}
+
+3. Set up validation criteria such as:
+   - Whole numbers within a specified range
+   - Decimal numbers within a specified range
+   - A predefined list of acceptable values
+   - Text with length restrictions
+
+In @fig-data-validation-03, we set validation for age variable to allow only whole numbers ranging from 120 to 191 (inclusive). The `Ignore blank` option is ticked so that blank entry will be accepted.
+
+![Setup validation criteria for age variable](images/data_validation_03.png){#fig-data-validation-03 fig-align="center" width="70%"}
+
+4. Add title and message to guide data entry input as shown in @fig-data-validation-04.
+
+![Add title and message guide for data entry](images/data_validation_04.png){#fig-data-validation-04 fig-align="center" width="70%"}
+
+5. Add error alert to show up when incorrect data entry input is made as shown in @fig-data-validation-05
+
+![Add error alert to show up when incorrect data entry input is made](images/data_validation_05.png){#fig-data-validation-05 fig-align="center" width="70%"}
+
+Additionally, formatting cells as "Text" can prevent unintended changes to data like dates or names. In @sec-spreadsheet-data-date, the steps to change formatting of cells is described and demonstrated.
+
+While these steps may seem tedious, they are valuable in maintaining data integrity and minimising errors during entry.
+
+<!-- ## Save the data in plain text files {#sec-spreadsheet-data-plain-text} -->
 
