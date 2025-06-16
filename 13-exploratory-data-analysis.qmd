@@ -1,8 +1,65 @@
 ---
 output-file: exploratory-data-analysis.html
+lightbox: auto
 ---
 
 # Exploratory data analysis {#sec-exploratory-data-analysis}
 
+Data analysis involves steps like cleaning, transforming, inspecting, and modelling data to extract meaningful information. This process can serve various purposes, including exploratory and confirmatory analyses, as well as descriptive or predictive tasks.
 
+Before building models or making predictions, it's essential to explore the data to identify underlying patterns and structures. Data analysts employ both numerical and visual techniques to uncover insights that might be hidden within the dataset. However, it's crucial for analysts to avoid over-interpreting apparent patterns and to ensure that the findings are reliable for the given data and potentially applicable to new 
+datasets as well. Exploratory data analysis fills this role.
 
+Following are a few other definitions of exploratory data analysis (EDA).
+
+## Definitions {#sec-eda-definition}
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Exploratory_data_analysis):
+
+> In statistics, exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. A statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task.
+
+From Wickham and Grolemund [-@wickham_r_2023]:
+
+> EDA is not a formal process with a strict set of rules. More than anything, EDA is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends.
+
+From [SAS](https://seleritysas.com/2020/05/08/exploratory-data-analysis-and-its-role-in-improving-business-operations/):
+
+> EDA is necessary for the next stage of data research. If there was an analogy to exploratory data analysis, it would be that of a painter examining their tools and available time, before deciding on what best to paint.
+
+## Origins {#sec-eda-origins}
+
+The field of EDA got into the forefront with the publication of [Tukey's Exploratory Data Analysis](https://books.google.sc/books/about/Exploratory_Data_Analysis.html?id=UT9dAAAAIAAJ&redir_esc=y) [@tukey_exploratory_1977]. Tukey's aim in writing the book was to provide individual and isolated techniques useful to data analysts. All of Tukey's techniques in the EDA book can be done by hand with pencil and paper.
+
+```{r}
+#| label: fig-eda-tukey-cover
+#| fig-cap: Book cover of Tukey's Exploratory Data Analysis
+#| fig-align: center
+#| column: margin
+#| echo: false
+
+knitr::include_graphics("images/tukey_cover.png")
+```
+
+<!-- ::: {.column-margin}
+
+![Book cover of Tukey's Exploratory Data Analysis](images/tukey_cover.png){#fig-eda-tukey-cover fig-align="center"}
+
+::: -->
+
+Following are some quotes by Tukey from the EDA book.
+
+### On measures
+
+It is important to understand what you **can do** before you learn to measure how **well** you seem to have **done** it.
+
+### On pictures
+
+**The greatest value of a picture** is when it forces us to notice **what we never expected to see**.
+
+### On exploration
+
+Once upon a time, statisticians only explored.
+
+### On not having one right answer
+
+There can be many ways to approach a body of data. Not all are equally good.
