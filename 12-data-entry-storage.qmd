@@ -382,6 +382,8 @@ In @fig-data-validation-03, we set validation for age variable to allow only who
 
 ![Add error alert to show up when incorrect data entry input is made](images/data_validation_05.png){#fig-data-validation-05 fig-align="center" width="70%"}
 
+Microsoft Support has further documentation and guidance on how to apply data validation to cells [here](https://support.microsoft.com/en-us/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249).
+
 Additionally, formatting cells as "Text" can prevent unintended changes to data like dates or names. In @sec-spreadsheet-data-date, the steps to change formatting of cells is described and demonstrated.
 
 While these steps may seem tedious, they are valuable in maintaining data integrity and minimising errors during entry.
