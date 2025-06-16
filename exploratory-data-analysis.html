@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -42,6 +61,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-2c583ca0f5e1d80a00909d1e0daac7e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +104,7 @@ gtag('config', '', { 'anonymize_ip': true});
 
 </head>
 
-<body class="floating quarto-light">
+<body class="floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -310,11 +332,24 @@ gtag('config', '', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-eda-definition" id="toc-sec-eda-definition" class="nav-link active" data-scroll-target="#sec-eda-definition"><span class="header-section-number">13.1</span> Definitions</a></li>
+  <li><a href="#sec-eda-origins" id="toc-sec-eda-origins" class="nav-link" data-scroll-target="#sec-eda-origins"><span class="header-section-number">13.2</span> Origins</a>
+  <ul class="collapse">
+  <li><a href="#on-measures" id="toc-on-measures" class="nav-link" data-scroll-target="#on-measures"><span class="header-section-number">13.2.1</span> On measures</a></li>
+  <li><a href="#on-pictures" id="toc-on-pictures" class="nav-link" data-scroll-target="#on-pictures"><span class="header-section-number">13.2.2</span> On pictures</a></li>
+  <li><a href="#on-exploration" id="toc-on-exploration" class="nav-link" data-scroll-target="#on-exploration"><span class="header-section-number">13.2.3</span> On exploration</a></li>
+  <li><a href="#on-not-having-one-right-answer" id="toc-on-not-having-one-right-answer" class="nav-link" data-scroll-target="#on-not-having-one-right-answer"><span class="header-section-number">13.2.4</span> On not having one right answer</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/13-exploratory-data-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exploratory-data-analysis.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./exploratory-data-analysis.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -335,8 +370,74 @@ gtag('config', '', { 'anonymize_ip': true});
 </header>
 
 
+<p>Data analysis involves steps like cleaning, transforming, inspecting, and modelling data to extract meaningful information. This process can serve various purposes, including exploratory and confirmatory analyses, as well as descriptive or predictive tasks.</p>
+<p>Before building models or making predictions, it’s essential to explore the data to identify underlying patterns and structures. Data analysts employ both numerical and visual techniques to uncover insights that might be hidden within the dataset. However, it’s crucial for analysts to avoid over-interpreting apparent patterns and to ensure that the findings are reliable for the given data and potentially applicable to new datasets as well. Exploratory data analysis fills this role.</p>
+<p>Following are a few other definitions of exploratory data analysis (EDA).</p>
+<section id="sec-eda-definition" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="sec-eda-definition"><span class="header-section-number">13.1</span> Definitions</h2>
+<p>From <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">Wikipedia</a>:</p>
+<blockquote class="blockquote">
+<p>In statistics, exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. A statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task.</p>
+</blockquote>
+<p>From Wickham and Grolemund <span class="citation" data-cites="wickham_r_2023">(<a href="references.html#ref-wickham_r_2023" role="doc-biblioref">2023</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>EDA is not a formal process with a strict set of rules. More than anything, EDA is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends.</p>
+</blockquote>
+<p>From <a href="https://seleritysas.com/2020/05/08/exploratory-data-analysis-and-its-role-in-improving-business-operations/">SAS</a>:</p>
+<blockquote class="blockquote">
+<p>EDA is necessary for the next stage of data research. If there was an analogy to exploratory data analysis, it would be that of a painter examining their tools and available time, before deciding on what best to paint.</p>
+</blockquote>
+</section>
+<section id="sec-eda-origins" class="level2 page-columns page-full" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="sec-eda-origins"><span class="header-section-number">13.2</span> Origins</h2>
+<p>The field of EDA got into the forefront with the publication of <a href="https://books.google.sc/books/about/Exploratory_Data_Analysis.html?id=UT9dAAAAIAAJ&amp;redir_esc=y">Tukey’s Exploratory Data Analysis</a> <span class="citation" data-cites="tukey_exploratory_1977">(<a href="references.html#ref-tukey_exploratory_1977" role="doc-biblioref">Tukey, 1977</a>)</span>. Tukey’s aim in writing the book was to provide individual and isolated techniques useful to data analysts. All of Tukey’s techniques in the EDA book can be done by hand with pencil and paper.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div id="fig-eda-tukey-cover" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-tukey-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/tukey_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;13.1: Book cover of Tukey’s Exploratory Data Analysis"><img src="images/tukey_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-tukey-cover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: Book cover of Tukey’s Exploratory Data Analysis
+</figcaption>
+</figure>
+</div>
+</div></div></div>
+<!-- ::: {.column-margin}
+
+![Book cover of Tukey's Exploratory Data Analysis](images/tukey_cover.png){#fig-eda-tukey-cover fig-align="center"}
+
+::: -->
+<p>Following are some quotes by Tukey from the EDA book.</p>
+<section id="on-measures" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="on-measures"><span class="header-section-number">13.2.1</span> On measures</h3>
+<p>It is important to understand what you <strong>can do</strong> before you learn to measure how <strong>well</strong> you seem to have <strong>done</strong> it.</p>
+</section>
+<section id="on-pictures" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="on-pictures"><span class="header-section-number">13.2.2</span> On pictures</h3>
+<p><strong>The greatest value of a picture</strong> is when it forces us to notice <strong>what we never expected to see</strong>.</p>
+</section>
+<section id="on-exploration" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="on-exploration"><span class="header-section-number">13.2.3</span> On exploration</h3>
+<p>Once upon a time, statisticians only explored.</p>
+</section>
+<section id="on-not-having-one-right-answer" class="level3" data-number="13.2.4">
+<h3 data-number="13.2.4" class="anchored" data-anchor-id="on-not-having-one-right-answer"><span class="header-section-number">13.2.4</span> On not having one right answer</h3>
+<p>There can be many ways to approach a body of data. Not all are equally good.</p>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-tukey_exploratory_1977" class="csl-entry" role="listitem">
+Tukey JW (1977). <em>Exploratory data analysis</em>. Reading (Mass.) Menlo Park (Calif.) London [etc.]: Addison-Wesley publ Addison-wesley series in behavioral science.
+</div>
+<div id="ref-wickham_r_2023" class="csl-entry" role="listitem">
+Wickham H, Çetinkaya-Rundel M, Grolemund G (2023). <em>R for data science: Import, tidy, transform, visualize, and model data</em>, Second Edition. Bejing: O’Reilly.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -751,8 +852,40 @@ gtag('config', '', { 'anonymize_ip': true});
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/13-exploratory-data-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/13-exploratory-data-analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>
