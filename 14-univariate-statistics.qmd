@@ -1,5 +1,1022 @@
 ---
 output-file: univariate-statistics.html
+lightbox: auto
 ---
 
+```{r}
+#| label: setup
+#| echo: false
+
+suppressPackageStartupMessages(source(here::here("packages.R")))
+for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
+
+scores <- c(10, 15, 80, 90, 75, 85, 92, 90, 90, 90)
+
+school_nutrition <- read.csv("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/refs/heads/main/school_nutrition.csv")
+```
+
 # Univariate statistics {#sec-univariate-statistics}
+
+In this chapter, we will focus on exploratory data analysis of a single variable. We discuss the features of a continuous variable and how these features can be explored, elucidated, tested, and visualised. We then discuss ordinal and nominal categorical variables and the various considerations when exploring these types of variables.
+
+## Continuous variables {#sec-univariate-continuous}
+
+A _continuous variable_ is a type of variable that can take on any value within a given range. It's characterised by the ability to be measured and can have an infinite number of values between any two given points. Examples include height, weight, temperature, and time.
+
+### Measure of central tendency {#sec-measure-central}
+
+In statistics, _measure of central tendency_ is a central or typical value for a probability distribution. Most common measures are _mean_, _median_, and _mode_ but there are many other measures of central tendency. It is important to note that not all measures of central tendency are robust.
+
+#### Mean {.unnumbered}
+
+Mean is the sum of a set of values divided by the number of values. Mathematically, it is represented as:
+
+<br/>
+
+$$ \bar{x} ~ = ~ \sum_{i=1}^{n} x_i \times \frac{1}{n} $$
+
+<br/>
+
+Mean is a non-robust measure of location because it is susceptible/sensitive to a few extreme values in the data.
+
+#### Median {.unnumbered}
+
+For a dataset $x$ of $n$ elements ordered from smallest to greatest, if $n$ is odd
+
+<br/>
+
+$$ \tilde{x} ~ = ~ x_{(n + 1)/2} $$
+
+<br/>
+
+and if $n$ is even
+
+<br/>
+
+$$ \tilde{x} ~ = ~ \frac{x_{\frac{n}{2}} + x_{\frac{n}{2} + 1}}{2} $$
+
+<br/>
+
+The median is the value that divides a dataset into two equal halves, separating the higher half from the lower half. It can be seen as the 'middle' value in a data sample, population, or probability distribution. Unlike the mean (often referred to as the "average"), the median is not influenced by extremely large or small values, making it more resistant to skewed data and providing a better representation of the dataset's center.
+
+For instance, when analysing income distribution, the median income is often a more accurate measure of the central tendency because increases in the highest incomes do not affect the median. This characteristic makes the median particularly valuable in robust statistics, where its ability to withstand the impact of outliers is 
+highly regarded.
+
+::: {#nte-mean-vs-median .callout-note title="Mean vs Median"}
+
+Consider this data of test scores of ten students.
+
+![Test scores of ten students](images/student_scores_01.png){#fig-student-scores fig-align="center" width="30%"}
+
+8 out of the 10 students did really well with scores 75 and higher but two students got really low scores.
+
+Calculating the mean scores using the spreadsheet, we use the `AVERAGE()` function:
+
+```swift
+=AVERAGE(B2:B11)
+```
+
+we get **`r mean(scores)`**.
+
+Calculating the median scores using the spreadsheet, we use the `MEDIAN()` function:
+
+```swift
+=MEDIAN(B2:B11)
+```
+
+we get **`r median(scores)`**.
+
+The mean and the median can be very different from each other.
+
+If `median > mean`, this would indicate that the continuous variable has some extremely low values
+
+If `median < mean`, this would indicate that the continuous variable has some extremely high values
+
+We should be using median instead of mean when performing summary measures for continuous variables
+
+:::
+
+### Measure of dispersion {#sec-measure-dispersion}
+
+In statistics, measure of dispersion describes the spread or variability of data points within a dataset. It indicates how much individual values deviate from the central tendency. Essentially, it provides insight into whether the data is tightly or loosely clustered around its center. Common measures of dispersion include _variance_, _standard deviation (SD)_, and _interquartile range (IQR)_.
+
+Standard deviation and variance are the most popular choice for measure of dispersion but are not robust to extreme values or outliers.
+
+#### Standard deviation {.unnumbered}
+
+$$ sd ~ = ~ \sqrt{\sum_{i=1}^n \frac{(x_i - \bar{x}) ^ 2}{n - 1}} $$
+
+where:
+
+$n ~ = ~ \text{number of observations in sample}$
+
+$x_i ~ = ~ \text{individual data point}$
+
+$\bar{x} ~ = ~ \text{sample mean}$
+
+<br/>
+
+In Excel, you can calculate standard deviation using the `STDEV()` function. Using the student scores example:
+
+```swift
+=STDEV(B2:B11)
+```
+
+which gives **`r sd(scores)`**.
+
+A low standard deviation indicates that the values tend to be close to the mean of the set, while a high standard deviation indicates that the values are spread out over a wider range. The standard deviation is commonly used in the determination of what constitutes an outlier and what does not.
+
+#### Interquartile range (IQR) {.unnumbered}
+
+IQR is the difference between the 1st and 3rd quartile of the values of the continuous variable and is a more robust measure of spread.
+
+Excel doesn’t have a function to calculate IQR but it can be calculated with the `QUARTILE()` function. Using the student scores example:
+
+```swift
+=QUARTILE(B2:B11, 3) - QUARTILE(B2:B11, 1)
+```
+
+which gives **`r IQR(scores)`**.
+
+<!-- ### Measure of skewness and kurtosis {.unnumbered} -->
+
+### Distribution {#sec-univariate-distribution}
+
+#### Assessing distribution using boxplots {.unnumbered}
+
+A **boxplot**, also referred to as a **box-and-whisker plot**, is a graphical tool used to summarise the distribution of a continuous variable. It provides insights into key aspects such as the median, quartiles, and any potential outliers in a clear and concise manner.
+
+```{r}
+#| label: fig-boxplot-school-weight
+#| fig-cap: Boxplot of weight of children 10-15 years of age
+#| echo: false
+#| fig-height: 8
+#| fig-width: 6
+
+q1 <- quantile(school_nutrition$weight, probs = 0.25)
+q3 <- quantile(school_nutrition$weight, probs = 0.75)
+m  <- median(school_nutrition$weight, na.rm = TRUE)
+w1 <- q1 - 1.5 * IQR(school_nutrition$weight)
+w3 <- q3 + 1.5 * IQR(school_nutrition$weight)
+o1 <- mean(school_nutrition$weight[school_nutrition$weight < w1])
+o3 <- mean(school_nutrition$weight[school_nutrition$weight > w3])
+
+school_nutrition |>
+  ggplot(mapping = aes(x = "", y = weight)) +
+  geom_boxplot(
+    colour = get_oxford_colour("Oxford blue"),
+    linewidth = 1.2, width = 0.2, 
+    outlier.size = 3, outlier.colour = get_oxford_colour("plum")
+  ) +
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = q3, yend = q3, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.19, y = q3, label = "Q3", size = 3) +
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = q1, yend = q1, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.19, y = q1, label = "Q1", size = 3) +  
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = m, yend = m, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.22, y = m, label = "Median", size = 3) +  
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = w3, yend = w3, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.25, y = w3, label = "Upper fence", size = 3) +  
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = w1, yend = w1, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.25, y = w1, label = "Lower fence", size = 3) +  
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = o1, yend = o1, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.21, y = o1, label = "Outliers", size = 3) +  
+  annotate(
+    geom = "segment", x = 1.12, xend = 1.16, y = o3, yend = o3, linetype = 2
+  ) +
+  annotate(geom = "text", x = 1.21, y = o3, label = "Outliers", size = 3) +  
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 60, by = 10), limits = c(0, 60)
+  ) +
+  labs(x = NULL, y = "Weight (kgs)") +
+  theme_oxford(base_family = "", grid = FALSE)
+```
+
+##### Key Components of a Boxplot {.unnumbered}
+
+1. **The Box:** The box itself illustrates the IQR, which spans the middle 50% of the data. The lower edge of the box represents the first quartile (25th percentile), while the upper edge marks the third quartile (75th percentile).
+
+2. **The Median Line:** A vertical line within the box indicates the median, or the 50th percentile, which divides the dataset into two equal halves.
+
+3. **The Whiskers:** Lines extending from the sides of the box, often referred to as _whiskers_, show the range of the data beyond the IQR. This is based on 1.5 times the IQR value. The lower whisker is measured out as a distance 1.5 times IQR below the lower edge of the box (lower quartile) while the upper whisker is measured out as a distance 1.5 times IQR above the upper edge of the box (upper quartile).
+
+4. **Outliers:** Data points that lie outside the whiskers are considered outliers and are usually plotted as individual points separate from the main plot.
+
+##### Plotting boxplots {.unnumbered}
+
+::: {.panel-tabset}
+
+## Excel 2016 and later
+
+Starting with Excel 2016, Microsoft has included a Box and Whiskers chart capability to Excel.
+
+1. Go to `Insert` --> `Insert Statistics Chart` --> `Box and Whisker`
+
+![Insert Box and Whisker chart](images/plot_boxplot_01.png){#fig-boxplot-01 fig-align="center" width="70%"}
+
+2. Select base chart --> `Chart Design` --> `Select Data`
+
+![Select data to use for boxplot](images/plot_boxplot_02.png){#fig-boxplot-02 fig-align="center" width="70%"}
+
+3. Edit range of values to use for boxplot.
+
+![Edit range of values to use for boxplot](images/plot_boxplot_03.png){#fig-boxplot-03 fig-align="center" width="70%"}
+
+4. Specify range of weight values for boxplot. 
+
+The data is in Sheet 1 and found in range `E2:E268`.
+
+::: {layout-ncol="3" layout-valign="bottom"}
+
+![Specify range of weight values for boxplot](images/plot_boxplot_04.png){#fig-boxplot-04}
+
+![Click OK to confirm range of weight values](images/plot_boxplot_05.png){#fig-boxplot-05}
+
+![Boxplot is now created](images/plot_boxplot_06.png){#fig-boxplot-06}
+
+:::
+
+## Pre-Excel 2016
+
+Before Excel 2016 version, there was no boxplot chart type available but boxplots can be made through the following steps:
+
+1. Calculate the lower whisker, quartile 1, median, quartile 3, and upper whisker summary values of the weight variable.
+
+::: {layout="[[1,1,1], [1,1,1]]"}
+
+![Calculate the median weight](images/plot_boxplot_hack_02.png){#fig-plot-boxplot-hack-02}
+
+![Calculate quartile 1 of weight](images/plot_boxplot_hack_03.png){#fig-plot-boxplot-hack-03}
+
+![Calculate quartile 3 of weight](images/plot_boxplot_hack_04.png){#fig-plot-boxplot-hack-04}
+
+![Calculate the lower whisker](images/plot_boxplot_hack_05.png){#fig-plot-boxplot-hack-05}
+
+![Calculate the upper whisker](images/plot_boxplot_hack_06.png){#fig-plot-boxplot-hack-06}
+
+![Add a starting point value of 0](images/plot_boxplot_hack_07.png){#fig-plot-boxplot-hack-07}
+
+:::
+
+2. Create a base stacked column chart.
+
+`Insert` --> `Insert Column or Bar Chart` --> `Stacked Column`
+
+![Create a base stacked column chart](images/plot_boxplot_hack_08.png){#fig-plot-boxplot-hack-08 fig-align="center" width="70%"}
+
+3. Select data to use for stacked column chart.
+
+Select base chart --> `Chart Design` --> `Select Data`
+
+![Select data to use for stacked column chart](images/plot_boxplot_hack_09.png){#fig-plot-boxplot-hack-09 fig-align="center" width="70%"}
+
+4. Edit range of values to use for stacked column chart.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Tap to select range of values to use for stacked column chart](images/plot_boxplot_hack_10.png){#fig-plot-boxplot-hack-10}
+
+![Specify range of values to use for stacked column chart](images/plot_boxplot_hack_11.png){#fig-plot-boxplot-hack-11}
+
+:::
+
+5. Reverse stacked column chart axis.
+
+Click on `Switch Row/Column`
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Click on Switch Row/Column](images/plot_boxplot_hack_12.png){#fig-plot-boxplot-hack-12}
+
+![Confirm chart settings](images/plot_boxplot_hack_13.png){#fig-plot-boxplot-hack-13}
+
+:::
+
+6. Hide the lower column of the stacked column chart.
+
+Click on the lower column of the stacked column chart. Format the data series by removing its fill. 
+
+![Hide lower column of the stacked column chart](images/plot_boxplot_hack_14.png){#fig-plot-boxplot-hack-14 fig-align="center" width="70%"}
+
+7. Hide the upper column of the stacked column chart.
+
+Click on the upper column of the stacked column chart. Format the data series by removing its fill.
+
+![Hide upper column of the stacked column chart](images/plot_boxplot_hack_15.png){#fig-plot-boxplot-hack-15 fig-align="center" width="70%"}
+
+8. Add error bars to replace the upper column.
+
+Click on `Chart Elements` --> `Error Bars` --> `More Options`
+
+![Add error bars to replace the upper column](images/plot_boxplot_hack_16.png){#fig-plot-boxplot-hack-16 fig-align="center" width="70%"}
+
+9. Format error bars to create the upper whisker.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Set error bars to solid line](images/plot_boxplot_hack_17.png){#fig-plot-boxplot-hack-17}
+
+![Format error bars](images/plot_boxplot_hack_18.png){#fig-plot-boxplot-hack-18}
+
+:::
+
+10. Hide the second lower column of the stacked column chart.
+
+Click on the second lower column of the stacked column chart. Format the data series by removing its fill.
+
+![Hide second lower column of the stacked column chart](images/plot_boxplot_hack_19.png){#fig-plot-boxplot-hack-19 fig-align="center" width="70%"}
+
+11. Add error bars to replace the second lower column.
+
+Click on `Chart Elements` --> `Error Bars` --> `More Options`
+
+![Add error bars to replace the second lower column](images/plot_boxplot_hack_20.png){#fig-plot-boxplot-hack-20 fig-align="center" width="70%"}
+
+12. Format error bars to create the lower whisker.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Set error bars to solid line](images/plot_boxplot_hack_21.png){#fig-plot-boxplot-hack-21}
+
+![Format error bars](images/plot_boxplot_hack_22.png){#fig-plot-boxplot-hack-22}
+
+:::
+
+13. Change fill and outline colours of the box.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Change fill and outline colours of the upper box](images/plot_boxplot_hack_23.png){#fig-plot-boxplot-hack-23}
+
+![Change fill and outline colours of the lower box](images/plot_boxplot_hack_24.png){#fig-plot-boxplot-hack-24}
+
+:::
+
+14. Boxplot is now created.
+
+![Boxplot is now created](images/plot_boxplot_hack_25.png){#fig-plot-boxplot-hack-25 fig-align="center" width="70%"}
+
+*Based on [Microsoft Support documentation](https://support.microsoft.com/en-gb/office/create-a-box-plot-10204530-8cdf-40fe-a711-2eb9785e510f#_top)
+
+:::
+
+##### Interpreting boxplots {.unnumbered}
+
+The median, represented by the line within the box, indicates the central value of the data. The height of the box and the length of the whiskers indicate the spread and variability of the data. A wider box or longer whiskers suggest greater variability. The position of the median line within the box can suggest whether the data is symmetrical, skewed left (negative skew), or skewed right (positive skew). Outliers represent data points that are significantly different from the rest of the data and may warrant further investigation. Comparing box plots for different datasets can help reveal differences in their central tendency, spread, and distribution. 
+
+#### Assessing distribution using histograms {.unnumbered}
+
+A histogram is a graphical representation that displays the distribution of numerical data. It uses adjacent bars to show the frequency or count of data points within specified ranges, known as bins. Histograms provide insights into the data distribution, such as whether it is normally distributed (bell-shaped), skewed, or has multiple peaks (multimodal). They help identify patterns like clusters, gaps, and outliers in the data.
+
+```{r}
+#| label: fig-hist-school-weight
+#| fig-cap: Histogram of weight of children 10-15 years of age
+#| echo: false
+#| fig-height: 6
+#| fig-width: 10
+
+school_nutrition |>
+  ggplot(mapping = aes(x = weight)) +
+  geom_histogram(fill = get_oxford_colour("mauve"), binwidth = 2) +
+  geom_vline(
+    xintercept = median(school_nutrition$weight), 
+    linetype = 2, linewidth = 0.75, colour = get_oxford_colour("orange")
+  ) +
+  annotate(
+    geom = "text", 
+    x = median(school_nutrition$weight) - 2, y = 45, 
+    label = "Median", size = 4, colour = get_oxford_colour("orange")
+  ) + 
+  geom_vline(
+    xintercept = mean(school_nutrition$weight),
+    linetype = 2, linewidth = 0.75, colour = get_oxford_colour("ochre")
+  ) +
+  annotate(
+    geom = "text", 
+    x = mean(school_nutrition$weight) + 1.35, y = 45, 
+    label = "Mean", size = 4, colour = get_oxford_colour("ochre")
+  ) + 
+  scale_x_continuous(breaks = seq(from = 0, to = 60, by = 5)) +
+  scale_y_continuous(limits = c(0, 50)) +
+  labs(x = "Weight (kgs)", y = NULL) +
+  theme_oxford(
+    base_family = "", grid = "Y", grid_col = get_oxford_colour("stone")
+  )
+```
+
+##### Plotting the histogram {.unnumbered}
+
+On a graph, the x-axis (horizontal) represents the bins or intervals of the numerical data. The y-axis (vertical) represents the frequency or count of data points in each bin. Bars are drawn adjacent to each other without gaps, as the bins represent continuous ranges.
+
+In Excel, the histogram can be plotted as follows:
+
+1. Create a base histogram plot.
+
+Go to `Insert` --> `Insert Statistics Chart` --> `Histogram`
+
+![Create a base histogram plot](images/plot_histogram_01.png){#fig-plot-histogram-01 fig-align="center" width="70%"}
+
+2. Select data to use for histogram.
+
+Select base chart --> `Chart Design` --> `Select Data`
+
+![Select data to use for histogram](images/plot_histogram_02.png){#fig-plot-histogram-02 fig-align="center" width="70%"}
+
+3. Edit range of values to use for histogram.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Tap to select range of values to use for histogram](images/plot_histogram_03.png){#fig-plot-histogram-03}
+
+![Specify range of values to use for histogram](images/plot_histogram_04.png){#fig-plot-histogram-04}
+
+:::
+
+4. Confirm range of values to use for histogram.
+
+Click on `OK`
+
+![Confirm range of values to use for histogram](images/plot_histogram_05.png){#fig-plot-histogram-05 fig-align="center" width="70%"}
+
+5. Histogram is now created.
+
+![Histogram is now created](images/plot_histogram_06.png){#fig-plot-histogram-06 fig-align="center" width="70%"}
+
+##### Interpretation {.unnumbered}
+
+Histograms provide insights into the data distribution, such as whether it is normally distributed (bell-shaped), skewed, or has multiple peaks (multimodal). Histograms help identify patterns like clusters, gaps, and outliers in the data.
+
+#### Assessing distribution using QQ plots {.unnumbered}
+
+A QQ plot, or Quantile-Quantile plot, is a graphical tool used to assess whether a dataset follows a specific theoretical distribution (like a normal distribution) or to compare the distributions of two datasets. It does this by plotting the quantiles of the observed data against the quantiles of the theoretical distribution (or the other dataset).
+
+##### Plotting QQ plots to test for normality {.unnumbered}
+
+There is no built-in chart for QQ plots in Excel. To create a QQ plot to test normal distribution in Excel, we recommend creating a new worksheet and then importing the raw dataset into this worksheet before proceeding with the steps below. We use the school nutrition dataset for this demonstration.
+
+1. Sort weight values in ascending order.
+
+We recommend doing this step on the worksheet where the data is and create a new variable for the sorted values of weight. The values can be sorted using the `SORT()` function in Excel as follows (@fig-plot-qqplot-01):
+
+```swift
+=SORT(E2:E268)
+```
+
+This function will fill the new column/variable with the weight values sorted in ascending order without changing the order of the reference/original data. We recommend doing it this way instead of sorting the whole dataset based on weight so that you can perform the same operation for creating QQ plots for other appropriate variable in the dataset (i.e., height).
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Sort weight values in ascending order](images/plot_qqplot_01.png){#fig-plot-qqplot-01}
+
+![Sorted weight values in ascending order in new column](images/plot_qqplot_02.png){#fig-plot-qqplot-02}
+
+:::
+
+2. Give a rank to each value from 1 to the total number of rows.
+
+This should be created in a new column/variable. This can be done easily using the following formula (@fig-plot-qqplot-03):
+
+```swift
+=ROW() - 1
+```
+
+Copy or drag this formula from the first cell to the following cells in the new column/variable to get the rank for all weight records (@fig-plot-qqplot-04).
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Formula for assigning a rank to the sorted weight records](images/plot_qqplot_03.png){#fig-plot-qqplot-03}
+
+![Copy or drag the formula to the rest of the rows](images/plot_qqplot_04.png){#fig-plot-qqplot-04}
+
+:::
+
+3. Calculate the empirical/observed cumulative probabilities.
+
+The empirical cumulative probabilities are calculated as follows:
+
+<br/>
+
+$$ F(x) ~ = ~ \frac{rank - 0.5}{n} $$
+
+where:
+
+$rank ~ = ~ \text{rank of the sorted value of the variable}$
+
+$n ~ = ~ \text{number of records/values of the variable}$
+
+<br/>
+
+In Excel, it can be calculated as follows (@fig-plot-qqplot-05):
+
+```swift
+=(I2-0.5)/COUNT($I$2:$I$268)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the empirical cumulative distribution](images/plot_qqplot_05.png){#fig-plot-qqplot-05}
+
+![Copy or drag the formula to the rest of the rows](images/plot_qqplot_06.png){#fig-plot-qqplot-06}
+
+:::
+
+4. Calculate the theoretical quantiles.
+
+The theoretical quantiles for each of the empirical probabilities are calculated as follows:
+
+<br/>
+
+$$ q ~ = ~ F^{-1} \times p $$
+
+where:
+
+$q ~ = ~ \text{theoretical quantile}$
+
+$F^{-1} ~ = ~ \text{inverse of the cumulative distribution function}$
+
+$p ~ = ~ \text{cumulative probability}$
+
+<br/>
+
+In Excel, it can be calculated as follows (@fig-plot-qqplot-07):
+
+```swift
+=NORM.S.INV(J2)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the theortetical quantiles](images/plot_qqplot_07.png){#fig-plot-qqplot-07}
+
+![Copy or drag the formula to the rest of the rows](images/plot_qqplot_08.png){#fig-plot-qqplot-08}
+
+:::
+
+5. Calculate the slope and intercept of the line of agreement (QQ line).
+
+In a QQ (quantile-quantile) plot, the _line of agreement_, also known as the 45-degree line or reference line, represents the expected relationship if two datasets being compared have identical distributions. If the points on the QQ plot fall close to this line, it suggests the distributions are similar. Deviations from the line indicate differences in the distributions.
+
+We recommend creating a new worksheet for these calculations (@fig-plot-qqplot-09) and then creating layout in which the various values can be calculated as shown in @fig-plot-qqplot-10.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Create new worksheet for QQ line calculations](images/plot_qqplot_09.png){#fig-plot-qqplot-09}
+
+![Create a layout for the calculations of the various values](images/plot_qqplot_10.png){#fig-plot-qqplot-10}
+
+:::
+
+a. Calculate the empirical 25% and 75% quantiles of the weight values ([@fig-plot-qqplot-11, @fig-plot-qqplot-12]).
+
+In Excel, these can be calculated as follows:
+
+```swift
+=QUARTILE(qqplot_data!E2:E268,1)     ## 25% quantile
+=QUARTILE(qqplot_data!E2:E268,3)     ## 75% quantile
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the empirical 25% quantile](images/plot_qqplot_11.png){#fig-plot-qqplot-11}
+
+![Calculate the empirical 75% quantile](images/plot_qqplot_12.png){#fig-plot-qqplot-12}
+
+:::
+
+
+b. Calculate the theoretical 25% and 75% quantile of the normal distribution ([@fig-plot-qqplot-13, @fig-plot-qqplot-14]).
+
+In Excel, these can be calculated as follows:
+
+```swift
+=NORM.INV(0.25,0,1)     ## 25% quantile
+=NORM.INV(0.75,0,1)     ## 75% quantile
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the theoretical 25% quantile of the normal distribution](images/plot_qqplot_13.png){#fig-plot-qqplot-13}
+
+![Calculate the theoretical 75% quantile of the normal distribution](images/plot_qqplot_14.png){#fig-plot-qqplot-14}
+
+:::
+
+c. Calculate the slope and intercept of the QQ line.
+
+The slope of the QQ line is calculated as follows:
+
+<br/>
+
+$$ slope ~ = ~ \frac{q75_{observed} - q25_{observed}}{q75_{theoretical} - q25_{theoretical}} $$
+
+<br/>
+
+The intercept of the QQ line is calculated as follows:
+
+<br/>
+
+$$ intercept ~ = ~ q25_{observed} - slope \times q25_{theoretical} $$
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the slope of the QQ line](images/plot_qqplot_15.png){#fig-plot-qqplot-15}
+
+![Calculate the intercept of the QQ line](images/plot_qqplot_16.png){#fig-plot-qqplot-16}
+
+:::
+
+6. Create a base scatterplot.
+
+In the same worksheet as the calculations, create a base scatterplot as follows (@fig-plot-qqplot-17):
+
+`Insert` --> `Charts` --> `Insert Scatter (x, Y) or Bubble Chart` --> `Scatter`
+
+![Create a base scatterplot](images/plot_qqplot_17.png){#fig-plot-qqplot-17 fig-align="center" width="70%"}
+
+7. Select data to use for scatterplot.
+
+Select base chart --> `Chart Design` --> `Select Data`
+
+![Select data to use for scatterplot](images/plot_qqplot_18.png){#fig-plot-qqplot-18 fig-align="center" width="70%"}
+
+8. Add a data series to base scatterplot.
+
+Click on `Add` (@fig-plot-qqplot-19)
+
+![Add a data series to base scatterplot](images/plot_qqplot_19.png){#fig-plot-qqplot-19}
+
+9. Specify values for x-axis of the scatterplot.
+
+The x-axis should use the range of values for the theoretical probabilities.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select x-axis for editing](images/plot_qqplot_20.png){#fig-plot-qqplot-20}
+
+![Select range of values for x-axis](images/plot_qqplot_21.png){#fig-plot-qqplot-21}
+
+:::
+
+10. Specify values for y-axis of the scatterplot.
+
+The y-axis should use the range of values for the ordered values for weight.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select y-axis for editing](images/plot_qqplot_22.png){#fig-plot-qqplot-22}
+
+![Select range of values for y-axis](images/plot_qqplot_23.png){#fig-plot-qqplot-23}
+
+:::
+
+11. Confirm selection of values for scatterplot.
+
+![Confirm selection of values for scatterplot](images/plot_qqplot_24.png){#fig-plot-qqplot-24 fig-align="center" width="70%"}
+
+12. Add the QQ line to the QQ plot.
+
+`Chart Elements` --> `Trendline` --> `More Options...`
+
+Select `Linear` for trendline and tick `Set Intercept` and then input the value for intercept that we calculated earlier (@fig-plot-qqplot-26).
+
+![Add trendline to scatterplot](images/plot_qqplot_25.png){#fig-plot-qqplot-25 fig-align="center" width="70%"}
+
+![Edit settings for trendline](images/plot_qqplot_26.png){#fig-plot-qqplot-26 fig-align="center" width="70%"}
+
+##### Interpreting the plot {.unnumbered}
+
+If the data follows the theoretical distribution, the points in the QQ plot will roughly form a straight diagonal line. Deviations from this line indicate that the data does not follow the theoretical distribution, and the nature of the deviations can provide insights into how the data differs from the expected distribution (e.g., skewness, outliers). In simpler terms: A QQ plot is a visual check to see if your data "looks like" it came from a specific distribution. It helps you determine if your data is normally distributed, or if it has some other pattern.
+
+### Age Heaping {#sec-univariate-heaping}
+
+Age heaping is the tendency to report children’s ages to the nearest year or adults’ ages to the nearest multiple of five or ten years. Age heaping is very common that is why most reported national statistics use broad age groups.
+
+#### Testing for age heaping {.unnumbered}
+
+There is no built-in function in Excel that tests for age heaping. The following steps can be performed in Excel to test whether there is significant age heaping in a dataset with age values. These steps use the school nutrition data for demonstration. We recommend that these steps be done in a separate worksheet from the raw data to avoid contamination of original dataset.
+
+1. Determine an appropriate divisor.
+
+The school nutrition data records age in months. A useful way of looking at age heaping when age is recorded in months is to examine the remainders when the ages are divided by 12. So, we set the divisor to 12.
+
+2. Create a new variable for the remainder when age variable is divided by 12.
+
+Create a new worksheet containing the raw dataset and create a new variable as shown in @fig-age-heaping-01.
+
+![Create a new variable for the remainder value](images/age_heaping_01.png){#fig-age-heaping-01 fig-align="center" width="70%"}
+
+Apply the `modulo` operator to the age variable using 12 as the divisor. This can be done using the `MOD()` function is Excel as follows (@fig-age-heaping-02):
+
+```swift
+=MOD(C2,12)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Get the remainder value when age is divided by 12](images/age_heaping_02.png){#fig-age-heaping-02}
+
+![Copy or drag the formula to the rest of the rows](images/age_heaping_03.png){#fig-age-heaping-03}
+
+:::
+
+3. Create a summary table of the counts per remainder values.
+
+a. In a separate worksheet (see @fig-age-heaping-04), create a summary table using Excel's pivot table functionality.
+
+`Insert` --> `Pivot Table` --> `From table/range`
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Create a new worksheet for the summary table](images/age_heaping_04.png){#fig-age-heaping-04}
+
+![Initiate pivot table functionality in Excel](images/age_heaping_05.png){#fig-age-heaping-05}
+
+:::
+
+b. Select the range of data to summarise via pivot table and insert this pivot table into the new worksheet.
+
+::: {layout-ncol="3" layout-valign="bottom"}
+
+![Select the range of data to summarise](images/age_heaping_06.png){#fig-age-heaping-06 }
+
+![Select the rage of data to summarise](images/age_heaping_07.png){#fig-age-heaping-07}
+
+![Select option to insert summary table into new worksheet](images/age_heaping_08.png){#fig-age-heaping-08}
+
+:::
+
+c. Select the rows of the summary table.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select the variable for the rows of the summary table](images/age_heaping_09.png){#fig-age-heaping-09}
+
+![Drag the variable for the rows to the row option of the summary table](images/age_heaping_10.png){#fig-age-heaping-10}
+
+:::
+
+d. Select the values of the summary table.
+
+::: {layout-ncol="3" layout-valign="bottom"}
+
+![Select the values of the summary table](images/age_heaping_11.png){#fig-age-heaping-11}
+
+![Select the value field settings of the summary table](images/age_heaping_12.png){#fig-age-heaping-12}
+
+![Select the appropriate summary measure](images/age_heaping_13.png){#fig-age-heaping-13}
+
+:::
+
+e. The summary table is now completed.
+
+![Summary table completed](images/age_heaping_14.png){#fig-age-heaping-14 fig-align="center" width="70%"}
+
+4. Calculate the expected counts of the remainder values if there was no age heaping.
+
+The expected counts can be calculated as follows:
+
+<br/>
+
+$$ \text{expected counts} ~ = ~ \frac{n}{d-1} $$
+
+where:
+
+$n ~ = ~ \text{number of records}$
+
+$d ~ = ~ \text{divisor}$
+
+<br/>
+
+In Excel, this can be calculated using the following formula (@fig-age-heaping-15):
+
+```swift
+=$B$14/COUNT($B$2:$B$13)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate expected counts if no age heaping](images/age_heaping_15.png){#fig-age-heaping-15}
+
+![Copy or drag the formula to the rest of the rows](images/age_heaping_16.png){#fig-age-heaping-16}
+
+:::
+
+5. Perform a chi-square test on the actual vs expected remainder counts.
+
+A chi-square test is performed to test whether the actual remainder values are significantly different from the expected remainder values. This test can be performed in Excel as follows (@fig-age-heaping-17):
+
+```swift
+=CHISQ.TEST(B2:B13,C2:C13)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Perform chi-square test in Excel](images/age_heaping_17.png){#fig-age-heaping-17}
+
+![Result is p-value of chi-square test](images/age_heaping_18.png){#fig-age-heaping-18}
+
+:::
+
+The resulting value when the `CHISQ.TEST()` is performed in Excel is the `p-value` of the chi-square test. A `p-value` of less than 0.05 indicates that there is a significant difference between the actual and expected remainder values for the age in the school nutrition dataset. This points to significant age heaping in the dataset.
+
+### Digit preference {#sec-univariate-digit-preference}
+
+Digit preference is the observation that the final number in a measurement occurs with a greater frequency than is expected by chance. This can occur because of rounding, the practice of increasing or decreasing the value in a measurement to the nearest whole or half unit, or because data are made up.
+
+#### Testing for digit preference {.unnumbered}
+
+There is no built-in function in Excel that tests for digit preference. The following steps can be performed in Excel to test whether there is significant digit preference in a continuous variable. These steps use the weight variable in the school nutrition data for demonstration. We recommend that these steps be done in a separate worksheet from the raw data to avoid contamination of original dataset.
+
+1. Create a new variable for the last digit of the weight variable.
+
+Create a new worksheet and then create a new variable for the last digit of the weight variable as shown in [@fig-digit-preference-01, @fig-digit-preference-02].
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Create a new worksheet for the digit preference testing](images/digit_preference_01.png){#fig-digit-preference-01}
+
+![Create a new variable for the last digit of the weight variable](images/digit_preference_02.png){#fig-digit-preference-02}
+
+:::
+
+The last digit of the weight variable can be extracted in Excel using the `RIGHT()` function as follows (see @fig-digit-preference-03):
+
+```swift
+=RIGHT(E2,1)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Get the last digit of the weight variable](images/digit_preference_03.png){#fig-digit-preference-03}
+
+![Copy or drag the formula to the rest of the rows](images/digit_preference_04.png){#fig-digit-preference-04}
+
+:::
+
+2. Create a summary table of the counts of the last digits.
+
+Using pivot table in Excel, create a summary table of the counts of the last digits. We recommend that the summary table be inserted into a new worksheet.
+
+a. `Insert` --> `Pivot Table` --> `From Table/Range`
+
+![Initiate pivot table functionality in Excel](images/digit_preference_05.png){#fig-digit-preference-05 fig-align="center" width="70%"}
+
+
+b. Select the range of data to summarise via pivot table and insert this pivot table into the new worksheet.
+
+::: {layout-ncol="3" layout-valign="bottom"}
+
+![Select the range of data to summarise](images/digit_preference_06.png){#fig-digit-preference-06}
+
+![Select the rage of data to summarise](images/digit_preference_07.png){#fig-digit-preference-07}
+
+![Select option to insert summary table into new worksheet](images/digit_preference_08.png){#fig-digit-preference-08}
+
+:::
+
+c. Select the rows of the summary table.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select the variable for the rows of the summary table](images/digit_preference_09.png){#fig-digit-preference-09}
+
+![Drag the variable for the rows to the row option of the summary table](images/digit_preference_10.png){#fig-digit-preference-10}
+
+:::
+
+d. Select the values of the summary table.
+
+![Select the values of the summary table](images/digit_preference_11.png){#fig-digit-preference-11 fig-align="center" width="70%"}
+
+3. Calculate the expected counts of the last digits if there was no digit preference.
+
+This can be calculated as:
+
+<br/>
+
+$$ \text{expected counts} ~ = ~ \frac{n}{10} $$
+
+where:
+
+$n ~ = ~ \text{number of records}$
+
+<br/>
+
+In Excel, this can be calculated as follows (@fig-digit-preference-12):
+
+```swift
+=B12/10
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate expected counts if no digit preference](images/digit_preference_12.png){#fig-digit-preference-12}
+
+![Copy or drag the formula to the rest of the rows](images/digit_preference_13.png){#fig-digit-preference-13}
+
+:::
+
+4. Calculate the chi-square ($\chi^2$) statistic.
+
+The formula to calculate the chi-square ($\chi^2$) statistic is:
+
+<br/>
+
+$$ \chi^2 ~ = ~ \sum^n_{i = 1} \frac{(O_i - E_i) ^ 2}{E_i} $$
+
+<br/>
+
+In Excel, this can be calculated by first calculating the square of per digit difference in observed and expected counts divided by the expected counts (@fig-digit-preference-14).
+
+```swift
+=((B2-C2) ^ 2) / C2
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate the difference in observed and expected counts](images/digit_preference_14.png){#fig-digit-preference-14}
+
+![Copy or drag the formula to the rest of the rows](images/digit_preference_15.png){#fig-digit-preference-15}
+
+:::
+
+Then, these differences are summed (@fig-digit-preference-16).
+
+```swift
+=SUM(D2:D11)
+```
+
+<br/>
+
+![Sum the square of per digit difference in observed and expected counts divided by expected counts](images/digit_preference_16.png){#fig-digit-preference-16 fig-align="center" width="70%"}
+
+5. Calculate the digit preference score (DPS).
+
+The digit preference score (DPS) is a summary measure that reduces the bias in digit preference testing because of sample size. The DPS takes into account sample size as shown in this formula:
+
+<br/>
+
+$$ DPS ~ = ~ \sqrt{\frac{\chi^2}{\sum^n_{i=1} O_i \times (n_{digits} - 1)}} * 100 $$
+
+<br/>
+
+In Excel, this can be calculated as follows (@fig-digit-preference-17):
+
+```swift
+=SQRT(F2/(SUM(B2:B11)*(COUNT($B$2:$B$11)-1)))*100
+```
+
+<br/>
+
+![Calculate the digit preference score](images/digit_preference_17.png){#fig-digit-preference-17 fig-align="center" width="70%"}
+
+#### Interpreting the digit preference score {.unnumbered}
+
+The following table shows how to interpret the DPS.
+
+**DPS** | **Classification**
+:--- | :---
+< 8 | Excellent
+from 8 to < 12 | Good
+from 12 to < 20 | Acceptable
+20 or higher | Problematic
+
+
+<!-- ### Implausible {.unnumbered} -->
+
+
+
+

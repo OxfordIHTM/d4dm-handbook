@@ -70,6 +70,8 @@ format:
   html:
     theme: zephyr
     highlight-style: breeze
+    toc: true
+    toc-depth: 3
   pdf:
     documentclass: scrreprt
     papersize: a4
