@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -42,6 +77,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-2c583ca0f5e1d80a00909d1e0daac7e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -79,6 +117,35 @@ gtag('js', new Date());
 gtag('config', '', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -310,8 +377,22 @@ gtag('config', '', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-scatter-plot" id="toc-sec-scatter-plot" class="nav-link active" data-scroll-target="#sec-scatter-plot"><span class="header-section-number">15.1</span> Scatter plots</a>
+  <ul class="collapse">
+  <li><a href="#sec-scatter-plot-create" id="toc-sec-scatter-plot-create" class="nav-link" data-scroll-target="#sec-scatter-plot-create"><span class="header-section-number">15.1.1</span> Creating scatter plots</a></li>
+  </ul></li>
+  <li><a href="#sec-measures-association" id="toc-sec-measures-association" class="nav-link" data-scroll-target="#sec-measures-association"><span class="header-section-number">15.2</span> Numerical measures of association</a>
+  <ul class="collapse">
+  <li><a href="#sec-correlation" id="toc-sec-correlation" class="nav-link" data-scroll-target="#sec-correlation"><span class="header-section-number">15.2.1</span> Correlation</a></li>
+  <li><a href="#sec-robust-correlation-measures" id="toc-sec-robust-correlation-measures" class="nav-link" data-scroll-target="#sec-robust-correlation-measures"><span class="header-section-number">15.2.2</span> Correlation measures</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/15-bivariate-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -335,8 +416,632 @@ gtag('config', '', { 'anonymize_ip': true});
 </header>
 
 
+<p>Bivariate means “involving two variables” in statistics. It’s a method used to analyze relationships between two variables, studying how their values might connect or influence each other.</p>
+<p>One crucial element of bivariate analysis is evaluating the correlation between two variables, which can be positive (both rise together), negative (one rises while the other falls), or non-existent (no apparent connection).</p>
+<p>Bivariate data is often visualised using scatter plots (see <a href="#sec-scatter-plot" class="quarto-xref"><span>Section 15.1</span></a>), which can help reveal patterns or trends between the two variables.</p>
+<section id="sec-scatter-plot" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="sec-scatter-plot"><span class="header-section-number">15.1</span> Scatter plots</h2>
+<blockquote class="blockquote">
+<p>Scatter plots are glorious. Of all the major chart types, they are by far the most powerful. They allow us to quickly understand relationships that would be nearly impossible to recognize in a table or a different type of chart… Michael Friendly and Daniel Denis, psychologists and historians of graphics, call the scatter plot the most “generally useful invention in the history of statistical graphics.”</p>
+</blockquote>
+<p>Dan Kopf</p>
+<p>Scatter plots are graphs that show how two numerical datasets relate. Each data point is represented by a dot, positioned based on the values of the two variables being compared. They effectively demonstrate both the strength and direction of connections between these variables.</p>
+<p>Scatter plots primarily help visualise and determine potential relationships or correlations between two variables. They reveal if the variables trend upward together (positive correlation), downward together (negative correlation), or exhibit no noticeable connection.</p>
+<p>A scatter plot features two axes—the horizontal <em>x-axis</em> and vertical <em>y-axis</em>. Data points are represented as dots, each positioned according to their respective x and y values.</p>
+<p>Examining the pattern of dots in a scatter plot offers insights into the relationship between variables. For example, dots forming an upward-sloping line indicate a positive correlation, whereas a downward slope suggests a negative correlation.</p>
+<section id="sec-scatter-plot-create" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="sec-scatter-plot-create"><span class="header-section-number">15.1.1</span> Creating scatter plots</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-scatterplot-cyclones" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatterplot-cyclones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="15-bivariate-statistics_files/figure-html/fig-scatterplot-cyclones-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;15.1: Scatterplot of pressure and speed of cyclones"><img src="15-bivariate-statistics_files/figure-html/fig-scatterplot-cyclones-1.png" class="img-fluid figure-img" width="768"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-cyclones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.1: Scatterplot of pressure and speed of cyclones
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Excel has a built-in functionality to create scatterplots. Following are the steps to create a scatterplot in Excel. For this demonstration, we use the cyclones dataset. We recommend creating a new Excel workbook and import the raw cyclones dataset into this workbook to avoid contamination of the original data.</p>
+<ol type="1">
+<li>Create a base scatterplot.</li>
+</ol>
+<p>In a new worksheet, go to <code>Insert</code> –&gt; <code>Insert Scatter (X, Y) or Bubble Chart</code> –&gt; <code>Scatter</code></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-01" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;15.2: Create new worksheet"><img src="images/plot_scatterplot_01.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.2: Create new worksheet
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;15.3: Create base scatterplot"><img src="images/plot_scatterplot_02.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.3: Create base scatterplot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Select data to use for the scatterplot.</li>
+</ol>
+<ol type="a">
+<li>Select base scatterplot –&gt; <code>Chart Design</code> –&gt; <code>Select Data</code></li>
+</ol>
+<div id="fig-plot-scatterplot-03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;15.4: Go into Chart Design options to select data"><img src="images/plot_scatterplot_03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.4: Go into Chart Design options to select data
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="a">
+<li>Click on <code>Add</code> to add a new data series (<a href="#fig-plot-scatterplot-04" class="quarto-xref">Figure&nbsp;<span>15.5</span></a>).</li>
+</ol>
+<div id="fig-plot-scatterplot-04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;15.5: Click on Add to add new data series"><img src="images/plot_scatterplot_04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.5: Click on Add to add new data series
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="a">
+<li>Select the appropriate x-axis and y-axis values. For this demonstration, we will use pressure as the x-axis variable and speed as the y-axis variable.</li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="4">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-05" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;15.6: Edit x-axis values"><img src="images/plot_scatterplot_05.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.6: Edit x-axis values
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-06" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;15.7: Assign pressure to x-axis"><img src="images/plot_scatterplot_06.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.7: Assign pressure to x-axis
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-07" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;15.8: Edit y-axis values"><img src="images/plot_scatterplot_07.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.8: Edit y-axis values
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-plot-scatterplot-08" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;15.9: Assign speed to y-axis"><img src="images/plot_scatterplot_08.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.9: Assign speed to y-axis
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Add a trendline (<a href="#fig-plot-scatterplot-09" class="quarto-xref">Figure&nbsp;<span>15.10</span></a>).</li>
+</ol>
+<p><code>Chart Elements</code> –&gt; <code>Trendline</code> –&gt; <code>Linear</code></p>
+<div id="fig-plot-scatterplot-09" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;15.10: Add a trendline"><img src="images/plot_scatterplot_09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.10: Add a trendline
+</figcaption>
+</figure>
+</div>
+<ol start="5" type="a">
+<li>The scatterplot is now created (<a href="#fig-plot-scatterplot-10" class="quarto-xref">Figure&nbsp;<span>15.11</span></a>).</li>
+</ol>
+<div id="fig-plot-scatterplot-10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-scatterplot-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/plot_scatterplot_10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;15.11: The scatterplot is now created"><img src="images/plot_scatterplot_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-scatterplot-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.11: The scatterplot is now created
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-measures-association" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="sec-measures-association"><span class="header-section-number">15.2</span> Numerical measures of association</h2>
+<section id="sec-correlation" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="sec-correlation"><span class="header-section-number">15.2.1</span> Correlation</h3>
+<p>Correlation is a statistical measure indicating how strongly and in what direction two variables are connected. While it reveals the extent and nature of a linear relationship, it does not imply that one variable causes the other - it only shows how often they move together without explaining why.</p>
+</section>
+<section id="sec-robust-correlation-measures" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="sec-robust-correlation-measures"><span class="header-section-number">15.2.2</span> Correlation measures</h3>
+<p>In this section, we discuss the three most common numerical measures of correlation - <em>Pearson’s correlation coefficient</em>, <em>Spearman’s rank correlation coefficient</em>, and <em>Kendall’s tau rank correlation coefficient</em>.</p>
+<p>Of these three, Spearman’s and Kendall’s are non-parametric and are considered more robust than Pearson’s.</p>
+<section id="pearsons-correlation-coefficient" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="pearsons-correlation-coefficient">Pearson’s correlation coefficient</h4>
+<p>Pearson’s correlation coefficient, commonly referred to as Pearson’s <span class="math inline">\(\rho\)</span>, is a statistical tool used to evaluate both the strength and direction of a linear association between two continuous variables. It indicates how closely data points align with a line of best fit. The value of <span class="math inline">\(\rho\)</span> can range from -1 to +1.</p>
+<p>The absolute value of Pearson’s <span class="math inline">\(\rho\)</span> reflects the strength of the linear relationship. A score of 1 or -1 signifies a perfect positive or negative correlation, respectively, implying all data points lie perfectly on a line. Conversely, a score of 0 suggests no linear relationship exists.</p>
+<p>Pearson’s <span class="math inline">\(\rho\)</span> can be calculated as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ \rho ~ = ~ \frac{covariance(x_1, x_2)}{(n-1) sd_{x_1} sd_{x_2}} \]</span></p>
+<p>where</p>
+<p><span class="math inline">\(x_1,x_2 ~ = ~ \text{continuous variables to test correlation of}\)</span></p>
+<p><span class="math inline">\(n ~ = ~ \text{number of data pairs for } x_1,x_2\)</span></p>
+<p><span class="math inline">\(sd_{x_1},sd_{x_2} ~ = ~ \text{standard deviation for } x_1,x_2\)</span></p>
+<p><br></p>
+<p>In Excel, either the <code>PEARSON()</code> or the <code>CORREL()</code> function is used to get Pearson’s <span class="math inline">\(\rho\)</span>. To get Pearson’s <span class="math inline">\(\rho\)</span> for the correlation between pressure and speed from the cyclones dataset, we use the following calculation:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>PEARSON<span class="op">(</span>H2<span class="op">:</span>H102<span class="op">,</span>I2<span class="op">:</span>I102<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>CORREL<span class="op">(</span>H2<span class="op">:</span>H102<span class="op">,</span>I2<span class="op">:</span>I102<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>with both giving a Pearson’s <span class="math inline">\(\rho\)</span> of <strong>-0.7886634.</strong></p>
+<p><a href="#tbl-pearson-values" class="quarto-xref">Table&nbsp;<span>15.1</span></a> summarises how to interpret the range of Pearson’s <span class="math inline">\(\rho\)</span> values.</p>
+<div id="tbl-pearson-values" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pearson-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;15.1: Interpretation of various Pearson’s <span class="math inline">\(\rho\)</span> values.
+</figcaption>
+<div aria-describedby="tbl-pearson-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Pearson’s <span class="math inline">\(\rho\)</span></strong></th>
+<th style="text-align: left;"><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">+1</td>
+<td style="text-align: left;">Perfect positive correlation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-1</td>
+<td style="text-align: left;">Perfect negative correlation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">No correlation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">+/- 0.1 to +/- 0.3</td>
+<td style="text-align: left;">Weak correlation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">+/- 0.4 to +/- 0.6</td>
+<td style="text-align: left;">Moderate correlation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">+/- 0.7 to +/- 0.9</td>
+<td style="text-align: left;">Strong correlation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>It’s important to note that Pearson’s <span class="math inline">\(\rho\)</span> only measures linear relationships. It may not accurately reflect the relationship between variables if the relationship is non-linear. Pearson’s correlation is typically used when dealing with normally distributed data that are measured on interval or ratio scales.</p>
+</section>
+<section id="spearmans-rank-correlation-coefficient" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="spearmans-rank-correlation-coefficient">Spearman’s rank correlation coefficient</h4>
+<p>Spearman’s rank correlation coefficient (Spearman’s <span class="math inline">\(\rho\)</span>) is a statistical measure that assesses the strength and direction of a monotonic relationship between two ranked variables. It’s a non-parametric test, meaning it doesn’t assume data follows a normal distribution and is often used when data is ordinal or when a linear relationship isn’t assumed. The coefficient ranges from -1 to +1, with -1 indicating a perfect negative correlation, +1 indicating a perfect positive correlation, and 0 indicating no correlation.</p>
+<p>Compared to Pearson’s <span class="math inline">\(\rho\)</span>, Spearman’s <span class="math inline">\(\rho\)</span> performs the correlation test on the rank of the values of the two variables rather than on the values themselves.</p>
+<p>Hence, the values of the two variables are ranked first and then the Spearman’s <span class="math inline">\(\rho\)</span> is calculated based on these ranks as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ \rho ~ = ~ 1 - \frac{6 \sum d ^ 2}{n(n ^ 2 - 1)} \]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(d ~ = ~ \text{difference in ranks}\)</span></p>
+<p><span class="math inline">\(n ~ = ~ \text{number of data pairs}\)</span></p>
+<p><br></p>
+<p>In Excel, we can calculate Spearman’s <span class="math inline">\(\rho\)</span> as follows (using the pressure and speed variables in the cyclones dataset):</p>
+<ol type="1">
+<li>Rank each of the two variables you are testing for correlations using the <code>RANK.AVG()</code> function.</li>
+</ol>
+<p>For this step, we recommend creating a new worksheet and importing the raw dataset to this worksheet to avoid contamination of the raw data (<a href="#fig-spearman-rank-01" class="quarto-xref">Figure&nbsp;<span>15.12</span></a>).</p>
+<div id="fig-spearman-rank-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;15.12: Import raw data to new worksheet"><img src="images/spearman_rank_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.12: Import raw data to new worksheet
+</figcaption>
+</figure>
+</div>
+<p>Create a new variable for the ranking of the pressure variable and then rank using <code>RANK.AVG()</code> function (<a href="#fig-spearman-rank-02" class="quarto-xref">Figure&nbsp;<span>15.13</span></a>).</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;15.13: Rank the pressure variable"><img src="images/spearman_rank_02.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.13: Rank the pressure variable
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-03" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure&nbsp;15.14: Copy or drag the formula to the rest of the rows"><img src="images/spearman_rank_03.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.14: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Create a new variable for the ranking of the speed variable and then rank using <code>RANK.AVG()</code> function (<a href="#fig-spearman-rank-03" class="quarto-xref">Figure&nbsp;<span>15.14</span></a>).</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-04" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;15.15: Rank the speed variable"><img src="images/spearman_rank_04.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.15: Rank the speed variable
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-05" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;15.16: Copy or drag the formula to the rest of the rows"><img src="images/spearman_rank_05.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.16: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Calculate Spearman’s <span class="math inline">\(\rho\)</span>.</li>
+</ol>
+<ol type="a">
+<li>Calculate using the <code>CORREL()</code> function in Excel.</li>
+</ol>
+<p>The <code>CORREL()</code> function should be applied to the ranks for pressure and speed (see <a href="#fig-spearman-rank-06" class="quarto-xref">Figure&nbsp;<span>15.17</span></a>) instead of the actual pressure and speed values (as used in the Pearson’s calculation).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>CORREL<span class="op">(</span>J2<span class="op">:</span>J102<span class="op">,</span>K2<span class="op">:</span>K102<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div id="fig-spearman-rank-06" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;15.17: Calculate Spearman’s \rho using built-in function"><img src="images/spearman_rank_06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.17: Calculate Spearman’s <span class="math inline">\(\rho\)</span> using built-in function
+</figcaption>
+</figure>
+</div>
+<p>Using this method, the Spearman’s <span class="math inline">\(\rho\)</span> for pressure and speed variable in the cyclones dataset is <strong>-0.8289627</strong></p>
+<ol start="2" type="a">
+<li>Calculate using the formula.</li>
+</ol>
+<p>First, get the square differences of the pressure and speed ranks (<a href="#fig-spearman-rank-07" class="quarto-xref">Figure&nbsp;<span>15.18</span></a>).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">=(</span>J2<span class="op">-</span>K2<span class="op">)^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then apply the Spearman’s <span class="math inline">\(\rho\)</span> formula as follows:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span><span class="dv">1</span><span class="op">-((</span><span class="dv">6</span><span class="op">*</span>SUM<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">))/(</span>COUNT<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">)*(</span>COUNT<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">)^</span><span class="dv">2</span><span class="op">-</span><span class="dv">1</span><span class="op">)))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-07" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figure&nbsp;15.18: Get the squared differences of the ranks"><img src="images/spearman_rank_07.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.18: Get the squared differences of the ranks
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-spearman-rank-08" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spearman-rank-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spearman_rank_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figure&nbsp;15.19: Calculate using the formula"><img src="images/spearman_rank_08.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spearman-rank-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.19: Calculate using the formula
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Using this method, the Spearman’s <span class="math inline">\(\rho\)</span> for pressure and speed variable in the cyclones dataset is <strong>-0.8226878</strong></p>
+<div id="nte-spearman-rho-differences" class="callout callout-style-default callout-note callout-titled" title="Difference between built-in function result and the calculated result">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;15.1: Difference between built-in function result and the calculated result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a very small difference (<code>-0.0063</code>) between the result when <code>CORREL()</code> function is used compared to when the formula is used. This is likely due to some differences in the way ranking is performed by the <code>CORREL()</code> function compared to the <code>RANK.AVG()</code> function approach used in the calculation approach.</p>
+</div>
+</div>
+<p>The reference table in <a href="#tbl-pearson-values" class="quarto-xref">Table&nbsp;<span>15.1</span></a> for the Pearson’s <span class="math inline">\(\rho\)</span> can also be used to interpret Spearman’s <span class="math inline">\(\rho\)</span>.</p>
+</section>
+<section id="kendalls-rank-correlation-coefficient" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="kendalls-rank-correlation-coefficient">Kendall’s rank correlation coefficient</h4>
+<p>Kendall’s <span class="math inline">\(\tau\)</span>, alternatively referred to as Kendall’s tau rank correlation coefficient, serves as a statistical tool for evaluating the ordinal relationship between two variables. It examines how closely the rankings of data points align across two datasets, irrespective of their specific values. This measure is non-parametric, implying it does not rely on assumptions about data distribution and remains effective even in the presence of outliers.</p>
+<p>Kendall’s <span class="math inline">\(\tau\)</span> assesses how closely the rankings of two variables align. If one variable’s ranking rises, does the other also tend to rise (positive relationship), fall (negative relationship), or show little pattern (nearly zero correlation)?</p>
+<p>The method involves comparing concordant pairs - where both variables’ rankings follow the same order - and discordant pairs - where their rankings are opposite in order.</p>
+<p>Kendall’s <span class="math inline">\(\tau\)</span> can be calculated as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ \tau ~ = ~ \frac{n_{concordant} - n_{discordant}}{\frac{n (n-1)}{2}}\]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(n ~ = ~ \text{number of data pairs}\)</span></p>
+<p><br></p>
+<p>There is no built-in function in Excel that calculates Kendall’s <span class="math inline">\(\tau\)</span>. Following are steps on how to arrive at this value for pressure and speed variables in the cyclones dataset using Excel.</p>
+<ol type="1">
+<li>Create a new worksheet and import cyclones dataset.</li>
+</ol>
+<p>We recommend creating a new worksheet and importing the raw dataset to this worksheet (see <a href="#fig-kendall-rank-01" class="quarto-xref">Figure&nbsp;<span>15.20</span></a>) to avoid contamination of the raw data.</p>
+<div id="fig-kendall-rank-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figure&nbsp;15.20: Create new worksheet and import cyclones dataset for Kendall’s tau calculations"><img src="images/kendall_rank_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.20: Create new worksheet and import cyclones dataset for Kendall’s tau calculations
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Rank pressure values.</li>
+</ol>
+<p>Using the <code>RANK.AVG()</code> function in Excel, rank the pressure values as follows (<a href="#fig-kendall-rank-02" class="quarto-xref">Figure&nbsp;<span>15.21</span></a>):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>RANK<span class="op">.</span>AVG<span class="op">(</span>H2<span class="op">,</span>$H$<span class="op">:</span>$H$<span class="dv">102</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure&nbsp;15.21: Rank pressure values"><img src="images/kendall_rank_02.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.21: Rank pressure values
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-03" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure&nbsp;15.22: Copy or drag the formula to the rest of the rows"><img src="images/kendall_rank_03.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.22: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Rank speed values.</li>
+</ol>
+<p>Using the <code>RANK.AVG()</code> function in Excel, rank the speed values as follows (<a href="#fig-kendall-rank-04" class="quarto-xref">Figure&nbsp;<span>15.23</span></a>):</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>RANK<span class="op">.</span>AVG<span class="op">(</span>I2<span class="op">,</span>$I$<span class="op">:</span>$I$<span class="dv">102</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-04" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figure&nbsp;15.23: Rank speed values"><img src="images/kendall_rank_04.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.23: Rank speed values
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-05" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figure&nbsp;15.24: Copy or drag the formula to the rest of the rows"><img src="images/kendall_rank_05.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.24: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Sort the table by ascending order based on the pressure rank.</li>
+</ol>
+<p>Click on the sort functionality at the pressure column if available (<a href="#fig-kendall-rank-06" class="quarto-xref">Figure&nbsp;<span>15.25</span></a>) or go to <code>Data</code> –&gt; <code>Sort</code> to sort the table by pressure rank in ascending order.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-06" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figure&nbsp;15.25: Sort table by pressure rank"><img src="images/kendall_rank_06.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.25: Sort table by pressure rank
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-07" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figure&nbsp;15.26: Table now sorted ascending by pressure rank"><img src="images/kendall_rank_07.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.26: Table now sorted ascending by pressure rank
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Create new variable for counts of concordant pairs.</li>
+</ol>
+<p>Concordant pairs are items that are ranked higher in variable X and also ranked higher in variable Y, or items ranked lower in X and also ranked lower in Y.</p>
+<p>Since our cyclones data is now sorted in ascending order based on the pressure ranking, we can go down the array of ranks for speed to check for concordance. For example, in the cyclones dataset, if the value of the speed rank in <code>K2</code> cell is higher than the value of the rank in the <code>K3</code> cell, then these two are counted as concordant pairs. We make this comparison for the speed rank in <code>K2</code> for every cell after it and tally the number of concordant pairs. The sum of the counts of concordant pairs for <code>K2</code> cell becomes the value for the concordant variable for row 2. We then do the same for the next row until we have counts of concordant pairs for each row of data.</p>
+<p>This can be implemented in Excel using the following formula (<a href="#fig-kendall-rank-08" class="quarto-xref">Figure&nbsp;<span>15.27</span></a>):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>COUNTIF<span class="op">(</span>K3<span class="op">:</span>$K$<span class="dv">102</span><span class="op">,</span><span class="st">"&gt;"</span><span class="op">&amp;</span>K2<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-08" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figure&nbsp;15.27: Count number of concordant pairs"><img src="images/kendall_rank_08.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.27: Count number of concordant pairs
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-09" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figure&nbsp;15.28: Copy or drag the formula to the rest of the rows"><img src="images/kendall_rank_09.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.28: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Create new variable for counts of discordant pairs.</li>
+</ol>
+<p>Discordant pairs are items that are ranked higher in variable X and are ranked lower in variable Y, or vice versa.</p>
+<p>Since our cyclones data is now sorted in ascending order based on the pressure ranking, we can go down the array of ranks for speed to check for concordance. For example, in the cyclones dataset, if the value of the speed rank in <code>K2</code> cell is lower than the value of the rank in the <code>K3</code> cell, then these two are counted as discordant pairs. We make this comparison for the speed rank in <code>K2</code> for every cell after it and tally the number of discordant pairs. The sum of the counts of discordant pairs for <code>K2</code> cell becomes the value for the discordant variable for row 2. We then do the same for the next row until we have counts of discordant pairs for each row of data.</p>
+<p>This can be implemented in Excel using the following formula (<a href="#fig-kendall-rank-10" class="quarto-xref">Figure&nbsp;<span>15.29</span></a>):</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>COUNTIF<span class="op">(</span>K3<span class="op">:</span>$K$<span class="dv">102</span><span class="op">,</span><span class="st">"&lt;"</span><span class="op">&amp;</span>K2<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Figure&nbsp;15.29: Count number of discordant pairs"><img src="images/kendall_rank_10.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.29: Count number of discordant pairs
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-kendall-rank-11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Figure&nbsp;15.30: Copy or drag the formula to the rest of the rows"><img src="images/kendall_rank_11.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.30: Copy or drag the formula to the rest of the rows
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Calculate Kendall’s <span class="math inline">\(\tau\)</span>.</li>
+</ol>
+<p>Now that we have the counts of concordant and discordant pairs, we can calculate Kendall’s <span class="math inline">\(\tau\)</span> in Excel as follows (<a href="#fig-kendall-rank-12" class="quarto-xref">Figure&nbsp;<span>15.31</span></a>):</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">=(</span>SUM<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">)-</span>SUM<span class="op">(</span>M2<span class="op">:</span>M102<span class="op">))/((</span>COUNT<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">)*(</span>COUNT<span class="op">(</span>L2<span class="op">:</span>L102<span class="op">)-</span><span class="dv">1</span><span class="op">))/</span><span class="dv">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This results in a Kendall’s <span class="math inline">\(\tau\)</span> of <strong>-0.642178218</strong>.</p>
+<!-- **-0.6752679** -->
+<p><br></p>
+<div id="fig-kendall-rank-12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kendall-rank-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/kendall_rank_12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Figure&nbsp;15.31: Calculate Kendall’s tau"><img src="images/kendall_rank_12.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kendall-rank-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.31: Calculate Kendall’s tau
+</figcaption>
+</figure>
+</div>
+<p>The reference table in <a href="#tbl-pearson-values" class="quarto-xref">Table&nbsp;<span>15.1</span></a> for the Pearson’s <span class="math inline">\(\rho\)</span> can also be used to interpret Kendall’s <span class="math inline">\(\tau\)</span>.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -751,8 +1456,40 @@ gtag('config', '', { 'anonymize_ip': true});
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/15-bivariate-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/15-bivariate-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>

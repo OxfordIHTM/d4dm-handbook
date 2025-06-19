@@ -390,6 +390,10 @@ window.Quarto = {
   <li><a href="#sec-univariate-heaping" id="toc-sec-univariate-heaping" class="nav-link" data-scroll-target="#sec-univariate-heaping"><span class="header-section-number">14.1.4</span> Age Heaping</a></li>
   <li><a href="#sec-univariate-digit-preference" id="toc-sec-univariate-digit-preference" class="nav-link" data-scroll-target="#sec-univariate-digit-preference"><span class="header-section-number">14.1.5</span> Digit preference</a></li>
   </ul></li>
+  <li><a href="#sec-univariate-categorical" id="toc-sec-univariate-categorical" class="nav-link" data-scroll-target="#sec-univariate-categorical"><span class="header-section-number">14.2</span> Categorical variables</a>
+  <ul class="collapse">
+  <li><a href="#sec-categorical-considerations" id="toc-sec-categorical-considerations" class="nav-link" data-scroll-target="#sec-categorical-considerations"><span class="header-section-number">14.2.1</span> Some considerations when dealing with categorical variables</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/14-univariate-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -1396,50 +1400,50 @@ Figure&nbsp;14.55: Calculate the intercept of the QQ line
 </div>
 </div>
 <ol start="6" type="1">
-<li>Create a base scatterplot.</li>
+<li>Create a base scatter plot.</li>
 </ol>
-<p>In the same worksheet as the calculations, create a base scatterplot as follows (<a href="#fig-plot-qqplot-17" class="quarto-xref">Figure&nbsp;<span>14.56</span></a>):</p>
+<p>In the same worksheet as the calculations, create a base scatter plot as follows (<a href="#fig-plot-qqplot-17" class="quarto-xref">Figure&nbsp;<span>14.56</span></a>):</p>
 <p><code>Insert</code> –&gt; <code>Charts</code> –&gt; <code>Insert Scatter (x, Y) or Bubble Chart</code> –&gt; <code>Scatter</code></p>
 <div id="fig-plot-qqplot-17" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-qqplot-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/plot_qqplot_17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-56" title="Figure&nbsp;14.56: Create a base scatterplot"><img src="images/plot_qqplot_17.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/plot_qqplot_17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-56" title="Figure&nbsp;14.56: Create a base scatter plot"><img src="images/plot_qqplot_17.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-qqplot-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.56: Create a base scatterplot
+Figure&nbsp;14.56: Create a base scatter plot
 </figcaption>
 </figure>
 </div>
 <ol start="7" type="1">
-<li>Select data to use for scatterplot.</li>
+<li>Select data to use for scatter plot.</li>
 </ol>
 <p>Select base chart –&gt; <code>Chart Design</code> –&gt; <code>Select Data</code></p>
 <div id="fig-plot-qqplot-18" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-qqplot-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/plot_qqplot_18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-57" title="Figure&nbsp;14.57: Select data to use for scatterplot"><img src="images/plot_qqplot_18.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/plot_qqplot_18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-57" title="Figure&nbsp;14.57: Select data to use for scatter plot"><img src="images/plot_qqplot_18.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-qqplot-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.57: Select data to use for scatterplot
+Figure&nbsp;14.57: Select data to use for scatter plot
 </figcaption>
 </figure>
 </div>
 <ol start="8" type="1">
-<li>Add a data series to base scatterplot.</li>
+<li>Add a data series to base scatter plot.</li>
 </ol>
 <p>Click on <code>Add</code> (<a href="#fig-plot-qqplot-19" class="quarto-xref">Figure&nbsp;<span>14.58</span></a>)</p>
 <div id="fig-plot-qqplot-19" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-qqplot-19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/plot_qqplot_19.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58" title="Figure&nbsp;14.58: Add a data series to base scatterplot"><img src="images/plot_qqplot_19.png" class="img-fluid figure-img"></a>
+<a href="images/plot_qqplot_19.png" class="lightbox" data-gallery="quarto-lightbox-gallery-58" title="Figure&nbsp;14.58: Add a data series to base scatter plot"><img src="images/plot_qqplot_19.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-qqplot-19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.58: Add a data series to base scatterplot
+Figure&nbsp;14.58: Add a data series to base scatter plot
 </figcaption>
 </figure>
 </div>
 <ol start="9" type="1">
-<li>Specify values for x-axis of the scatterplot.</li>
+<li>Specify values for x-axis of the scatter plot.</li>
 </ol>
 <p>The x-axis should use the range of values for the theoretical probabilities.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
@@ -1471,7 +1475,7 @@ Figure&nbsp;14.60: Select range of values for x-axis
 </div>
 </div>
 <ol start="10" type="1">
-<li>Specify values for y-axis of the scatterplot.</li>
+<li>Specify values for y-axis of the scatter plot.</li>
 </ol>
 <p>The y-axis should use the range of values for the ordered values for weight.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
@@ -1503,15 +1507,15 @@ Figure&nbsp;14.62: Select range of values for y-axis
 </div>
 </div>
 <ol start="11" type="1">
-<li>Confirm selection of values for scatterplot.</li>
+<li>Confirm selection of values for scatter plot.</li>
 </ol>
 <div id="fig-plot-qqplot-24" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-qqplot-24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/plot_qqplot_24.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63" title="Figure&nbsp;14.63: Confirm selection of values for scatterplot"><img src="images/plot_qqplot_24.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/plot_qqplot_24.png" class="lightbox" data-gallery="quarto-lightbox-gallery-63" title="Figure&nbsp;14.63: Confirm selection of values for scatter plot"><img src="images/plot_qqplot_24.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-qqplot-24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.63: Confirm selection of values for scatterplot
+Figure&nbsp;14.63: Confirm selection of values for scatter plot
 </figcaption>
 </figure>
 </div>
@@ -1523,10 +1527,10 @@ Figure&nbsp;14.63: Confirm selection of values for scatterplot
 <div id="fig-plot-qqplot-25" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-qqplot-25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/plot_qqplot_25.png" class="lightbox" data-gallery="quarto-lightbox-gallery-64" title="Figure&nbsp;14.64: Add trendline to scatterplot"><img src="images/plot_qqplot_25.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="images/plot_qqplot_25.png" class="lightbox" data-gallery="quarto-lightbox-gallery-64" title="Figure&nbsp;14.64: Add trendline to scatter plot"><img src="images/plot_qqplot_25.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-qqplot-25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.64: Add trendline to scatterplot
+Figure&nbsp;14.64: Add trendline to scatter plot
 </figcaption>
 </figure>
 </div>
@@ -1658,10 +1662,10 @@ Figure&nbsp;14.71: Select the range of data to summarise
 <div id="fig-age-heaping-07" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-age-heaping-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/age_heaping_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-72" title="Figure&nbsp;14.72: Select the rage of data to summarise"><img src="images/age_heaping_07.png" class="img-fluid figure-img"></a>
+<a href="images/age_heaping_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-72" title="Figure&nbsp;14.72: Select the range of data to summarise"><img src="images/age_heaping_07.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age-heaping-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.72: Select the rage of data to summarise
+Figure&nbsp;14.72: Select the range of data to summarise
 </figcaption>
 </figure>
 </div>
@@ -1670,10 +1674,10 @@ Figure&nbsp;14.72: Select the rage of data to summarise
 <div id="fig-age-heaping-08" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-age-heaping-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/age_heaping_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-73" title="Figure&nbsp;14.73: Select option to insert summary table into new worksheet"><img src="images/age_heaping_08.png" class="img-fluid figure-img"></a>
+<a href="images/age_heaping_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-73" title="Figure&nbsp;14.73: Select to insert into new worksheet"><img src="images/age_heaping_08.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age-heaping-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.73: Select option to insert summary table into new worksheet
+Figure&nbsp;14.73: Select to insert into new worksheet
 </figcaption>
 </figure>
 </div>
@@ -1952,10 +1956,10 @@ Figure&nbsp;14.89: Select the range of data to summarise
 <div id="fig-digit-preference-07" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-digit-preference-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/digit_preference_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-90" title="Figure&nbsp;14.90: Select the rage of data to summarise"><img src="images/digit_preference_07.png" class="img-fluid figure-img"></a>
+<a href="images/digit_preference_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-90" title="Figure&nbsp;14.90: Select the range of data to summarise"><img src="images/digit_preference_07.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digit-preference-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.90: Select the rage of data to summarise
+Figure&nbsp;14.90: Select the range of data to summarise
 </figcaption>
 </figure>
 </div>
@@ -1964,10 +1968,10 @@ Figure&nbsp;14.90: Select the rage of data to summarise
 <div id="fig-digit-preference-08" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-digit-preference-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/digit_preference_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-91" title="Figure&nbsp;14.91: Select option to insert summary table into new worksheet"><img src="images/digit_preference_08.png" class="img-fluid figure-img"></a>
+<a href="images/digit_preference_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-91" title="Figure&nbsp;14.91: Select to insert into new worksheet"><img src="images/digit_preference_08.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digit-preference-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.91: Select option to insert summary table into new worksheet
+Figure&nbsp;14.91: Select to insert into new worksheet
 </figcaption>
 </figure>
 </div>
@@ -2160,6 +2164,28 @@ Figure&nbsp;14.100: Calculate the digit preference score
 </tbody>
 </table>
 <!-- ### Implausible {.unnumbered} -->
+</section>
+</section>
+</section>
+<section id="sec-univariate-categorical" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-univariate-categorical"><span class="header-section-number">14.2</span> Categorical variables</h2>
+<p>Categorical variables represent attributes or categories instead of numerical values. They organise data into specific groups or labels, and each observation is placed into one group. Categorical variables don’t have an inherent numerical order or ranking. They consist of a finite number of distinct categories or groups.</p>
+<p>Categorical variables can be further classified as either <em>nominal</em>, <em>ordinal</em>, or <em>binary</em>.</p>
+<ul>
+<li><p>Nominal - categories with no inherent order such as colours or types of fruit.</p></li>
+<li><p>Ordinal - categories with a meaningful order such as education level - primary, secondary, college.</p></li>
+<li><p>Binary - a special case of categorical variable with only two categories such as yes or no.</p></li>
+</ul>
+<section id="sec-categorical-considerations" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="sec-categorical-considerations"><span class="header-section-number">14.2.1</span> Some considerations when dealing with categorical variables</h3>
+<section id="use-the-inherent-order-of-ordinal-variables" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="use-the-inherent-order-of-ordinal-variables">Use the inherent order of ordinal variables</h4>
+</section>
+<section id="order-nominal-variables-meaningfully" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="order-nominal-variables-meaningfully">Order nominal variables meaningfully</h4>
+</section>
+<section id="use-colours-for-categories-appropriately" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="use-colours-for-categories-appropriately">Use colours for categories appropriately</h4>
 
 
 </section>
