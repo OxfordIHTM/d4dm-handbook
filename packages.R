@@ -15,6 +15,7 @@ library(yaml)
 library(dplyr)
 library(ggplot2)
 library(ngramr)
+library(readxl)
 
 
 ## Packages for colour palettes ----

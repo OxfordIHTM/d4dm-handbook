@@ -13,6 +13,8 @@ for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
 scores <- c(10, 15, 80, 90, 75, 85, 92, 90, 90, 90)
 
 school_nutrition <- read.csv("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/refs/heads/main/school_nutrition.csv")
+
+cyclones <- read_xlsx(path = "data/cyclones.xlsx")
 ```
 
 # Univariate statistics {#sec-univariate-statistics}
@@ -646,27 +648,27 @@ $$ intercept ~ = ~ q25_{observed} - slope \times q25_{theoretical} $$
 
 :::
 
-6. Create a base scatterplot.
+6. Create a base scatter plot.
 
-In the same worksheet as the calculations, create a base scatterplot as follows (@fig-plot-qqplot-17):
+In the same worksheet as the calculations, create a base scatter plot as follows (@fig-plot-qqplot-17):
 
 `Insert` --> `Charts` --> `Insert Scatter (x, Y) or Bubble Chart` --> `Scatter`
 
-![Create a base scatterplot](images/plot_qqplot_17.png){#fig-plot-qqplot-17 fig-align="center" width="70%"}
+![Create a base scatter plot](images/plot_qqplot_17.png){#fig-plot-qqplot-17 fig-align="center" width="70%"}
 
-7. Select data to use for scatterplot.
+7. Select data to use for scatter plot.
 
 Select base chart --> `Chart Design` --> `Select Data`
 
-![Select data to use for scatterplot](images/plot_qqplot_18.png){#fig-plot-qqplot-18 fig-align="center" width="70%"}
+![Select data to use for scatter plot](images/plot_qqplot_18.png){#fig-plot-qqplot-18 fig-align="center" width="70%"}
 
-8. Add a data series to base scatterplot.
+8. Add a data series to base scatter plot.
 
 Click on `Add` (@fig-plot-qqplot-19)
 
-![Add a data series to base scatterplot](images/plot_qqplot_19.png){#fig-plot-qqplot-19}
+![Add a data series to base scatter plot](images/plot_qqplot_19.png){#fig-plot-qqplot-19}
 
-9. Specify values for x-axis of the scatterplot.
+9. Specify values for x-axis of the scatter plot.
 
 The x-axis should use the range of values for the theoretical probabilities.
 
@@ -678,7 +680,7 @@ The x-axis should use the range of values for the theoretical probabilities.
 
 :::
 
-10. Specify values for y-axis of the scatterplot.
+10. Specify values for y-axis of the scatter plot.
 
 The y-axis should use the range of values for the ordered values for weight.
 
@@ -690,9 +692,9 @@ The y-axis should use the range of values for the ordered values for weight.
 
 :::
 
-11. Confirm selection of values for scatterplot.
+11. Confirm selection of values for scatter plot.
 
-![Confirm selection of values for scatterplot](images/plot_qqplot_24.png){#fig-plot-qqplot-24 fig-align="center" width="70%"}
+![Confirm selection of values for scatter plot](images/plot_qqplot_24.png){#fig-plot-qqplot-24 fig-align="center" width="70%"}
 
 12. Add the QQ line to the QQ plot.
 
@@ -700,7 +702,7 @@ The y-axis should use the range of values for the ordered values for weight.
 
 Select `Linear` for trendline and tick `Set Intercept` and then input the value for intercept that we calculated earlier (@fig-plot-qqplot-26).
 
-![Add trendline to scatterplot](images/plot_qqplot_25.png){#fig-plot-qqplot-25 fig-align="center" width="70%"}
+![Add trendline to scatter plot](images/plot_qqplot_25.png){#fig-plot-qqplot-25 fig-align="center" width="70%"}
 
 ![Edit settings for trendline](images/plot_qqplot_26.png){#fig-plot-qqplot-26 fig-align="center" width="70%"}
 
@@ -762,9 +764,9 @@ b. Select the range of data to summarise via pivot table and insert this pivot t
 
 ![Select the range of data to summarise](images/age_heaping_06.png){#fig-age-heaping-06 }
 
-![Select the rage of data to summarise](images/age_heaping_07.png){#fig-age-heaping-07}
+![Select the range of data to summarise](images/age_heaping_07.png){#fig-age-heaping-07}
 
-![Select option to insert summary table into new worksheet](images/age_heaping_08.png){#fig-age-heaping-08}
+![Select to insert into new worksheet](images/age_heaping_08.png){#fig-age-heaping-08}
 
 :::
 
@@ -897,9 +899,9 @@ b. Select the range of data to summarise via pivot table and insert this pivot t
 
 ![Select the range of data to summarise](images/digit_preference_06.png){#fig-digit-preference-06}
 
-![Select the rage of data to summarise](images/digit_preference_07.png){#fig-digit-preference-07}
+![Select the range of data to summarise](images/digit_preference_07.png){#fig-digit-preference-07}
 
-![Select option to insert summary table into new worksheet](images/digit_preference_08.png){#fig-digit-preference-08}
+![Select to insert into new worksheet](images/digit_preference_08.png){#fig-digit-preference-08}
 
 :::
 
@@ -1007,15 +1009,36 @@ In Excel, this can be calculated as follows (@fig-digit-preference-17):
 
 The following table shows how to interpret the DPS.
 
-**DPS** | **Classification**
-:--- | :---
-< 8 | Excellent
-from 8 to < 12 | Good
+**DPS**         | **Classification**
+:-------------- | :-----------------
+< 8             | Excellent
+from 8 to < 12  | Good
 from 12 to < 20 | Acceptable
-20 or higher | Problematic
+20 or higher    | Problematic
 
 
 <!-- ### Implausible {.unnumbered} -->
+
+## Categorical variables {#sec-univariate-categorical}
+
+Categorical variables represent attributes or categories instead of numerical values. They organise data into specific groups or labels, and each observation is placed into one group. Categorical variables don't have an inherent numerical order or ranking. They consist of a finite number of distinct categories or groups.
+
+Categorical variables can be further classified as either _nominal_, _ordinal_, or _binary_.
+
+* Nominal - categories with no inherent order such as colours or types of fruit. 
+
+* Ordinal - categories with a meaningful order such as education level - primary, secondary, college.
+
+* Binary - a special case of categorical variable with only two categories such as yes or no.
+
+### Some considerations when dealing with categorical variables {#sec-categorical-considerations}
+
+#### Use the inherent order of ordinal variables {.unnumbered}
+
+#### Order nominal variables meaningfully {.unnumbered}
+
+#### Use colours for categories appropriately {.unnumbered}
+
 
 
 

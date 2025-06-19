@@ -1,5 +1,443 @@
 ---
 output-file: bivariate-statistics.html
+lightbox: auto
 ---
 
-# Bivariate statistics {#sec-bivariate-statistics} 
+```{r}
+#| label: setup
+#| echo: false
+
+suppressPackageStartupMessages(source(here::here("packages.R")))
+for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
+
+scores <- c(10, 15, 80, 90, 75, 85, 92, 90, 90, 90)
+
+school_nutrition <- read.csv("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/refs/heads/main/school_nutrition.csv")
+
+cyclones <- read_xlsx(path = "data/cyclones.xlsx")
+```
+
+# Bivariate statistics {#sec-bivariate-statistics}
+
+Bivariate means "involving two variables" in statistics. It's a method used to analyze relationships between two variables, studying how their values might connect or influence each other.
+
+One crucial element of bivariate analysis is evaluating the correlation between two variables, which can be positive (both rise together), negative (one rises while the other falls), or non-existent (no apparent connection).
+
+Bivariate data is often visualised using scatter plots (see @sec-scatter-plot), which can help reveal patterns or trends between the two variables. 
+
+## Scatter plots {#sec-scatter-plot}
+
+> Scatter plots are glorious. Of all the major chart types, they are by far the most powerful. They allow us to quickly understand relationships that would be nearly impossible to recognize in a table or a different type of chart... Michael Friendly and Daniel Denis, psychologists and historians of graphics, call the scatter plot the most “generally useful invention in the history of statistical graphics.”
+
+Dan Kopf
+
+Scatter plots are graphs that show how two numerical datasets relate. Each data point is represented by a dot, positioned based on the values of the two variables being compared. They effectively demonstrate both the strength and direction of connections between these variables. 
+
+Scatter plots primarily help visualise and determine potential relationships or correlations between two variables. They reveal if the variables trend upward together (positive correlation), downward together (negative correlation), or exhibit no noticeable connection.
+
+A scatter plot features two axes—the horizontal _x-axis_ and vertical _y-axis_. Data points are represented as dots, each positioned according to their respective x and y values. 
+
+Examining the pattern of dots in a scatter plot offers insights into the relationship between variables. For example, dots forming an upward-sloping line indicate a positive correlation, whereas a downward slope suggests a negative correlation.
+
+### Creating scatter plots {#sec-scatter-plot-create}
+
+```{r}
+#| label: fig-scatterplot-cyclones
+#| fig-cap: Scatterplot of pressure and speed of cyclones
+#| fig-width: 8
+#| fig-height: 6
+#| echo: false
+
+cyclones |>
+  mutate(year = as.character(year)) |>
+  ggplot(mapping = aes(x = pressure, y = speed, colour = year)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_colour_manual(
+    name = NULL,
+    values = c("#9c5e60", "#4b876e", "#465b92", "#e5be72", "#5d0505")
+  ) +
+  labs(x = "central pressure (hPa)", y = "wind speed (km/h)") +
+  theme_oxford(base_family = "", grid_col = get_oxford_colour("stone")) +
+  theme(legend.position = "top")
+```
+
+Excel has a built-in functionality to create scatterplots. Following are the steps to create a scatterplot in Excel. For this demonstration, we use the cyclones dataset. We recommend creating a new Excel workbook and import the raw cyclones dataset into this workbook to avoid contamination of the original data.
+
+1. Create a base scatterplot.
+
+In a new worksheet, go to `Insert` --> `Insert Scatter (X, Y) or Bubble Chart` --> `Scatter`
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Create new worksheet](images/plot_scatterplot_01.png){#fig-plot-scatterplot-01}
+
+![Create base scatterplot](images/plot_scatterplot_02.png){#fig-plot-scatterplot-02}
+
+:::
+
+2. Select data to use for the scatterplot.
+
+a. Select base scatterplot --> `Chart Design` --> `Select Data`
+
+![Go into Chart Design options to select data](images/plot_scatterplot_03.png){#fig-plot-scatterplot-03 fig-align="center" width="70%"}
+
+b. Click on `Add` to add a new data series (@fig-plot-scatterplot-04).
+
+![Click on Add to add new data series](images/plot_scatterplot_04.png){#fig-plot-scatterplot-04 fig-align="center" width="70%"}
+
+c. Select the appropriate x-axis and y-axis values. For this demonstration, we will use pressure as the x-axis variable and speed as the y-axis variable.
+
+::: {layout-ncol="4" layout-valign="bottom"}
+
+![Edit x-axis values](images/plot_scatterplot_05.png){#fig-plot-scatterplot-05}
+
+![Assign pressure to x-axis](images/plot_scatterplot_06.png){#fig-plot-scatterplot-06}
+
+![Edit y-axis values](images/plot_scatterplot_07.png){#fig-plot-scatterplot-07}
+
+![Assign speed to y-axis](images/plot_scatterplot_08.png){#fig-plot-scatterplot-08}
+
+:::
+
+d. Add a trendline (@fig-plot-scatterplot-09).
+
+`Chart Elements` --> `Trendline` --> `Linear`
+
+![Add a trendline](images/plot_scatterplot_09.png){#fig-plot-scatterplot-09 fig-align="center" width="70%"}
+
+e. The scatterplot is now created (@fig-plot-scatterplot-10).
+
+![The scatterplot is now created](images/plot_scatterplot_10.png){#fig-plot-scatterplot-10 fig-align="center" width="70%"}
+
+## Numerical measures of association {#sec-measures-association}
+
+### Correlation {#sec-correlation}
+
+Correlation is a statistical measure indicating how strongly and in what direction two variables are connected. While it reveals the extent and nature of a linear relationship, it does not imply that one variable causes the other - it only shows how often they move together without explaining why.
+
+### Correlation measures {#sec-robust-correlation-measures}
+
+In this section, we discuss the three most common numerical measures of correlation - _Pearson's correlation coefficient_, _Spearman's rank correlation coefficient_, and _Kendall's tau rank correlation coefficient_.
+
+Of these three, Spearman's and Kendall's are non-parametric and are considered more robust than Pearson's.
+
+#### Pearson's correlation coefficient {.unnumbered}
+
+Pearson's correlation coefficient, commonly referred to as Pearson's $\rho$, is a statistical tool used to evaluate both the strength and direction of a linear association between two continuous variables. It indicates how closely data 
+points align with a line of best fit. The value of $\rho$ can range from -1 to +1.
+
+The absolute value of Pearson's $\rho$ reflects the strength of the linear relationship. A score of 1 or -1 signifies a perfect positive or negative correlation, respectively, implying all data points lie perfectly on a line. 
+Conversely, a score of 0 suggests no linear relationship exists.
+
+Pearson's $\rho$ can be calculated as follows:
+
+<br/>
+
+$$ \rho ~ = ~ \frac{covariance(x_1, x_2)}{(n-1) sd_{x_1} sd_{x_2}} $$
+
+where
+
+$x_1,x_2 ~ = ~ \text{continuous variables to test correlation of}$
+
+$n ~ = ~ \text{number of data pairs for } x_1,x_2$
+
+$sd_{x_1},sd_{x_2} ~ = ~ \text{standard deviation for } x_1,x_2$
+
+<br/>
+
+In Excel, either the `PEARSON()` or the `CORREL()` function is used to get Pearson's $\rho$. To get Pearson's $\rho$ for the correlation between pressure and speed from the cyclones dataset, we use the following calculation:
+
+```swift
+=PEARSON(H2:H102,I2:I102)
+```
+
+or
+
+```swift
+=CORREL(H2:H102,I2:I102)
+```
+
+with both giving a Pearson's $\rho$ of **`r cor(cyclones[ , c("pressure", "speed")])[1,2]`.**
+
+@tbl-pearson-values summarises how to interpret the range of Pearson's $\rho$ values.
+
+::: {#tbl-pearson-values}
+
+**Pearson's $\rho$** | **Interpretation**
+:-------------------:|:----------------------------
++1                   | Perfect positive correlation
+-1                   | Perfect negative correlation
+0                    | No correlation
++/- 0.1 to +/- 0.3   | Weak correlation
++/- 0.4 to +/- 0.6   | Moderate correlation
++/- 0.7 to +/- 0.9   | Strong correlation
+
+Interpretation of various Pearson's $\rho$ values.
+
+:::
+
+It's important to note that Pearson's $\rho$ only measures linear relationships. It may not accurately reflect the relationship between variables if the relationship is non-linear. Pearson's correlation is typically used when dealing with normally distributed data that are measured on interval or ratio scales. 
+
+#### Spearman's rank correlation coefficient {.unnumbered}
+
+Spearman's rank correlation coefficient (Spearman's $\rho$) is a statistical measure that assesses the strength and direction of a monotonic relationship between two ranked variables. It's a non-parametric test, meaning it doesn't assume data follows a normal distribution and is often used when data is ordinal or when a linear relationship isn't assumed. The coefficient ranges from -1 to +1, with -1 indicating a perfect negative correlation, +1 indicating a perfect positive correlation, and 0 indicating no correlation.
+
+Compared to Pearson's $\rho$, Spearman's $\rho$ performs the correlation test on the rank of the values of the two variables rather than on the values themselves.
+
+Hence, the values of the two variables are ranked first and then the Spearman's $\rho$ is calculated based on these ranks as follows:
+
+<br/>
+
+$$ \rho ~ = ~ 1 - \frac{6 \sum d ^ 2}{n(n ^ 2 - 1)} $$
+
+where:
+
+$d ~ = ~ \text{difference in ranks}$
+
+$n ~ = ~ \text{number of data pairs}$
+
+<br/>
+
+In Excel, we can calculate Spearman's $\rho$ as follows (using the pressure and speed variables in the cyclones dataset):
+
+1. Rank each of the two variables you are testing for correlations using the `RANK.AVG()` function.
+
+For this step, we recommend creating a new worksheet and importing the raw dataset to this worksheet to avoid contamination of the raw data (@fig-spearman-rank-01).
+
+![Import raw data to new worksheet](images/spearman_rank_01.png){#fig-spearman-rank-01 fig-align="center" width="70%"}
+
+Create a new variable for the ranking of the pressure variable and then rank using `RANK.AVG()` function (@fig-spearman-rank-02).
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Rank the pressure variable](images/spearman_rank_02.png){#fig-spearman-rank-02}
+
+![Copy or drag the formula to the rest of the rows](images/spearman_rank_03.png){#fig-spearman-rank-03}
+
+:::
+
+Create a new variable for the ranking of the speed variable and then rank using `RANK.AVG()` function (@fig-spearman-rank-03).
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Rank the speed variable](images/spearman_rank_04.png){#fig-spearman-rank-04}
+
+![Copy or drag the formula to the rest of the rows](images/spearman_rank_05.png){#fig-spearman-rank-05}
+
+:::
+
+2. Calculate Spearman's $\rho$.
+
+a. Calculate using the `CORREL()` function in Excel.
+
+The `CORREL()` function should be applied to the ranks for pressure and speed (see @fig-spearman-rank-06) instead of the actual pressure and speed values (as used in the Pearson's calculation).
+
+```swift
+=CORREL(J2:J102,K2:K102)
+```
+
+<br/>
+
+![Calculate Spearman's $\rho$ using built-in function](images/spearman_rank_06.png){#fig-spearman-rank-06 fig-align="center" width="70%"}
+
+Using this method, the Spearman's $\rho$ for pressure and speed variable in the cyclones dataset is **`r cor(cyclones[ , c("pressure", "speed")], method = "spearman")[1,2]`**
+
+b. Calculate using the formula.
+
+First, get the square differences of the pressure and speed ranks (@fig-spearman-rank-07).
+
+```swift
+=(J2-K2)^2
+```
+
+Then apply the Spearman's $\rho$ formula as follows:
+
+```swift
+=1-((6*SUM(L2:L102))/(COUNT(L2:L102)*(COUNT(L2:L102)^2-1)))
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Get the squared differences of the ranks](images/spearman_rank_07.png){#fig-spearman-rank-07}
+
+![Calculate using the formula](images/spearman_rank_08.png){#fig-spearman-rank-08}
+
+:::
+
+```{r}
+#| label: spearman-rank-calculation
+#| echo: false
+
+x <- cyclones |>
+  mutate(
+    pressure_rank = rank(pressure),
+    speed_rank = rank(speed),
+    rank_diff = (pressure_rank - speed_rank) ^ 2
+  )
+
+x_spearman_rho <- 1 - (6 * sum(x$rank_diff)) / (nrow(x) * (nrow(x) ^ 2 - 1))
+
+y <- cyclones |>
+  arrange(desc(pressure)) |>
+  mutate(pressure_rank = seq_len(nrow(x))) |>
+  arrange(desc(speed)) |>
+  mutate(
+    speed_rank = seq_len(nrow(x)),
+    rank_diff = (pressure_rank - speed_rank) ^ 2
+  )
+
+y_spearman_rho <- 1 - (6 * sum(y$rank_diff)) / (nrow(y) * (nrow(y) ^ 2 - 1))
+```
+
+Using this method, the Spearman's $\rho$ for pressure and speed variable in the cyclones dataset is **`r x_spearman_rho`**
+
+::: {#nte-spearman-rho-differences .callout-note title="Difference between built-in function result and the calculated result"}
+
+There is a very small difference (`-0.0063`) between the result when `CORREL()` function is used compared to when the formula is used. This is likely due to some differences in the way ranking is performed by the `CORREL()` function compared to the `RANK.AVG()` function approach used in the calculation approach.
+
+:::
+
+The reference table in @tbl-pearson-values for the Pearson's $\rho$ can also be used to interpret Spearman's $\rho$.
+
+#### Kendall's rank correlation coefficient {.unnumbered}
+
+Kendall's $\tau$, alternatively referred to as Kendall's tau rank correlation coefficient, serves as a statistical tool for evaluating the ordinal relationship between two variables. It examines how closely the rankings of data points align across two datasets, irrespective of their specific values. This measure is non-parametric, implying it does not rely on assumptions about data distribution and remains effective even in the presence of outliers.
+
+Kendall's $\tau$ assesses how closely the rankings of two variables align. If one variable's ranking rises, does the other also tend to rise (positive relationship), fall (negative relationship), or show little pattern (nearly zero correlation)? 
+
+The method involves comparing concordant pairs - where both variables' rankings follow the same order - and discordant pairs - where their rankings are opposite in order.
+
+Kendall's $\tau$ can be calculated as follows:
+
+<br/>
+
+$$ \tau ~ = ~ \frac{n_{concordant} - n_{discordant}}{\frac{n (n-1)}{2}}$$
+
+where:
+
+$n ~ = ~ \text{number of data pairs}$
+
+<br/>
+
+There is no built-in function in Excel that calculates Kendall's $\tau$. Following are steps on how to arrive at this value for pressure and speed variables in the cyclones dataset using Excel. 
+
+1. Create a new worksheet and import cyclones dataset.
+
+We recommend creating a new worksheet and importing the raw dataset to this worksheet (see @fig-kendall-rank-01) to avoid contamination of the raw data.
+
+![Create new worksheet and import cyclones dataset for Kendall's tau calculations](images/kendall_rank_01.png){#fig-kendall-rank-01 fig-align="center" width="70%"}
+
+2. Rank pressure values.
+
+Using the `RANK.AVG()` function in Excel, rank the pressure values as follows (@fig-kendall-rank-02):
+
+```swift
+=RANK.AVG(H2,$H$:$H$102)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Rank pressure values](images/kendall_rank_02.png){#fig-kendall-rank-02}
+
+![Copy or drag the formula to the rest of the rows](images/kendall_rank_03.png){#fig-kendall-rank-03}
+
+:::
+
+2. Rank speed values.
+
+Using the `RANK.AVG()` function in Excel, rank the speed values as follows (@fig-kendall-rank-04):
+
+```swift
+=RANK.AVG(I2,$I$:$I$102)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Rank speed values](images/kendall_rank_04.png){#fig-kendall-rank-04}
+
+![Copy or drag the formula to the rest of the rows](images/kendall_rank_05.png){#fig-kendall-rank-05}
+
+:::
+
+
+3. Sort the table by ascending order based on the pressure rank.
+
+Click on the sort functionality at the pressure column if available (@fig-kendall-rank-06) or go to `Data` --> `Sort` to sort the table by pressure rank in ascending order.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Sort table by pressure rank](images/kendall_rank_06.png){#fig-kendall-rank-06}
+
+
+![Table now sorted ascending by pressure rank](images/kendall_rank_07.png){#fig-kendall-rank-07}
+
+:::
+
+4. Create new variable for counts of concordant pairs.
+
+Concordant pairs are items that are ranked higher in variable X and also ranked higher in variable Y, or items ranked lower in X and also ranked lower in Y.
+
+Since our cyclones data is now sorted in ascending order based on the pressure ranking, we can go down the array of ranks for speed to check for concordance. For example, in the cyclones dataset, if the value of the speed rank in `K2` cell is higher than the value of the rank in the `K3` cell, then these two are counted as concordant pairs. We make this comparison for the speed rank in `K2` for every cell after it and tally the number of concordant pairs. The sum of the counts of concordant pairs for `K2` cell becomes the value for the concordant variable for row 2. We then do the same for the next row until we have counts of concordant pairs for each row of data.
+
+This can be implemented in Excel using the following formula (@fig-kendall-rank-08):
+
+```swift
+=COUNTIF(K3:$K$102,">"&K2)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Count number of concordant pairs](images/kendall_rank_08.png){#fig-kendall-rank-08}
+
+![Copy or drag the formula to the rest of the rows](images/kendall_rank_09.png){#fig-kendall-rank-09}
+
+:::
+
+4. Create new variable for counts of discordant pairs.
+
+Discordant pairs are items that are ranked higher in variable X and are ranked lower in variable Y, or vice versa. 
+
+Since our cyclones data is now sorted in ascending order based on the pressure ranking, we can go down the array of ranks for speed to check for concordance. For example, in the cyclones dataset, if the value of the speed rank in `K2` cell is lower than the value of the rank in the `K3` cell, then these two are counted as discordant pairs. We make this comparison for the speed rank in `K2` for every cell after it and tally the number of discordant pairs. The sum of the counts of discordant pairs for `K2` cell becomes the value for the discordant variable for row 2. We then do the same for the next row until we have counts of discordant pairs for each row of data.
+
+This can be implemented in Excel using the following formula (@fig-kendall-rank-10):
+
+```swift
+=COUNTIF(K3:$K$102,"<"&K2)
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Count number of discordant pairs](images/kendall_rank_10.png){#fig-kendall-rank-10}
+
+![Copy or drag the formula to the rest of the rows](images/kendall_rank_11.png){#fig-kendall-rank-11}
+
+:::
+
+5. Calculate Kendall's $\tau$.
+
+Now that we have the counts of concordant and discordant pairs, we can calculate Kendall's $\tau$ in Excel as follows (@fig-kendall-rank-12):
+
+```swift
+=(SUM(L2:L102)-SUM(M2:M102))/((COUNT(L2:L102)*(COUNT(L2:L102)-1))/2)
+```
+
+This results in a Kendall's $\tau$ of **-0.642178218**.
+
+<!-- **`r cor(cyclones[ , c("pressure", "speed")], method = "kendall")[1,2]`** -->
+
+<br/>
+
+![Calculate Kendall's tau](images/kendall_rank_12.png){#fig-kendall-rank-12}
+
+The reference table in @tbl-pearson-values for the Pearson's $\rho$ can also be used to interpret Kendall's $\tau$.
+
