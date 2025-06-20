@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>16&nbsp; Epidemiological statistics – Data for Decision Makers: Data Concepts and Applications</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./bivariate-statistics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-f4db45487a441faad5dd7eaa04a2f633.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2c583ca0f5e1d80a00909d1e0daac7e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id="></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exploratory-data-analysis.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./epi-statistics.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Epidemiological statistics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data for Decision Makers: Data Concepts and Applications</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/data4decisonmakers/data-concepts-applications/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-for-Decision-Makers--Data-Concepts-and-Applications.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-for-Decision-Makers--Data-Concepts-and-Applications.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./all-about-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">All about data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Case Studies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case_study_one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data use and analytics in water quality management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case_study_two.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enhancing Local Governance Through Data-Driven Decision-Making in Indonesia</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-study-three.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Use of Data in Local Governance - A Michigan Perspective</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-study-four.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Enhancing Data-Driven Decision-Making in Local Governance - A Focus on Turkana County</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-study-five.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Indigenous Data Governance in the United States</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Management</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data privacy, security, and protection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data tools</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./all-about-spreadsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">All about spreadsheets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project-based-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Project-based workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-entry-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data entry/collection and storage using spreadsheets</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exploratory Data Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exploratory-data-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exploratory data analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./univariate-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Univariate statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bivariate-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Bivariate statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epi-statistics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Epidemiological statistics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-contingency-table" id="toc-sec-contingency-table" class="nav-link active" data-scroll-target="#sec-contingency-table"><span class="header-section-number">16.1</span> Contingency tables</a>
+  <ul class="collapse">
+  <li><a href="#sec-two-by-two" id="toc-sec-two-by-two" class="nav-link" data-scroll-target="#sec-two-by-two"><span class="header-section-number">16.1.1</span> Creating two-by-two contingency tables</a></li>
+  </ul></li>
+  <li><a href="#sec-relative-risk-ratio" id="toc-sec-relative-risk-ratio" class="nav-link" data-scroll-target="#sec-relative-risk-ratio"><span class="header-section-number">16.2</span> Relative risk ratio</a>
+  <ul class="collapse">
+  <li><a href="#sec-calculating-relative-risk-ratio" id="toc-sec-calculating-relative-risk-ratio" class="nav-link" data-scroll-target="#sec-calculating-relative-risk-ratio"><span class="header-section-number">16.2.1</span> Calculating relative risk ratio</a></li>
+  <li><a href="#sec-interpreting-relative-risk-ratio" id="toc-sec-interpreting-relative-risk-ratio" class="nav-link" data-scroll-target="#sec-interpreting-relative-risk-ratio"><span class="header-section-number">16.2.2</span> Interpreting the relative risk ratio and its confidence interval</a></li>
+  </ul></li>
+  <li><a href="#sec-odds-ratio" id="toc-sec-odds-ratio" class="nav-link" data-scroll-target="#sec-odds-ratio"><span class="header-section-number">16.3</span> Odds ratio</a>
+  <ul class="collapse">
+  <li><a href="#sec-calculating-odds-ratio" id="toc-sec-calculating-odds-ratio" class="nav-link" data-scroll-target="#sec-calculating-odds-ratio"><span class="header-section-number">16.3.1</span> Calculating odds ratio</a></li>
+  <li><a href="#sec-interpreting-odds-ratio" id="toc-sec-interpreting-odds-ratio" class="nav-link" data-scroll-target="#sec-interpreting-odds-ratio"><span class="header-section-number">16.3.2</span> Interpreting the odds ratio and its confidence interval</a></li>
+  </ul></li>
+  <li><a href="#difference-between-relative-risk-ratio-and-odds-ratio" id="toc-difference-between-relative-risk-ratio-and-odds-ratio" class="nav-link" data-scroll-target="#difference-between-relative-risk-ratio-and-odds-ratio"><span class="header-section-number">16.4</span> Difference between relative risk ratio and odds ratio</a></li>
+  <li><a href="#sec-t-test" id="toc-sec-t-test" class="nav-link" data-scroll-target="#sec-t-test"><span class="header-section-number">16.5</span> Student t-test</a>
+  <ul class="collapse">
+  <li><a href="#sec-calculating-t-test" id="toc-sec-calculating-t-test" class="nav-link" data-scroll-target="#sec-calculating-t-test"><span class="header-section-number">16.5.1</span> Calculating the t-test</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/16-epi-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exploratory-data-analysis.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./epi-statistics.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Epidemiological statistics</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-epi-stats" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Epidemiological statistics</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this chapter, we will cover topics and techniques on statistical methods commonly used by epidemiologists in public health investigations or studies that have wider uses and applications to other fields. These methods are considered <em>bread-and-butter</em> techniques for all epidemiologists and are generally easy to implement.</p>
+<p>We will cover topics on <em>contingency tables</em>, <em>relative risk ratio</em>, <em>odds ratio</em>, and <em>t-test</em>. These methods can be considered bivariate statistics as they are applied on two variables but with binary categorical variables. To demonstrate these techniques, we will use the fem dataset.</p>
+<section id="sec-contingency-table" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="sec-contingency-table"><span class="header-section-number">16.1</span> Contingency tables</h2>
+<p>A contingency table, also known as a cross-tabulation, is used in statistics to display the relationship between two or more categorical variables. It organises data by showing the frequency of observations that fall into various combinations of the categories of the variables being examined. It is also usually called a <em>two-by-two table</em> as its common use is for comparing two categories per group. However, contingency tables can also be created with more than two categories per group.</p>
+<p>For this topic, we will focus on <em>two-by-two</em> tables for simplicity and to be consistent with exploratory data analysis of bivariates.</p>
+<div id="fig-contingency-table" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;16.1: A diagram of a two-by-two contingency table"><img src="images/contingency_table.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.1: A diagram of a two-by-two contingency table
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-contingency-table" class="quarto-xref">Figure&nbsp;<span>16.1</span></a> demonstrates the structure of a two-by-two contingency table with the exposure variable on the rows and the outcome variable on the columns.</p>
+<div id="nte-exposure" class="callout callout-style-default callout-note callout-titled" title="Understanding exposure">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;16.1: Understanding exposure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since contingency tables were developed for disease epidemiology, the term exposure has been used which usually pertains to exposure to a risk factor or known causative agent of a particular disease outcome.</p>
+<p>However, exposure in a general sense can also mean exposure to a factor or a condition that is known to be associated to a certain outcome which doesn’t have to be a disease. For example, exposure to being female for an outcome of good grades; exposure to being married for an outcome of owning your house, etc.</p>
+</div>
+</div>
+<section id="sec-two-by-two" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="sec-two-by-two"><span class="header-section-number">16.1.1</span> Creating two-by-two contingency tables</h3>
+<p>In Excel, a contingency table can be easily created using pivot tables. Using the fem dataset, we can create a contingency table for the exposure variable of lost interest in sex (<code>SEX</code> variable) and the outcome variable of considered suicide (<code>LIFE</code> variable) through the following steps.</p>
+<ol type="1">
+<li>Create a new worksheet for the contingency table.</li>
+</ol>
+<div id="fig-contingency-table-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;16.2: Create a new worksheet for the contingency table"><img src="images/contingency_table_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.2: Create a new worksheet for the contingency table
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Setup pivot table.</li>
+</ol>
+<ol type="a">
+<li><code>Insert</code> –&gt; <code>Pivot Table</code> –&gt; <code>From table/range</code></li>
+</ol>
+<div id="fig-contingency-table-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;16.3: Initiate pivot table"><img src="images/contingency_table_02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.3: Initiate pivot table
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="a">
+<li>Select table/range to pivot and insert into current worksheet.</li>
+</ol>
+<div id="fig-contingency-table-03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;16.4: Select table/range"><img src="images/contingency_table_03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.4: Select table/range
+</figcaption>
+</figure>
+</div>
+<div id="fig-contingency-table-04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;16.5: Select fem raw data table"><img src="images/contingency_table_04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.5: Select fem raw data table
+</figcaption>
+</figure>
+</div>
+<div id="fig-contingency-table-05" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;16.6: Insert into current worksheet"><img src="images/contingency_table_05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.6: Insert into current worksheet
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Select exposure variable of contingency table.</li>
+</ol>
+<p>The variable for no interest in sex (<code>SEX</code>) is the exposure variable. Select and drag to the rows setting.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-06" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;16.7: Select SEX as exposure variable"><img src="images/contingency_table_06.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.7: Select SEX as exposure variable
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-07" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;16.8: Drag SEX as row of table"><img src="images/contingency_table_07.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.8: Drag SEX as row of table
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Select outcome variable of contingency table.</li>
+</ol>
+<p>The variable for considered suicide (<code>LIFE</code>) is the outcome variable. Select and drag to the columns setting.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-08" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;16.9: Select LIFE as outcome variable"><img src="images/contingency_table_08.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.9: Select LIFE as outcome variable
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-09" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;16.10: Drag LIFE as column of table"><img src="images/contingency_table_09.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.10: Drag LIFE as column of table
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Select values for the contingency table.</li>
+</ol>
+<ol type="a">
+<li>Drag the <code>LIFE</code> variable into the values setting.</li>
+</ol>
+<div id="fig-contingency-table-10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;16.11: Drag LIFE into the values setting"><img src="images/contingency_table_10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.11: Drag LIFE into the values setting
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="a">
+<li>Change the value setting to the COUNT summary measure.</li>
+</ol>
+<p>Tap on the settings arrow on the value variable –&gt; <code>Value Edit Settings</code> –&gt; Select <code>COUNT</code></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;16.12: Go to value edit settings"><img src="images/contingency_table_11.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.12: Go to value edit settings
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-contingency-table-12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;16.13: Select COUNT as summary measure"><img src="images/contingency_table_12.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.13: Select COUNT as summary measure
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Remove empty values in exposure variable.</li>
+</ol>
+<ol type="a">
+<li>Click on settings button for exposure labels and untick blank.</li>
+</ol>
+<div id="fig-contingency-table-13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure&nbsp;16.14: Click on settings for exposure"><img src="images/contingency_table_13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.14: Click on settings for exposure
+</figcaption>
+</figure>
+</div>
+<div id="fig-contingency-table-14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;16.15: Untick blank exposure label"><img src="images/contingency_table_14.png" class="quarto-figure quarto-figure-center figure-img" style="height:30.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.15: Untick blank exposure label
+</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Remove empty values in outcome variable.</li>
+</ol>
+<ol type="a">
+<li>Click on settings button for outcome labels and untick blank.</li>
+</ol>
+<div id="fig-contingency-table-15" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;16.16: Click settings for outcome"><img src="images/contingency_table_15.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.16: Click settings for outcome
+</figcaption>
+</figure>
+</div>
+<div id="fig-contingency-table-16" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;16.17: Untick blank outcome label"><img src="images/contingency_table_16.png" class="quarto-figure quarto-figure-center figure-img" style="height:30.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.17: Untick blank outcome label
+</figcaption>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>Contingency table is now complete.</li>
+</ol>
+<div id="fig-contingency-table-17" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-contingency-table-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/contingency_table_17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figure&nbsp;16.18: Contingency table is now complete"><img src="images/contingency_table_17.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contingency-table-17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.18: Contingency table is now complete
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-relative-risk-ratio" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="sec-relative-risk-ratio"><span class="header-section-number">16.2</span> Relative risk ratio</h2>
+<p>Relative risk ratio (RRR) is a measure of the risk of a certain event happening in one group (usually called the exposed group) compared to the risk of the same event happening in another group (usually called the unexposed group). It indicates how much more likely the outcome is in the exposed group compared to the unexposed group.</p>
+<section id="sec-calculating-relative-risk-ratio" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="sec-calculating-relative-risk-ratio"><span class="header-section-number">16.2.1</span> Calculating relative risk ratio</h3>
+<p>Using the schema of a two-by-two table in <a href="#fig-contingency-table" class="quarto-xref">Figure&nbsp;<span>16.1</span></a>, the relative risk ratio is calculated as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ RRR ~ = ~ \frac{\frac{A}{A + B}}{\frac{C}{C + D}} ~ = ~ \frac{A \times (C + D)}{C \times (A + B)} \]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(A ~ = ~ \text{exposed with outcome}\)</span></p>
+<p><span class="math inline">\(B ~ = ~ \text{exposed with no outcome}\)</span></p>
+<p><span class="math inline">\(C ~ = ~ \text{not exposed with outcome}\)</span></p>
+<p><span class="math inline">\(D ~ = ~ \text{not exposed with no outcome}\)</span></p>
+<p><br></p>
+<p>Using the pivot table we created in <a href="#sec-two-by-two" class="quarto-xref"><span>Section 16.1.1</span></a>, we can calculate the relative risk ratio as follows:</p>
+<p><span class="math display">\[ RRR ~ = ~ \frac{A \times (C + D)}{C \times (A + B)} \]</span></p>
+<p><span class="math display">\[ RRR ~ = ~ \frac{58 \times (5 + 12)}{5 \times (58 + 38)} ~ = ~ \frac{58 \times 17}{5 \times 96} ~ = ~ \frac{986}{480} ~ = ~ 2.054167 \]</span></p>
+<p>We can also perform this calculation in Excel using the pivot table we created.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">=(</span>B5<span class="op">*</span>D6<span class="op">)/(</span>B6<span class="op">*</span>D5<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div id="fig-risk-ratio-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-risk-ratio-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/risk_ratio_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figure&nbsp;16.19: Calculate relative risk ratio"><img src="images/risk_ratio_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-risk-ratio-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.19: Calculate relative risk ratio
+</figcaption>
+</figure>
+</div>
+<section id="calculating-the-confidence-interval-of-the-relative-risk-ratio" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="calculating-the-confidence-interval-of-the-relative-risk-ratio">Calculating the confidence interval of the relative risk ratio</h4>
+<p>Following are the steps to calculating the confidence interval<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of the relative risk ratio.</p>
+<ol type="1">
+<li>Calculate the standard error of the natural logarithm of relative risk ratio</li>
+</ol>
+<p><br></p>
+<p><span class="math display">\[ SE_{log(RRR)} ~ = ~ \sqrt{\frac{C}{A(A+C)} ~ + ~ \frac{D}{B(B+D)}} \]</span></p>
+<p><br></p>
+<p>In Excel, this can be calculated as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>SQRT<span class="op">(</span>B6<span class="op">/(</span>B5<span class="op">*</span>B7<span class="op">)+</span>C6<span class="op">/(</span>C5<span class="op">*</span>C7<span class="op">))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div id="fig-risk-ratio-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-risk-ratio-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/risk_ratio_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figure&nbsp;16.20: Calculate standard error of natural logarithm of relative risk ratio"><img src="images/risk_ratio_02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-risk-ratio-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.20: Calculate standard error of natural logarithm of relative risk ratio
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Calculate the 95% confidence interval of relative risk ratio.</li>
+</ol>
+<p><br></p>
+<p><span class="math display">\[ 95\% ~ CI ~ = ~ e ^ {\log(RRR) ~ \pm ~ 1.96 ~ \times ~ SE_{\log(RRR)}} \]</span></p>
+<p><br></p>
+<p>In Excel, this can be calculated as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>EXP<span class="op">(</span>LN<span class="op">(</span>B9<span class="op">)-</span><span class="fl">1.96</span><span class="op">*</span>B10<span class="op">)</span>     ## <span class="dv">95</span><span class="op">%</span> LCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>EXP<span class="op">(</span>LN<span class="op">(</span>B9<span class="op">)+</span><span class="fl">1.96</span><span class="op">*</span>B10<span class="op">)</span>     ## <span class="dv">95</span><span class="op">%</span> UCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-risk-ratio-03" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-risk-ratio-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/risk_ratio_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure&nbsp;16.21: Calculate 95% lower confidence interval of relative risk ratio"><img src="images/risk_ratio_03.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-risk-ratio-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.21: Calculate 95% lower confidence interval of relative risk ratio
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-risk-ratio-04" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-risk-ratio-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/risk_ratio_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure&nbsp;16.22: Calculate 95% upper confidence interval of relative risk ratio"><img src="images/risk_ratio_04.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-risk-ratio-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.22: Calculate 95% upper confidence interval of relative risk ratio
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The risk of suicidal ideation for those with no interest in sex is <strong>2.05 (95% CI: 1.7298903-2.4392302)</strong> times higher than those who have interest in sex.</p>
+</section>
+</section>
+<section id="sec-interpreting-relative-risk-ratio" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="sec-interpreting-relative-risk-ratio"><span class="header-section-number">16.2.2</span> Interpreting the relative risk ratio and its confidence interval</h3>
+<p><a href="#tbl-rrr-values" class="quarto-xref">Table&nbsp;<span>16.1</span></a> provides guidance on how to interpret relative risk ratio.</p>
+<div id="tbl-rrr-values" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rrr-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;16.1: Interpretation of relative risk ratio values
+</figcaption>
+<div aria-describedby="tbl-rrr-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Risk ratio</strong></th>
+<th style="text-align: left;"><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>RRR = 1</code></td>
+<td style="text-align: left;">Exposure does not affect outcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>RRR &lt; 1</code></td>
+<td style="text-align: left;">Risk of outcome is decreased by the exposure (protective factor)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>RRR &gt; 1</code></td>
+<td style="text-align: left;">Risk of outcome is increased by the exposure (risk factor)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>If the 95% confidence interval doesn’t contain 1, this means that the risk of the outcome given the exposure is significant.</p>
+</section>
+</section>
+<section id="sec-odds-ratio" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="sec-odds-ratio"><span class="header-section-number">16.3</span> Odds ratio</h2>
+<p>Odds ratio (OR) is a measure of association between an exposure and an outcome. It represents the odds that an outcome will occur given a particular exposure compared to the odds of the outcome occurring in the absence of the exposure.</p>
+<section id="sec-calculating-odds-ratio" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="sec-calculating-odds-ratio"><span class="header-section-number">16.3.1</span> Calculating odds ratio</h3>
+<p>Using the schema of a two-by-two table in <a href="#fig-contingency-table" class="quarto-xref">Figure&nbsp;<span>16.1</span></a>, the odds ratio is calculated as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ OR ~ = ~ \frac{A/B}{C/D} ~ = ~ \frac{A \times D}{B \times C} \]</span></p>
+<p><span class="math display">\[ OR ~ = ~ \frac{58 \times 12}{38 \times 5} ~ = ~ \frac{696}{190} ~ = ~ 3.663158 \]</span></p>
+<p><br></p>
+<p>We can also perform this calculation in Excel using the pivot table we created.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">=(</span>B5<span class="op">*</span>D6<span class="op">)/(</span>B6<span class="op">*</span>D5<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div id="fig-odds-ratio-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-odds-ratio-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/odds_ratio_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figure&nbsp;16.23: Calculate odds ratio"><img src="images/odds_ratio_01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-odds-ratio-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.23: Calculate odds ratio
+</figcaption>
+</figure>
+</div>
+<section id="calculating-the-confidence-interval-of-the-odds-ratio" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="calculating-the-confidence-interval-of-the-odds-ratio">Calculating the confidence interval of the odds ratio</h4>
+<p>The 95% confidence interval is calculated as follows:</p>
+<p><br></p>
+<p><span class="math display">\[ 95\% ~ CI ~ = ~ e ^ {\log(OR) ~ \pm ~ 1.96 ~ \times ~ \sqrt{\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D}}} \]</span></p>
+<p><br></p>
+<p>In Excel, this can be calculated as follows:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>EXP<span class="op">(</span>LN<span class="op">(</span>E9<span class="op">)-</span><span class="fl">1.96</span><span class="op">*</span>SQRT<span class="op">(</span><span class="dv">1</span><span class="op">/</span>B5<span class="op">+</span><span class="dv">1</span><span class="op">/</span>C5<span class="op">+</span><span class="dv">1</span><span class="op">/</span>B6<span class="op">+</span><span class="dv">1</span><span class="op">/</span>C6<span class="op">))</span>     ## <span class="dv">95</span><span class="op">%</span> LCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>EXP<span class="op">(</span>LN<span class="op">(</span>E9<span class="op">)+</span><span class="fl">1.96</span><span class="op">*</span>SQRT<span class="op">(</span><span class="dv">1</span><span class="op">/</span>B5<span class="op">+</span><span class="dv">1</span><span class="op">/</span>C5<span class="op">+</span><span class="dv">1</span><span class="op">/</span>B6<span class="op">+</span><span class="dv">1</span><span class="op">/</span>C6<span class="op">))</span>     ## <span class="dv">95</span><span class="op">%</span> UCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-odds-ratio-02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-odds-ratio-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/odds_ratio_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figure&nbsp;16.24: Calculate 95% lower confidence interval of odds ratio"><img src="images/odds_ratio_02.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-odds-ratio-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.24: Calculate 95% lower confidence interval of odds ratio
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-odds-ratio-03" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-odds-ratio-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/odds_ratio_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figure&nbsp;16.25: Calculate 95% upper confidence interval of odds ratio"><img src="images/odds_ratio_03.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-odds-ratio-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.25: Calculate 95% upper confidence interval of odds ratio
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The odds of suicidal ideation for those with no interest in sex is <strong>3.66 (95% CI: 11.2339746-2.4392302)</strong> times higher than those who have interest in sex.</p>
+</section>
+</section>
+<section id="sec-interpreting-odds-ratio" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="sec-interpreting-odds-ratio"><span class="header-section-number">16.3.2</span> Interpreting the odds ratio and its confidence interval</h3>
+<p><a href="#tbl-or-values" class="quarto-xref">Table&nbsp;<span>16.2</span></a> provides guidance on how to interpret odds ratio.</p>
+<div id="tbl-or-values" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-or-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;16.2: Interpretation of odds ratio values
+</figcaption>
+<div aria-describedby="tbl-or-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Odds ratio</strong></th>
+<th style="text-align: left;"><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>OR = 1</code></td>
+<td style="text-align: left;">Exposure does not affect odds of outcome</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>OR &gt; 1</code></td>
+<td style="text-align: left;">Exposure associated with higher odds of outcome</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>OR &lt; 1</code></td>
+<td style="text-align: left;">Exposure associated with lower odds of outcome</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>If the 95% confidence interval doesn’t contain 1, this means that the odds of the outcome given the exposure is significant.</p>
+</section>
+</section>
+<section id="difference-between-relative-risk-ratio-and-odds-ratio" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="difference-between-relative-risk-ratio-and-odds-ratio"><span class="header-section-number">16.4</span> Difference between relative risk ratio and odds ratio</h2>
+<p>Relative risk ratio approximates odds ratio for outcomes that are rare (&lt; 10%) and as such can be reported interchangeably. In non-rare outcomes, odds ratio will tend to have greater magnitude than relative risk ratio but always in the same direction (negative or positive). In specific study designs, the total population-at-risk is not known hence relative risk ratio cannot be calculated.</p>
+</section>
+<section id="sec-t-test" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="sec-t-test"><span class="header-section-number">16.5</span> Student t-test</h2>
+<p>Sometimes, we want to compare summary numerical values between one group and another. Unlike a contingency table that summarises the counts of the variables, this summary table will usually have the mean or median of the numerical values. We can use the <em>t-test</em> (also known as the <em>Student t-test</em>) to compare whether the mean of the values for one group is different from another group.</p>
+<section id="sec-calculating-t-test" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="sec-calculating-t-test"><span class="header-section-number">16.5.1</span> Calculating the t-test</h3>
+<p>Using the fem dataset, let’s say for example we wanted to compare the mean age of those who have had thoughts of suicide to those who haven’t had thoughts of suicide. We can use the t-test to compare their mean age. In Excel, there is a built in function that performs the t-test, the <code>T.TEST()</code> function. Following are the steps on how to get the mean age for each group and then how to test if there is a difference between the mean age of the two groups.</p>
+<ol type="1">
+<li>Sort the fem dataset by the values of the <code>LIFE</code> variable.</li>
+</ol>
+<p>We recommend doing this step on a new worksheet with a fresh instance of the fem dataset imported in (<a href="#fig-t-test-01" class="quarto-xref">Figure&nbsp;<span>16.26</span></a>). Then sort the whole table based on the values of the <code>LIFE</code> variable (<a href="#fig-t-test-02" class="quarto-xref">Figure&nbsp;<span>16.27</span></a>).</p>
+<div class="quarto-layout-panel" data-layout="[[1,1],[1,1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-01" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figure&nbsp;16.26: Create a new worksheet"><img src="images/t_test_01.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.26: Create a new worksheet
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figure&nbsp;16.27: Setup sort"><img src="images/t_test_02.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.27: Setup sort
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-03" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figure&nbsp;16.28: Sort by LIFE from smallest to largest"><img src="images/t_test_03.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.28: Sort by LIFE from smallest to largest
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-04" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Figure&nbsp;16.29: Table is now sorted by LIFE"><img src="images/t_test_04.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.29: Table is now sorted by LIFE
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Get the mean age for the each group value of <code>LIFE</code> variable.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>AVERAGE<span class="op">(</span>B2<span class="op">:</span>B66<span class="op">)</span>     ## Average age of those who thought of suicide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>AVERAGE<span class="op">(</span>B67<span class="op">:</span>B118<span class="op">)</span>   ## Average age of those who have not thought of suicide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-05" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Figure&nbsp;16.30: Get the mean age for those who have thought of suicide"><img src="images/t_test_05.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.30: Get the mean age for those who have thought of suicide
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-t-test-06" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Figure&nbsp;16.31: Get the mean age for those who have not thought of suicide"><img src="images/t_test_06.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.31: Get the mean age for those who have not thought of suicide
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Perform t-test on <code>AGE</code> variable between the two groups.</li>
+</ol>
+<p>Using the <code>T.TEST()</code> function:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode swift code-with-copy"><code class="sourceCode swift"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">=</span>T<span class="op">.</span>TEST<span class="op">(</span>B2<span class="op">:</span>B66<span class="op">,</span>B67<span class="op">:</span>B118<span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div id="fig-t-test-07" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32" title="Figure&nbsp;16.32: Perform t-test"><img src="images/t_test_07.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.32: Perform t-test
+</figcaption>
+</figure>
+</div>
+<div id="fig-t-test-08" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-t-test-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/t_test_08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33" title="Figure&nbsp;16.33: Results of the t-test"><img src="images/t_test_08.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-t-test-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.33: Results of the t-test
+</figcaption>
+</figure>
+</div>
+<p>The result of the t-test is the p-value for the test. The result is <strong>0.2691091</strong>. These is no significant difference between the mean ages of those who thought of suicide and to those who had no thoughts of suicide.</p>
+<p><br> <br></p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>A confidence interval is a specific range of values, determined using sample data, which probably includes the actual value of an unknown population parameter. It shows how much uncertainty about a sample statistic and provides a likely interval for the corresponding population parameter. For instance, a 95% confidence interval means that if we repeated the sampling and calculation process numerous times, 95% of those intervals would include the true population parameter.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./bivariate-statistics.html" class="pagination-link" aria-label="Bivariate statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Bivariate statistics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/data4decisonmakers/data-concepts-applications/edit/main/16-epi-statistics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
