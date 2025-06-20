@@ -65,7 +65,7 @@ crossref:
   appendix-delim: ":"
 
 bibliography: references.bib
-csl: who-europe-harvard.csl
+csl: apa-single-spaced.csl
 
 format:
   html:
@@ -74,11 +74,11 @@ format:
     toc: true
     toc-depth: 3
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
     papersize: a4
     toc: true
     toc-depth: 3
-    highlight-style: breeze
+    highlight-style: breeze-light
     include-in-header: 
       text: |
         \usepackage{imakeidx}
