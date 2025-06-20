@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -484,11 +485,11 @@ Figure&nbsp;10.4: Timeline of development of the electronic spreadsheet
 <p>In order to be able to function as a tool for the various steps in the data pathway while still being user-friendly meant combining the data interface functionality (data storage and data access) with the programming/scripting capabilities (for data cleaning/processing, analysis, and visualisation) into a single graphical user interface with no clear distinction between them and no clear mechanism for programming/script testing. This brings about the following limitations and shortcomings:</p>
 <section id="lack-of-standard-mechanisms-for-management-and-quality-assurance-of-spreadsheets-produced-by-organisations" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="lack-of-standard-mechanisms-for-management-and-quality-assurance-of-spreadsheets-produced-by-organisations">Lack of standard mechanisms for management and quality assurance of spreadsheets produced by organisations</h4>
-<p>Given that data storage and access along with data processing/cleaning, analysis and visualisation capabilities sit side-by-side within the spreadsheet tool/software, developing routine and automated audit mechanisms for both data validity/quality and accuracy/correctness of data processing, analysis, and visualisation is nearly impossible. These audits will need to be done manually and line-by-line making them highly onerous. This is most likely the reason why a survey conducted in 2011 of nearly 1,500 people in the UK saw 72% reporting that no internal department checks their spreadsheets for accuracy, that only 13% said that internal audit reviews their spreadsheets, while a mere 1% receive checks from their risk department <span class="citation" data-cites="noauthor_spreadsheet_nodate">(<a href="references.html#ref-noauthor_spreadsheet_nodate" role="doc-biblioref">Anon</a>)</span>.</p>
+<p>Given that data storage and access along with data processing/cleaning, analysis and visualisation capabilities sit side-by-side within the spreadsheet tool/software, developing routine and automated audit mechanisms for both data validity/quality and accuracy/correctness of data processing, analysis, and visualisation is nearly impossible. These audits will need to be done manually and line-by-line making them highly onerous. This is most likely the reason why a survey conducted in 2011 of nearly 1,500 people in the UK saw 72% reporting that no internal department checks their spreadsheets for accuracy, that only 13% said that internal audit reviews their spreadsheets, while a mere 1% receive checks from their risk department <span class="citation" data-cites="noauthor_spreadsheet_nodate">(<a href="references.html#ref-noauthor_spreadsheet_nodate" role="doc-biblioref"><span>“Spreadsheet Risk Management Within <span>UK</span> Organisations,”</span> n.d.</a>)</span>.</p>
 </section>
 <section id="reliability-issues" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="reliability-issues">Reliability issues</h4>
-<p>An estimated 1% of all formulas in operational spreadsheets are in error <span class="citation" data-cites="powell_errors_2009">(<a href="references.html#ref-powell_errors_2009" role="doc-biblioref">Powell, Baker &amp; Lawson, 2009</a>)</span>.</p>
+<p>An estimated 1% of all formulas in operational spreadsheets are in error <span class="citation" data-cites="powell_errors_2009">(<a href="references.html#ref-powell_errors_2009" role="doc-biblioref">S. Powell et al., 2009</a>)</span>.</p>
 </section>
 <section id="practical-expressiveness-is-limited" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="practical-expressiveness-is-limited">Practical expressiveness is limited</h4>
@@ -496,7 +497,7 @@ Figure&nbsp;10.4: Timeline of development of the electronic spreadsheet
 </section>
 <section id="formulas-expressed-in-terms-of-cell-addresses-are-hard-to-keep-straight-and-hard-to-audit" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="formulas-expressed-in-terms-of-cell-addresses-are-hard-to-keep-straight-and-hard-to-audit">Formulas expressed in terms of cell addresses are hard to keep straight and hard to audit</h4>
-<p>A research paper critically reviewing spreadsheet errors has shown that auditors who check both numerical results and the cell formulas find no more errors than auditors who only check numerical results <span class="citation" data-cites="powell_critical_2008">(<a href="references.html#ref-powell_critical_2008" role="doc-biblioref">Powell, Baker &amp; Lawson, 2008</a>)</span>. By the nature of the <em>cell-at-a-time</em> approach, spreadsheets typically contain many copies of the same formula. Thus, when a formula needs to be edited, these edits will need to be applied to all cells containing that formula. This is in sharp contrast to a well-known principle in programming - <em>do not repeat yourself</em> or <em>DRY</em> - which emphasises the best practice of not repeating code to implement/achieve the same process or output. The <em>DRY</em> approach makes code implementation much more efficient and code auditing much more feasible and robust.</p>
+<p>A research paper critically reviewing spreadsheet errors has shown that auditors who check both numerical results and the cell formulas find no more errors than auditors who only check numerical results <span class="citation" data-cites="powell_critical_2008">(<a href="references.html#ref-powell_critical_2008" role="doc-biblioref">S. G. Powell et al., 2008</a>)</span>. By the nature of the <em>cell-at-a-time</em> approach, spreadsheets typically contain many copies of the same formula. Thus, when a formula needs to be edited, these edits will need to be applied to all cells containing that formula. This is in sharp contrast to a well-known principle in programming - <em>do not repeat yourself</em> or <em>DRY</em> - which emphasises the best practice of not repeating code to implement/achieve the same process or output. The <em>DRY</em> approach makes code implementation much more efficient and code auditing much more feasible and robust.</p>
 </section>
 <section id="maintenance-of-volumes-of-spreadsheets-is-challenging" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="maintenance-of-volumes-of-spreadsheets-is-challenging">Maintenance of volumes of spreadsheets is challenging</h4>
@@ -504,18 +505,18 @@ Figure&nbsp;10.4: Timeline of development of the electronic spreadsheet
 <p><br> <br></p>
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
-<div id="ref-noauthor_spreadsheet_nodate" class="csl-entry" role="listitem">
-Anon. Spreadsheet risk management within <span>UK</span> organisations. Actuarial Post: For the Modern Actuary. (<a href="https://www.actuarialpost.co.uk/article/spreadsheet-risk-management-within-uk-organisations-351.htm">https://www.actuarialpost.co.uk/article/spreadsheet-risk-management-within-uk-organisations-351.htm</a>, accessed 12 June 2025).
-</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-middleton_baking_1933" class="csl-entry" role="listitem">
-Middleton JH (1933). Baking costs. National Association of Cost Accountants Bulletin, 14(10).
-</div>
-<div id="ref-powell_errors_2009" class="csl-entry" role="listitem">
-Powell S, Baker K, Lawson B (2009). Errors in operational spreadsheets. Journal of Organizational and End User Computing, 21(3):24–36.
+Middleton, J. H. (1933). Baking costs. <em>National Association of Cost Accountants Bulletin</em>, <em>14</em>(10).
 </div>
 <div id="ref-powell_critical_2008" class="csl-entry" role="listitem">
-Powell SG, Baker KR, Lawson B (2008). A critical review of the literature on spreadsheet errors. Decision Support Systems, 46(1):128–138. doi:<a href="https://doi.org/10.1016/j.dss.2008.06.001">10.1016/j.dss.2008.06.001</a>.
+Powell, S. G., Baker, K. R., &amp; Lawson, B. (2008). A critical review of the literature on spreadsheet errors. <em>Decision Support Systems</em>, <em>46</em>(1), 128–138. <a href="https://doi.org/10.1016/j.dss.2008.06.001">https://doi.org/10.1016/j.dss.2008.06.001</a>
+</div>
+<div id="ref-powell_errors_2009" class="csl-entry" role="listitem">
+Powell, S., Baker, K., &amp; Lawson, B. (2009). Errors in operational spreadsheets. <em>Journal of Organizational and End User Computing</em>, <em>21</em>(3), 24–36.
+</div>
+<div id="ref-noauthor_spreadsheet_nodate" class="csl-entry" role="listitem">
+Spreadsheet risk management within <span>UK</span> organisations. (n.d.). <em>Actuarial Post: For the Modern Actuary</em>. Retrieved June 12, 2025, from <a href="https://www.actuarialpost.co.uk/article/spreadsheet-risk-management-within-uk-organisations-351.htm">https://www.actuarialpost.co.uk/article/spreadsheet-risk-management-within-uk-organisations-351.htm</a>
 </div>
 </div>
 </section>
@@ -524,7 +525,7 @@ Powell SG, Baker KR, Lawson B (2008). A critical review of the literature on spr
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>“We maintain, in our general ledger, a so-called Spread Sheet which is a long sheet with the name of each individual plant in a particular column.” <span class="citation" data-cites="middleton_baking_1933">(from <a href="references.html#ref-middleton_baking_1933" role="doc-biblioref">Middleton, 1933</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>“We maintain, in our general ledger, a so-called Spread Sheet which is a long sheet with the name of each individual plant in a particular column.” <span class="citation" data-cites="middleton_baking_1933">(from <a href="references.html#ref-middleton_baking_1933" role="doc-biblioref">Middleton, 1933, p. 763</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
