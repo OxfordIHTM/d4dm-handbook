@@ -57,7 +57,7 @@ book:
   downloads: [pdf, epub]
   sharing: [linkedin, twitter, facebook]
   google-analytics: 
-    tracking-id: ""
+    tracking-id: G-FD0RT8JB4E
     anonymize-ip: true
 
 crossref:
@@ -69,8 +69,8 @@ csl: apa-single-spaced.csl
 
 format:
   html:
-    theme: zephyr
-    highlight-style: breeze
+    theme: sandstone
+    highlight-style: breeze-light
     toc: true
     toc-depth: 3
   pdf:
@@ -90,4 +90,4 @@ format:
     cover-image: images/d4dm_neg.png
     toc: true
     toc-depth: 3
-    highlight-style: breeze
+    highlight-style: breeze-light
