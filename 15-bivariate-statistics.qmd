@@ -212,7 +212,7 @@ Create a new variable for the ranking of the pressure variable and then rank usi
 
 ![Rank the pressure variable](images/spearman_rank_02.png){#fig-spearman-rank-02}
 
-![Copy or drag the formula to the rest of the rows](images/spearman_rank_03.png){#fig-spearman-rank-03}
+![Copy/drag formula to rest of rows](images/spearman_rank_03.png){#fig-spearman-rank-03}
 
 :::
 
@@ -222,7 +222,7 @@ Create a new variable for the ranking of the speed variable and then rank using 
 
 ![Rank the speed variable](images/spearman_rank_04.png){#fig-spearman-rank-04}
 
-![Copy or drag the formula to the rest of the rows](images/spearman_rank_05.png){#fig-spearman-rank-05}
+![Copy/drag formula to rest of rows](images/spearman_rank_05.png){#fig-spearman-rank-05}
 
 :::
 
@@ -260,7 +260,7 @@ Then apply the Spearman's $\rho$ formula as follows:
 
 ::: {layout-ncol="2" layout-valign="bottom"}
 
-![Get the squared differences of the ranks](images/spearman_rank_07.png){#fig-spearman-rank-07}
+![Get squared differences of ranks](images/spearman_rank_07.png){#fig-spearman-rank-07}
 
 ![Calculate using the formula](images/spearman_rank_08.png){#fig-spearman-rank-08}
 
@@ -343,7 +343,7 @@ Using the `RANK.AVG()` function in Excel, rank the pressure values as follows (@
 
 ![Rank pressure values](images/kendall_rank_02.png){#fig-kendall-rank-02}
 
-![Copy or drag the formula to the rest of the rows](images/kendall_rank_03.png){#fig-kendall-rank-03}
+![Copy/drag formula to rest of rows](images/kendall_rank_03.png){#fig-kendall-rank-03}
 
 :::
 
@@ -361,7 +361,7 @@ Using the `RANK.AVG()` function in Excel, rank the speed values as follows (@fig
 
 ![Rank speed values](images/kendall_rank_04.png){#fig-kendall-rank-04}
 
-![Copy or drag the formula to the rest of the rows](images/kendall_rank_05.png){#fig-kendall-rank-05}
+![Copy/drag formula to rest of rows](images/kendall_rank_05.png){#fig-kendall-rank-05}
 
 :::
 
@@ -374,8 +374,7 @@ Click on the sort functionality at the pressure column if available (@fig-kendal
 
 ![Sort table by pressure rank](images/kendall_rank_06.png){#fig-kendall-rank-06}
 
-
-![Table now sorted ascending by pressure rank](images/kendall_rank_07.png){#fig-kendall-rank-07}
+![Table sorted by pressure rank](images/kendall_rank_07.png){#fig-kendall-rank-07}
 
 :::
 
@@ -397,7 +396,7 @@ This can be implemented in Excel using the following formula (@fig-kendall-rank-
 
 ![Count number of concordant pairs](images/kendall_rank_08.png){#fig-kendall-rank-08}
 
-![Copy or drag the formula to the rest of the rows](images/kendall_rank_09.png){#fig-kendall-rank-09}
+![Copy/drag formula to rest of rows](images/kendall_rank_09.png){#fig-kendall-rank-09}
 
 :::
 
@@ -419,7 +418,7 @@ This can be implemented in Excel using the following formula (@fig-kendall-rank-
 
 ![Count number of discordant pairs](images/kendall_rank_10.png){#fig-kendall-rank-10}
 
-![Copy or drag the formula to the rest of the rows](images/kendall_rank_11.png){#fig-kendall-rank-11}
+![Copy/drag formula to rest of rows](images/kendall_rank_11.png){#fig-kendall-rank-11}
 
 :::
 
@@ -441,3 +440,5 @@ This results in a Kendall's $\tau$ of **-0.642178218**.
 
 The reference table in @tbl-pearson-values for the Pearson's $\rho$ can also be used to interpret Kendall's $\tau$.
 
+<br/>
+<br/>

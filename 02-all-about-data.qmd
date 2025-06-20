@@ -67,3 +67,5 @@ Data is collected from sources, processed or formatted as needed, organised into
 
 Each component (sources, formats, structures) plays a role in ensuring data compatibility with various systems, which are then used for classification based on specific needs.
 
+<br/>
+<br/>

@@ -91,3 +91,6 @@ Resiliency depends on how well an organization endures or recovers from any type
 ## Summary {#sec-data-security-summary}
 
 Data privacy, security, and protection are fundamental concerns in today's digital landscape. They involve protecting personal information from unauthorised access, implementing robust security measures, and upholding ethical standards in data handling. Addressing these challenges effectively requires a holistic approach that integrates technical safeguards with ongoing education and ethical practices to maintain trust and prevent significant risks.
+
+<br/>
+<br/>

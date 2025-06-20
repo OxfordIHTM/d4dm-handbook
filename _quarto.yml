@@ -45,6 +45,7 @@ book:
         - 13-exploratory-data-analysis.qmd
         - 14-univariate-statistics.qmd
         - 15-bivariate-statistics.qmd
+        - 16-epi-statistics.qmd
     - references.qmd
   # appendices: 
   #   - 12-mobile-device-setup.qmd

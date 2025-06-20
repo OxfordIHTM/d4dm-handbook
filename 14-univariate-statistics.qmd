@@ -1040,6 +1040,7 @@ Categorical variables can be further classified as either _nominal_, _ordinal_, 
 #### Use colours for categories appropriately {.unnumbered}
 
 
-
+<br/>
+<br/>
 
 

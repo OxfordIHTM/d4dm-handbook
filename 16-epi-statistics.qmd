@@ -1,0 +1,414 @@
+---
+output-file: epi-statistics.html
+lightbox: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+
+suppressPackageStartupMessages(source(here::here("packages.R")))
+for (f in list.files(here::here("R"), full.names = TRUE)) source (f)
+
+scores <- c(10, 15, 80, 90, 75, 85, 92, 90, 90, 90)
+
+school_nutrition <- read.csv("https://raw.githubusercontent.com/OxfordIHTM/teaching_datasets/refs/heads/main/school_nutrition.csv")
+
+cyclones <- read_xlsx(path = "data/cyclones.xlsx")
+
+fem <- read_xlsx(path = "data/fem.xlsx")
+```
+
+# Epidemiological statistics {#sec-epi-stats}
+
+In this chapter, we will cover topics and techniques on statistical methods commonly used by epidemiologists in public health investigations or studies that have wider uses and applications to other fields. These methods are considered *bread-and-butter* techniques for all epidemiologists and are generally easy to implement.
+
+We will cover topics on _contingency tables_, _relative risk ratio_, _odds ratio_, and _t-test_. These methods can be considered bivariate statistics as they are applied on two variables but with binary categorical variables. To demonstrate these techniques, we will use the fem dataset.
+
+## Contingency tables {#sec-contingency-table}
+
+A contingency table, also known as a cross-tabulation, is used in statistics to display the relationship between two or more categorical variables. It organises data by showing the frequency of observations that fall into various combinations of the categories of the variables being examined. It is also usually called a _two-by-two table_ as its common use is for comparing two categories per group. However, contingency tables can also be created with more than two categories per group.
+
+For this topic, we will focus on _two-by-two_ tables for simplicity and to be consistent with exploratory data analysis of bivariates.
+
+![A diagram of a two-by-two contingency table](images/contingency_table.png){#fig-contingency-table fig-align="center" width="70%"}
+
+@fig-contingency-table demonstrates the structure of a two-by-two contingency table with the exposure variable on the rows and the outcome variable on the columns.
+
+::: {#nte-exposure .callout-note title="Understanding exposure"}
+
+Since contingency tables were developed for disease epidemiology, the term exposure has been used which usually pertains to exposure to a risk factor or known causative agent of a particular disease outcome.
+
+However, exposure in a general sense can also mean exposure to a factor or a condition that is known to be associated to a certain outcome which doesn’t have to be a disease. For example, exposure to being female for an outcome of good grades; exposure to being married for an outcome of owning your house, etc.
+
+:::
+
+### Creating two-by-two contingency tables {#sec-two-by-two}
+
+In Excel, a contingency table can be easily created using pivot tables. Using the fem dataset, we can create a contingency table for the exposure variable of lost interest in sex (`SEX` variable) and the outcome variable of considered suicide (`LIFE` variable) through the following steps.
+
+1. Create a new worksheet for the contingency table.
+
+![Create a new worksheet for the contingency table](images/contingency_table_01.png){#fig-contingency-table-01 fig-align="center" width="70%"}
+
+2. Setup pivot table.
+
+a. `Insert` --> `Pivot Table` --> `From table/range`
+
+![Initiate pivot table](images/contingency_table_02.png){#fig-contingency-table-02 fig-align="center" width="70%"}
+
+b. Select table/range to pivot and insert into current worksheet.
+
+![Select table/range](images/contingency_table_03.png){#fig-contingency-table-03 fig-align="center" width="70%"}
+
+![Select fem raw data table](images/contingency_table_04.png){#fig-contingency-table-04 fig-align="center" width="70%"}
+
+![Insert into current worksheet](images/contingency_table_05.png){#fig-contingency-table-05 fig-align="center" width="70%"}
+
+3. Select exposure variable of contingency table.
+
+The variable for no interest in sex (`SEX`) is the exposure variable. Select and drag to the rows setting.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select SEX as exposure variable](images/contingency_table_06.png){#fig-contingency-table-06}
+
+![Drag SEX as row of table](images/contingency_table_07.png){#fig-contingency-table-07}
+
+:::
+
+4. Select outcome variable of contingency table.
+
+The variable for considered suicide (`LIFE`) is the outcome variable. Select and drag to the columns setting.
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Select LIFE as outcome variable](images/contingency_table_08.png){#fig-contingency-table-08}
+
+![Drag LIFE as column of table](images/contingency_table_09.png){#fig-contingency-table-09}
+
+:::
+
+5. Select values for the contingency table.
+
+a. Drag the `LIFE` variable into the values setting.
+
+![Drag LIFE into the values setting ](images/contingency_table_10.png){#fig-contingency-table-10 fig-align="center" width="70%"}
+
+b. Change the value setting to the COUNT summary measure.
+
+Tap on the settings arrow on the value variable --> `Value Edit Settings` --> Select `COUNT`
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Go to value edit settings](images/contingency_table_11.png){#fig-contingency-table-11}
+
+![Select COUNT as summary measure](images/contingency_table_12.png){#fig-contingency-table-12}
+
+:::
+
+6. Remove empty values in exposure variable.
+
+a. Click on settings button for exposure labels and untick blank.
+
+![Click on settings for exposure](images/contingency_table_13.png){#fig-contingency-table-13 fig-align="center" width="70%"}
+
+![Untick blank exposure label](images/contingency_table_14.png){#fig-contingency-table-14 fig-align="center" height="30%"}
+
+
+7. Remove empty values in outcome variable.
+
+a. Click on settings button for outcome labels and untick blank.
+
+![Click settings for outcome](images/contingency_table_15.png){#fig-contingency-table-15 fig-align="center" width="70%"}
+
+![Untick blank outcome label](images/contingency_table_16.png){#fig-contingency-table-16 fig-align="center" height="30%"}
+
+8. Contingency table is now complete.
+
+![Contingency table is now complete](images/contingency_table_17.png){#fig-contingency-table-17 fig-align="center" width="70%"}
+
+## Relative risk ratio {#sec-relative-risk-ratio}
+
+Relative risk ratio (RRR) is a measure of the risk of a certain event happening in one group (usually called the exposed group) compared to the risk of the same event happening in another group (usually called the unexposed group). It indicates how much more likely the outcome is in the exposed group compared to the unexposed group.
+
+### Calculating relative risk ratio {#sec-calculating-relative-risk-ratio}
+
+Using the schema of a two-by-two table in @fig-contingency-table, the relative risk ratio is calculated as follows:
+
+<br/>
+
+$$ RRR ~ = ~ \frac{\frac{A}{A + B}}{\frac{C}{C + D}} ~ = ~ \frac{A \times (C + D)}{C \times (A + B)} $$
+
+where:
+
+$A ~ = ~ \text{exposed with outcome}$
+
+$B ~ = ~ \text{exposed with no outcome}$
+
+$C ~ = ~ \text{not exposed with outcome}$
+
+$D ~ = ~ \text{not exposed with no outcome}$
+
+<br/>
+
+Using the pivot table we created in @sec-two-by-two, we can calculate the relative risk ratio as follows:
+
+$$ RRR ~ = ~ \frac{A \times (C + D)}{C \times (A + B)} $$
+
+$$ RRR ~ = ~ \frac{58 \times (5 + 12)}{5 \times (58 + 38)} ~ = ~ \frac{58 \times 17}{5 \times 96} ~ = ~ \frac{986}{480} ~ = ~ 2.054167 $$
+
+We can also perform this calculation in Excel using the pivot table we created.
+
+```swift
+=(B5*D6)/(B6*D5)
+```
+<br/>
+
+![Calculate relative risk ratio](images/risk_ratio_01.png){#fig-risk-ratio-01 fig-align="center" width="70%"}
+
+
+#### Calculating the confidence interval of the relative risk ratio {.unnumbered}
+
+Following are the steps to calculating the confidence interval[^cinote] of the relative risk ratio.
+
+1. Calculate the standard error of the natural logarithm of relative risk ratio
+
+<br/>
+
+$$ SE_{log(RRR)} ~ = ~ \sqrt{\frac{C}{A(A+C)} ~ + ~ \frac{D}{B(B+D)}} $$
+
+<br/>
+
+In Excel, this can be calculated as follows:
+
+```swift
+=SQRT(B6/(B5*B7)+C6/(C5*C7))
+```
+
+<br/>
+
+![Calculate standard error of natural logarithm of relative risk ratio](images/risk_ratio_02.png){#fig-risk-ratio-02 fig-align="center" width="70%"}
+
+2. Calculate the 95% confidence interval of relative risk ratio.
+
+<br/>
+
+$$ 95\% ~ CI ~ = ~ e ^ {\log(RRR) ~ \pm ~ 1.96 ~ \times ~ SE_{\log(RRR)}} $$
+
+<br/>
+
+In Excel, this can be calculated as follows:
+
+```swift
+=EXP(LN(B9)-1.96*B10)     ## 95% LCI
+```
+
+```swift
+=EXP(LN(B9)+1.96*B10)     ## 95% UCI
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate 95% lower confidence interval of relative risk ratio](images/risk_ratio_03.png){#fig-risk-ratio-03}
+
+![Calculate 95% upper confidence interval of relative risk ratio](images/risk_ratio_04.png){#fig-risk-ratio-04}
+
+:::
+
+```{r}
+#| label: rrr-calculations
+#| echo: false
+
+tab <- table(fem$SEX, fem$LIFE)
+
+rrr <- 986/480
+se  <- sqrt(tab[2, 1] / (tab[1, 1] * (tab[1, 1] + tab[2, 1])) + tab[2, 2] / (tab[1, 2] * (tab[1, 2] + tab[2, 2])))
+lci <- exp(log(rrr) - 1.96 * se)
+uci <- exp(log(rrr) + 1.96 * se)
+```
+
+
+The risk of suicidal ideation for those with no interest in sex is **`r round(rrr, digits = 2)` (95% CI: `r lci`-`r uci`)** times higher than those who have interest in sex.
+
+### Interpreting the relative risk ratio and its confidence interval {#sec-interpreting-relative-risk-ratio}
+
+@tbl-rrr-values provides guidance on how to interpret relative risk ratio.
+
+::: {#tbl-rrr-values}
+
+**Risk ratio** | **Interpretation**
+:------------- | :----------------------------------------------------------------
+`RRR = 1`      | Exposure does not affect outcome
+`RRR < 1`      | Risk of outcome is decreased by the exposure (protective factor)
+`RRR > 1`      | Risk of outcome is increased by the exposure (risk factor)
+
+Interpretation of relative risk ratio values
+
+:::
+
+If the 95% confidence interval doesn't contain 1, this means that the risk of the outcome given the exposure is significant.
+
+## Odds ratio {#sec-odds-ratio}
+
+Odds ratio (OR) is a measure of association between an exposure and an outcome. It represents the odds that an outcome will occur given a particular exposure compared to the odds of the outcome occurring in the absence of the exposure.
+
+### Calculating odds ratio {#sec-calculating-odds-ratio}
+
+Using the schema of a two-by-two table in @fig-contingency-table, the odds ratio is calculated as follows:
+
+<br/>
+
+$$ OR ~ = ~ \frac{A/B}{C/D} ~ = ~ \frac{A \times D}{B \times C} $$
+
+$$ OR ~ = ~ \frac{58 \times 12}{38 \times 5} ~ = ~ \frac{696}{190} ~ = ~ 3.663158 $$
+
+<br/>
+
+We can also perform this calculation in Excel using the pivot table we created.
+
+```swift
+=(B5*D6)/(B6*D5)
+```
+<br/>
+
+![Calculate odds ratio](images/odds_ratio_01.png){#fig-odds-ratio-01 fig-align="center" width="70%"}
+
+#### Calculating the confidence interval of the odds ratio {.unnumbered}
+
+The 95% confidence interval is calculated as follows:
+
+<br/>
+
+$$ 95\% ~ CI ~ = ~ e ^ {\log(OR) ~ \pm ~ 1.96 ~ \times ~ \sqrt{\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D}}} $$
+
+<br/>
+
+In Excel, this can be calculated as follows:
+
+```swift
+=EXP(LN(E9)-1.96*SQRT(1/B5+1/C5+1/B6+1/C6))     ## 95% LCI
+```
+
+```swift
+=EXP(LN(E9)+1.96*SQRT(1/B5+1/C5+1/B6+1/C6))     ## 95% UCI
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Calculate 95% lower confidence interval of odds ratio](images/odds_ratio_02.png){#fig-odds-ratio-02}
+
+![Calculate 95% upper confidence interval of odds ratio](images/odds_ratio_03.png){#fig-odds-ratio-03}
+
+:::
+
+```{r}
+#| label: or-calculations
+#| echo: false
+
+tab <- table(fem$SEX, fem$LIFE)
+
+or  <- 696/190
+lci <- exp(log(or) - 1.96 * sqrt(1/tab[1, 1] + 1/tab[1, 2] + 1/tab[2, 1] + 1/tab[2, 2]))
+lci <- exp(log(or) + 1.96 * sqrt(1/tab[1, 1] + 1/tab[1, 2] + 1/tab[2, 1] + 1/tab[2, 2]))
+```
+
+The odds of suicidal ideation for those with no interest in sex is **`r round(or, digits = 2)` (95% CI: `r lci`-`r uci`)** times higher than those who have interest in sex.
+
+### Interpreting the odds ratio and its confidence interval {#sec-interpreting-odds-ratio}
+
+@tbl-or-values provides guidance on how to interpret odds ratio.
+
+::: {#tbl-or-values}
+
+**Odds ratio** | **Interpretation**
+:------------- | :-----------------------------------------------
+`OR = 1`       | Exposure does not affect odds of outcome
+`OR > 1`       | Exposure associated with higher odds of outcome
+`OR < 1`       | Exposure associated with lower odds of outcome
+
+Interpretation of odds ratio values
+
+:::
+
+If the 95% confidence interval doesn't contain 1, this means that the odds of the outcome given the exposure is significant.
+
+## Difference between relative risk ratio and odds ratio
+
+Relative risk ratio approximates odds ratio for outcomes that are rare (< 10%) and as such can be reported interchangeably. In non-rare outcomes, odds ratio will tend to have greater magnitude than relative risk ratio but always in the same direction (negative or positive). In specific study designs, the total population-at-risk is not known hence relative risk ratio cannot be calculated.
+
+## Student t-test {#sec-t-test}
+
+Sometimes, we want to compare summary numerical values between one group and another. Unlike a contingency table that summarises the counts of the variables, this summary table will usually have the mean or median of the numerical values. We can use the _t-test_ (also known as the _Student t-test_) to compare whether the mean of the values for one group is different from another group.
+
+### Calculating the t-test {#sec-calculating-t-test}
+
+Using the fem dataset, let's say for example we wanted to compare the mean age of those who have had thoughts of suicide to those who haven't had thoughts of suicide. We can use the t-test to compare their mean age. In Excel, there is a built in function that performs the t-test, the `T.TEST()` function. Following are the steps on how to get the mean age for each group and then how to test if there is a difference between the mean age of the two groups.
+
+1. Sort the fem dataset by the values of the `LIFE` variable.
+
+We recommend doing this step on a new worksheet with a fresh instance of the fem dataset imported in (@fig-t-test-01). Then sort the whole table based on the values of the `LIFE` variable (@fig-t-test-02).
+
+::: {layout=[[1,1],[1,1]]}
+
+![Create a new worksheet](images/t_test_01.png){#fig-t-test-01}
+
+![Setup sort](images/t_test_02.png){#fig-t-test-02}
+
+![Sort by LIFE from smallest to largest](images/t_test_03.png){#fig-t-test-03}
+
+![Table is now sorted by LIFE](images/t_test_04.png){#fig-t-test-04}
+
+:::
+
+2. Get the mean age for the each group value of `LIFE` variable.
+
+```swift
+=AVERAGE(B2:B66)     ## Average age of those who thought of suicide
+```
+
+```swift
+=AVERAGE(B67:B118)   ## Average age of those who have not thought of suicide
+```
+
+<br/>
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Get the mean age for those who have thought of suicide](images/t_test_05.png){#fig-t-test-05}
+
+![Get the mean age for those who have not thought of suicide](images/t_test_06.png){#fig-t-test-06}
+
+:::
+
+3. Perform t-test on `AGE` variable between the two groups.
+
+Using the `T.TEST()` function:
+
+```swift
+=T.TEST(B2:B66,B67:B118,2,2)
+```
+
+<br/>
+
+![Perform t-test](images/t_test_07.png){#fig-t-test-07 fig-align="center" width="70%"}
+
+![Results of the t-test](images/t_test_08.png){#fig-t-test-08 fig-align="center" width="70%"}
+
+```{r}
+#| label: t-test-calculations
+#| echo: false
+
+t_test <- t.test(fem$AGE[fem$LIFE == 1], fem$AGE[fem$LIFE == 2], var.equal = TRUE)
+```
+
+The result of the t-test is the p-value for the test. The result is **`r t_test$p.value`**. These is no significant difference between the mean ages of those who thought of suicide and to those who had no thoughts of suicide.
+
+<br/>
+<br/>
+
+[^cinote]: A confidence interval is a specific range of values, determined using sample data, which probably includes the actual value of an unknown population parameter. It shows how much uncertainty about a sample statistic and provides a likely interval for the corresponding population parameter. For instance, a 95% confidence interval means that if we repeated the sampling and calculation process numerous times, 95% of those intervals would include the true population parameter.
